@@ -43,12 +43,9 @@ d %>% select(ID, Codeur, is_economy, tone_raw, tone) %>% unique %>% write_csv(".
 
 ### Get crowd data
 # Note: Requires the figure 8 API key to be set using figr8::set.api.key(...)
-library(figr8)
-KEY = "zV623xAyU2ybS386Q3T2"
-set.api.key(Sys.getenv("FIGURE_EIGHT_KEY"))
-x = results(1345162) %>% as.tibble
-x = x %>% filter(id %in% gold$id) %>% select(id, tone=sentiment) %>% mutate(id=as.integer(id), tone=as.numeric(tone))
-table(table(x$id))
-table(unique(x$id) %in% gold$id)
+# source(path.expand("~/Dropbox/tmp/.figure8_api_key.R"))
 
-saveRDS(x, "crowd_5.rds")
+library(figr8)
+crowd = results(1345162) %>% as.tibble
+crowd %<>% filter(id %in% gold$id) %>% select(id, tone=sentiment) %>% mutate(id=as.integer(id), tone=as.numeric(tone))
+write_csv(crowd, "../data/intermediate/crowdcodings.csv")

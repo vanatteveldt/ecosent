@@ -35,5 +35,5 @@ meta = meta[meta.ID.isin(ids)][["ID", "headline"]]
 from scripts_r1.analyze import add_sentiments
 add_sentiments(meta, "headline")
 
-meta.to_csv(os.path.join(data_path, "dictionary_output.csv"))
+meta.drop("headline", 1).to_csv(os.path.join(data_path, "dictionary_output.csv"), index=False)
 
