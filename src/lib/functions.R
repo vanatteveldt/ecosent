@@ -1,6 +1,5 @@
 .project_root = getwd()
-while (!str_ends(.project_root, "/src")) .project_root = normalizePath(file.path(.project_root, ".."))
-.project_root = normalizePath(file.path(.project_root, ".."))
+while (!str_ends(.project_root, "/ecosent")) .project_root = normalizePath(file.path(.project_root, ".."))
 
 data_file = function(filename, folder="intermediate") {
    normalizePath(file.path(.project_root, "data", folder, filename))   

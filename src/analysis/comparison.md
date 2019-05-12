@@ -126,7 +126,7 @@ ggplot(res, aes(x=cov, y=alpha, color=factor(N), label=paste0("≥", support, " 
   ylim(.8, 1) + theme(legend.position="none") + xlab("Coverage") + ylab("Alpha (ordinal)")
 ```
 
-![](/home/wva/ecosent/results/figures/crowd-coverage-1.png)
+![](figures/crowd-coverage-1.png)
 
 Accuracy per method
 -------------------
@@ -177,7 +177,7 @@ x %>% as.data.frame %>% (function (x) {rownames(x)=x$method; x %>% select(-metho
   scale_x_discrete(position = "top") + theme(axis.text.x = element_text(angle = 0, hjust = .5))
 ```
 
-![](/home/wva/ecosent/results/figures/accuracy-1.png)
+![](figures/accuracy-1.png)
 
 Correlations between various methods
 ------------------------------------
@@ -195,4 +195,4 @@ x %>% as.data.frame %>% (function (x) {rownames(x)=x$method; x %>% select(-metho
                                                            sep="\n"))
 ```
 
-![](/home/wva/ecosent/results/figures/corr-1.png)
+![](figures/corr-1.png)

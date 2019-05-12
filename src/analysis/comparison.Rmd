@@ -8,7 +8,7 @@ output:
 editor_options: 
   chunk_output_type: console
 knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding, knit_root_dir="..", output_dir = "../../results") })
+  rmarkdown::render(inputFile, encoding = encoding, knit_root_dir="..") })
 ---
 
 # Setup
@@ -22,7 +22,7 @@ source("lib/functions.R")
 ```
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.path=file.path(.project_root, "results", "figures", ""))
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.path="figures/")
 library(printr)
 ```
 
