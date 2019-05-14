@@ -8,13 +8,12 @@ output:
 editor_options: 
   chunk_output_type: console
 knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding, knit_root_dir="..") 
-  })
+  rmarkdown::render(inputFile, encoding = encoding, knit_root_dir="..") })
 ---
 
 # Setup
 
-Load the required packages and source the auxilliary functions from `lib/functions.R`:
+Load the requiered packages and source the auxilliary functions from `lib/functions.R`:
 
 ```{r import, message=F, warning=F}
 library(tidyverse)

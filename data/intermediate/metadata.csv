@@ -1,4 +1,4 @@
-ID,date,medtype,medium,headline
+id,date,medtype,medium,headline
 150282317,2015-02-01T00:00:00Z,Newspaper,Telegraaf,Personeel weggekaapt; Buitenland zit te springen om Nederlandse specialisten
 150282315,2015-02-01T00:00:00Z,Newspaper,Telegraaf,Bar en boos
 150282314,2015-02-01T00:00:00Z,Newspaper,Telegraaf,'Onderliggend is er veel aan de hand'
@@ -1282,7 +1282,7 @@ ID,date,medtype,medium,headline
 150282004,2015-02-21T00:00:00Z,Newspaper,Telegraaf,Heil in hypotheek
 150282002,2015-02-21T00:00:00Z,Newspaper,Telegraaf,Winst
 150282001,2015-02-21T00:00:00Z,Newspaper,Telegraaf,Geld verdienen aan schaarste; Vraag naar grondstoffen zal stijgen
-150282e3,2015-02-21T00:00:00Z,Newspaper,Telegraaf,Beleggingstip: 'Volg aandeleninkoopprogramma's'
+150282000,2015-02-21T00:00:00Z,Newspaper,Telegraaf,Beleggingstip: 'Volg aandeleninkoopprogramma's'
 150281999,2015-02-21T00:00:00Z,Newspaper,Telegraaf,DNB wil spaarlust beteugelen
 150281998,2015-02-21T00:00:00Z,Newspaper,Telegraaf,Rendement uit Europese bedrijfsobligaties
 150281997,2015-02-21T00:00:00Z,Newspaper,Telegraaf,Rentes
@@ -1343,7 +1343,7 @@ ID,date,medtype,medium,headline
 150287006,2015-02-23T00:00:00Z,Newspaper,FD,Bezuinigingen houden aan
 150287004,2015-02-23T00:00:00Z,Newspaper,FD,De Fed verhoogt de rente... en dan?; Marktvorsers voorzien na een rentestap in juni een volatielere dollar
 150287003,2015-02-23T00:00:00Z,Newspaper,FD,FINANCIËLE AGENDA
-150287e3,2015-02-23T00:00:00Z,Newspaper,FD,`Redding Braziliaans staatsolieconcern Petrobras kan $110 mrd gaan kosten'
+150287000,2015-02-23T00:00:00Z,Newspaper,FD,`Redding Braziliaans staatsolieconcern Petrobras kan $110 mrd gaan kosten'
 150286998,2015-02-23T00:00:00Z,Newspaper,FD,Monetaire verkrapping in VS mondiaal voelbaar
 150285137,2015-02-23T00:00:00Z,Newspaper,NoordelijkDagblad,Belegger rest na Grieks drama weer de cijfers
 150285136,2015-02-23T00:00:00Z,Newspaper,NoordelijkDagblad,'Redding van Petrobras risico voor Brazilië'
@@ -1380,7 +1380,7 @@ ID,date,medtype,medium,headline
 150290718,2015-02-24T00:00:00Z,Newspaper,NHD,'Loof de banken'; Werkgeversvoorman De Boer wil eind aan strafexpeditie
 150290003,2015-02-24T00:00:00Z,Newspaper,AD,V&D niet direct in problemen
 150290002,2015-02-24T00:00:00Z,Newspaper,AD,Gratis stroom en hogere lonen
-15029e4,2015-02-24T00:00:00Z,Newspaper,AD,Grieken tergen Europa
+150290000,2015-02-24T00:00:00Z,Newspaper,AD,Grieken tergen Europa
 150289999,2015-02-24T00:00:00Z,Newspaper,AD,Dijsselbloem heeft 'vertrouwen'
 150289996,2015-02-24T00:00:00Z,Newspaper,AD,'Ambtenaren VS mogelijk niet uitbetaald'
 150289992,2015-02-24T00:00:00Z,Newspaper,AD,De Boer ziet niets in belastingplan
@@ -1566,7 +1566,7 @@ ID,date,medtype,medium,headline
 150293007,2015-02-27T00:00:00Z,Newspaper,Trouw,Transparantie is het nieuwe toverwoord
 150293005,2015-02-27T00:00:00Z,Newspaper,Trouw,Bouwbedrijf Heijmans duikt diep de rode cijfers in
 150293001,2015-02-27T00:00:00Z,Newspaper,Trouw,KLM wil banen voor grondpersoneel schrappen
-150293e3,2015-02-27T00:00:00Z,Newspaper,Trouw,"Meer mensen zoeken werk, daardoor stijgt werkloosheid"
+150293000,2015-02-27T00:00:00Z,Newspaper,Trouw,"Meer mensen zoeken werk, daardoor stijgt werkloosheid"
 150292999,2015-02-27T00:00:00Z,Newspaper,Trouw,Omhels Griekenland met vergeving en verzoening
 150292011,2015-02-27T00:00:00Z,Newspaper,Volkskrant,Opnieuw vastgoedverlies Rabobank
 150292010,2015-02-27T00:00:00Z,Newspaper,Volkskrant,Imtech opnieuw in opspraak
@@ -2170,7 +2170,7 @@ ID,date,medtype,medium,headline
 150286909,2015-03-11T00:00:00Z,Newspaper,FD,Frankrijk krijgt alsnog vleugels
 150285003,2015-03-11T00:00:00Z,Newspaper,NoordelijkDagblad,Rijk moet schuld aan Noorden aflossen
 150285002,2015-03-11T00:00:00Z,Newspaper,NoordelijkDagblad,'Duitse export naar nieuw record'
-150285e3,2015-03-11T00:00:00Z,Newspaper,NoordelijkDagblad,Nederlandse rente naar dieptepunt
+150285000,2015-03-11T00:00:00Z,Newspaper,NoordelijkDagblad,Nederlandse rente naar dieptepunt
 150284997,2015-03-11T00:00:00Z,Newspaper,NoordelijkDagblad,Investeringsverschil groot
 150284995,2015-03-11T00:00:00Z,Newspaper,NoordelijkDagblad,Werkgevers gokken op beperkte stijging lonen
 150282441,2015-03-11T00:00:00Z,Newspaper,Metro,Korting op huurwoning
@@ -4396,7 +4396,7 @@ ID,date,medtype,medium,headline
 150281004,2015-04-25T00:00:00Z,Newspaper,Telegraaf,Sparen bij Chinezen
 150281002,2015-04-25T00:00:00Z,Newspaper,Telegraaf,HSBC studeert op Britse exit
 150281001,2015-04-25T00:00:00Z,Newspaper,Telegraaf,Val Ballast Nedam zal pijn doen
-150281e3,2015-04-25T00:00:00Z,Newspaper,Telegraaf,'Nog meer vluchtelingen als Griekenland geen geld meer krijgt'
+150281000,2015-04-25T00:00:00Z,Newspaper,Telegraaf,'Nog meer vluchtelingen als Griekenland geen geld meer krijgt'
 150280999,2015-04-25T00:00:00Z,Newspaper,Telegraaf,Spaarrente duikt onder 1 procent
 150280997,2015-04-25T00:00:00Z,Newspaper,Telegraaf,'Waarom moest mijn bedrijf kapot?'; Achterhoekse transportondernemer Frank Bruger vecht miljoenenstrijd uit met Belastingdienst
 150280995,2015-04-25T00:00:00Z,Newspaper,Telegraaf,Spaartaks adieu
@@ -6679,7 +6679,7 @@ ID,date,medtype,medium,headline
 150762261,2015-06-18T00:00:00Z,Newspaper,Volkskrant,Beurzen in ban van Griekse crisis
 150762260,2015-06-18T00:00:00Z,Newspaper,Volkskrant,Gemeente redt Stedelijk Schiedam
 150762001,2015-06-18T00:00:00Z,Newspaper,Trouw,'Bang? Natuurlijk ben ik bang'
-150762e3,2015-06-18T00:00:00Z,Newspaper,Trouw,Het rampscenario: een slechte munt verdrijft de euro
+150762000,2015-06-18T00:00:00Z,Newspaper,Trouw,Het rampscenario: een slechte munt verdrijft de euro
 150761998,2015-06-18T00:00:00Z,Newspaper,Trouw,In 20 jaar niet zo weinig Duitse faillissementen
 150761997,2015-06-18T00:00:00Z,Newspaper,Trouw,Meer export van bloemen en planten
 150761994,2015-06-18T00:00:00Z,Newspaper,Trouw,Nieuw plan voor roc Leiden: langzaam ontmantelen
@@ -7726,7 +7726,7 @@ ID,date,medtype,medium,headline
 150761375,2015-07-07T00:00:00Z,Newspaper,Telegraaf,Stap terug beurzen VS
 150761374,2015-07-07T00:00:00Z,Newspaper,Telegraaf,Rentefeest hypotheken voorbij
 150761003,2015-07-07T00:00:00Z,Newspaper,NRC,"Snel online fornuis kopen, nu het nog kan"
-150761e3,2015-07-07T00:00:00Z,Newspaper,NRC,Zó had je nog meer verdiend met aandelen
+150761000,2015-07-07T00:00:00Z,Newspaper,NRC,Zó had je nog meer verdiend met aandelen
 150760996,2015-07-07T00:00:00Z,Newspaper,NRC,Arbeidsmarkt 'Kwart van werkgevers vraagt ouderen stapje terug te doen'
 150760833,2015-07-07T00:00:00Z,Newspaper,NHD,Rentefeest hypotheken lijkt alweer voorbij
 150760830,2015-07-07T00:00:00Z,Newspaper,NHD,Grootverdiener moet bij ontslag snel aan de bak

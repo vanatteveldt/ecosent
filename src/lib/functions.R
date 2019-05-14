@@ -1,8 +1,11 @@
+library(tidyverse)
+library(magrittr)
+
 .project_root = getwd()
 while (!str_ends(.project_root, "/ecosent")) .project_root = normalizePath(file.path(.project_root, ".."))
 
 data_file = function(filename, folder="intermediate") {
-   normalizePath(file.path(.project_root, "data", folder, filename))   
+  file.path(.project_root, "data", folder) %>% normalizePath(mustWork = T) %>% file.path(filename)
 }
 
 
@@ -19,4 +22,15 @@ compare = function(crowd, gold, ...) {
   stats = d %>% summarize(n=n(), acc=mean(crowd == tone))
   alpha =d %>% select(crowd, tone) %>% as.matrix() %>% t %>% irr::kripp.alpha("ordinal")
   tibble(..., cov=stats$n/nrow(gold), acc=stats$acc, alpha=alpha$value)
+}
+
+#' Get the value labels from a (SPSS) column
+value_labels = function(x, labels_col=x) {
+  labels = attr(labels_col, "labels") 
+  names(labels)[match(x, labels)]
+}
+
+#' Recode the 'raw' tone into -1 .. 1
+recode_tone = function(tone) {
+  recode(tone, "vooral negatief"=-1, "vooral positief"=1, "de kop is niet van toepassing op de economie"=NA_real_, .default=0)
 }
