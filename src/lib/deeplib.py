@@ -29,7 +29,7 @@ def embeddings_matrix(vocabulary, embeddings_file):
     return embedding_matrix
 
 
-def get_data(data_file, output_dim=1, shuffle=True, gold=0):
+def get_data(data_file, shuffle=True, gold=0) -> Tuple[str, int]:
     """Get the data, returning the texts and labels"""
     h = pd.read_csv(data_file)
     # drop gold, randomize rows, select train/val
@@ -37,16 +37,20 @@ def get_data(data_file, output_dim=1, shuffle=True, gold=0):
     if shuffle:
         h = h.sample(frac=1).reset_index(drop=True)
     texts = h.lemmata
+    labels = h.tone
+    return texts, labels
+
+
+def encode_labels(labels: int, output_dim: int) -> np.array:
     if output_dim == 1:
-        labels = np.asarray([[x] for x in h.tone])
+        return np.asarray([[x] for x in labels])
     elif output_dim == 2:
-        labels  = np.asarray([[(x + 1) / 2, int(x!=0)] for x in h.tone])
+        return np.asarray([[(x + 1) / 2, int(x != 0)] for x in labels])
     elif output_dim == 3:
-        labels = [tone+1 for tone in h.tone] # -1 -> 0 etc
-        labels = to_categorical(np.asarray(labels))
+        labels = [tone+1 for tone in labels] # -1 -> 0 etc
+        return to_categorical(np.asarray(labels))
     else:
         raise ValueError(output_dim)
-    return texts, labels
 
 
 def tokenize(texts):
