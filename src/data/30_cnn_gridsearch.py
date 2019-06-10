@@ -2,7 +2,7 @@
 # Requires:
 #  - the initialized embeddings matrix (tmp/embeddings.npy) created by prep_ml_features.py
 #  - the lemmata and codings (intermediate/sentences_ml.csv) created by ml_features.R
-
+import random
 import sys
 import logging
 
@@ -36,8 +36,6 @@ np.random.seed(1)
 
 logging.info("Loading data from {} and {}, saving logs to {}".format(data_file, embeddings_file, output_file))
 texts, labels = lib.get_data(data_file)
-print(type(texts), type(labels))
-import sys; sys.exit()
 data, vocabulary = lib.tokenize(texts)
 
 logging.info("Loading embeddings")
@@ -49,13 +47,18 @@ logger = lib.ValidationLogger(params, output_file)
 experiments = list(lib.iter_grid(PARAM_GRID))
 
 for k in range(N_REPEAT):
+    logging.info("Repetition {k}/{N_REPEAT}".format(**locals()))
+    shuffle = random.sample(range(len(labels)), len(labels))
+    rep_labels = labels[shuffle]
+    rep_data = data[shuffle, :]
+
     for i, settings in enumerate(experiments):
         logging.info("Experiment {i}/{n}: {settings}".format(n=len(experiments), **locals()))
         logger.start_experiment(settings, rep=k)
         np.random.seed(k)
         
-        labels_enc = lib.encode_labels(labels, output_dim=settings['output_dim'])
-        for j, (x_train, y_train, x_val, y_val) in enumerate(lib.xval_folds(data, labels_enc, folds=N_FOLDS)):
+        labels_enc = lib.encode_labels(rep_labels, output_dim=settings['output_dim'])
+        for j, (x_train, y_train, x_val, y_val) in enumerate(lib.xval_folds(rep_data, labels_enc, folds=N_FOLDS)):
             logging.info("... Fold {}. #train: {}, #val: {}".format(j, len(y_train), len(y_val)))
             logger.start_fold(x_val, y_val)
             model = lib.cnn_model(settings=settings,

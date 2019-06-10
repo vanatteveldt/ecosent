@@ -152,7 +152,7 @@ def validate(output, test_labels) -> Tuple[float, float, float]:
 
 def xval_folds(x, y, folds=5):
     nval = len(y) // folds
-    splits = np.array([nval, nval*2, nval*3, nval*4])
+    splits = np.array([nval * (f+1) for f in range(folds)])
     y_folds = np.split(y, splits)
     x_folds = np.vsplit(x, splits)
     for i in range(folds):
