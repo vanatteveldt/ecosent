@@ -102,7 +102,7 @@ class ValidationLogger(Callback):
         self.keys = keys
         self.output_file = open(outfile, 'w')
         self.w = csv.writer(self.output_file)
-        self.w.writerow(["experiment"] + keys + ["epoch", "fold", "acc", "cor", "acc2", "cor2", "mse", "cortot"])
+        self.w.writerow(["experiment"] + keys + ["epoch", "fold", "acc", "cor", "mse", "cortot"])
         self.experiment = 0
 
     def start_experiment(self, settings, i=None):

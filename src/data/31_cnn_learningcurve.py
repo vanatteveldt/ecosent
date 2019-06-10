@@ -27,6 +27,7 @@ settings = dict(
     output_dim=2,
     batch_size=128,
     )
+np.random.seed(1)
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s %(name)-12s %(levelname)-5s] %(message)s')
 
@@ -50,7 +51,6 @@ test_data = data[len(train_texts):]
 logging.info("Loading embeddings")
 embeddings = lib.embeddings_matrix(word_index, embeddings_file)
 
-np.random.seed(1)
 
 with open(output_file, 'w') as of:
     w = csv.writer(of)
