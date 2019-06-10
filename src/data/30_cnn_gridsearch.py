@@ -21,6 +21,8 @@ embeddings_file = os.path.join(data_path, "tmp", "w2v_320d")
 
 N_EPOCHS = 10
 BATCH_SIZE = 128
+N_FOLDS=10
+N_REPEAT=4
 
 PARAM_GRID = dict(
     train_embedding=[True, False],
@@ -34,6 +36,8 @@ np.random.seed(1)
 
 logging.info("Loading data from {} and {}, saving logs to {}".format(data_file, embeddings_file, output_file))
 texts, labels = lib.get_data(data_file)
+print(type(texts), type(labels))
+import sys; sys.exit()
 data, vocabulary = lib.tokenize(texts)
 
 logging.info("Loading embeddings")
@@ -44,19 +48,20 @@ logger = lib.ValidationLogger(params, output_file)
 
 experiments = list(lib.iter_grid(PARAM_GRID))
 
+for k in range(N_REPEAT):
+    for i, settings in enumerate(experiments):
+        logging.info("Experiment {i}/{n}: {settings}".format(n=len(experiments), **locals()))
+        logger.start_experiment(settings, rep=k)
+        np.random.seed(k)
+        
+        labels_enc = lib.encode_labels(labels, output_dim=settings['output_dim'])
+        for j, (x_train, y_train, x_val, y_val) in enumerate(lib.xval_folds(data, labels_enc, folds=N_FOLDS)):
+            logging.info("... Fold {}. #train: {}, #val: {}".format(j, len(y_train), len(y_val)))
+            logger.start_fold(x_val, y_val)
+            model = lib.cnn_model(settings=settings,
+                                  max_sequence_length=data.shape[1],
+                                  embeddings_matrix=embeddings)
 
-for i, settings in enumerate(experiments):
-    logging.info("Experiment {i}/{n}: {settings}".format(n=len(experiments), **locals()))
-    logger.start_experiment(settings)
-    data, word_index = lib.tokenize(texts)
-    labels_enc = lib.encode_labels(labels, output_dim=settings['output_dim'])
-    for j, (x_train, y_train, x_val, y_val) in enumerate(lib.xval_folds(data, labels_enc)):
-        logging.info("... Fold {}. #train: {}, #val: {}".format(j, len(y_train), len(y_val)))
-        logger.start_fold(x_val, y_val)
-        model = lib.cnn_model(settings=settings,
-                              max_sequence_length=data.shape[1],
-                              embeddings_matrix=embeddings)
-
-        model.fit(x_train, y_train, epochs=N_EPOCHS, batch_size=BATCH_SIZE, callbacks=[logger])
-        keras_backend.clear_session()
+            model.fit(x_train, y_train, epochs=N_EPOCHS, batch_size=BATCH_SIZE, callbacks=[logger])
+            keras_backend.clear_session()
 
