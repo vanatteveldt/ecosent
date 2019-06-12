@@ -105,14 +105,14 @@ class ValidationLogger(Callback):
         self.w.writerow(["rep", "experiment"] + keys + ["epoch", "fold", "acc", "cor", "mse", "cortot"])
         self.experiment = 0
 
-    def start_experiment(self, settings, rep=None, i=None):
+    def start_experiment(self, settings, seed=None, i=None):
         self.fold = 0
-        self.rep = rep
+        self.seed = seed
         if i is None:
             self.experiment += 1
         else:
             self.experiment = i
-        self.settings_row = [self.rep, self.experiment] + [settings[k] for k in self.keys]
+        self.settings_row = [self.seed, self.experiment] + [settings[k] for k in self.keys]
 
     def start_fold(self, x_val, y_val):
         self.fold += 1
