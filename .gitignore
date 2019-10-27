@@ -37,8 +37,17 @@ rsconnect/
 .Rproj.user
 *~
 
+.doit.db
+.idea
+
+env
+
 __pycache__
 
 data/private
 packrat/lib*/
 packrat/src/
+
+
+data/tmp
+data/raw-private
