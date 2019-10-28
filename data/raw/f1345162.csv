@@ -1,0 +1,646 @@
+_unit_id,_created_at,_golden,_id,_missed,_started_at,_tainted,_channel,_trust,_worker_id,_country,_region,_city,_ip,sentiment,headline,id,sentiment_gold
+2128145138,2/1/2019 21:33:40,true,4486899423,,2/1/2019 21:33:01,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Droompakket Rutte II,150282313,1
+2128145138,2/3/2019 15:13:15,true,4491423994,,2/3/2019 15:12:42,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Droompakket Rutte II,150282313,1
+2128145138,2/4/2019 09:23:38,true,4493009291,false,2/4/2019 09:23:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Droompakket Rutte II,150282313,1
+2128145140,2/3/2019 15:11:22,true,4491421303,,2/3/2019 15:10:52,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Rentedip drama voor pensioenpotje,20641,-1
+2128145140,2/4/2019 09:23:21,true,4493008763,,2/4/2019 09:23:07,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Rentedip drama voor pensioenpotje,20641,-1
+2128145141,2/1/2019 17:36:16,true,4486164140,true,2/1/2019 17:35:18,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Krimp bedrijvigheid Chinese industrie,20643,-1
+2128145141,2/1/2019 21:43:30,true,4486923152,,2/1/2019 21:42:49,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Krimp bedrijvigheid Chinese industrie,20643,-1
+2128145141,2/4/2019 09:17:02,true,4492995238,,2/4/2019 09:16:41,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Krimp bedrijvigheid Chinese industrie,20643,-1
+2128145142,2/1/2019 21:32:22,true,4486896607,,2/1/2019 21:31:47,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Van Boxtel: lager eigen risico,20647,0
+2128145143,2/3/2019 12:52:51,true,4491203899,,2/3/2019 12:52:28,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,Zo ziet het verschil tussen Noord- en Zuid-Europa eruit,15011,0
+2128145143,2/3/2019 15:12:40,true,4491423221,,2/3/2019 15:12:12,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Zo ziet het verschil tussen Noord- en Zuid-Europa eruit,15011,0
+2128145144,2/4/2019 09:23:05,true,4493008199,,2/4/2019 09:22:39,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Frankrijk wil nieuwe deal voor Griekenland,20661,0
+2128145144,2/4/2019 11:54:16,true,4493309257,,2/4/2019 11:50:34,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Frankrijk wil nieuwe deal voor Griekenland,20661,0
+2128145145,2/1/2019 17:31:12,true,4486146925,,2/1/2019 17:30:43,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Lage olieprijs nekt offshore,150292294,-1
+2128145145,2/3/2019 12:52:26,true,4491203276,,2/3/2019 12:51:51,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Lage olieprijs nekt offshore,150292294,-1
+2128145145,2/3/2019 15:12:10,true,4491422535,,2/3/2019 15:11:24,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Lage olieprijs nekt offshore,150292294,-1
+2128145146,2/1/2019 17:43:03,true,4486185262,,2/1/2019 17:40:42,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Laat stadsregio btw heffen over lokale meerwaarde,150292293,0
+2128145146,2/1/2019 21:36:43,true,4486906773,,2/1/2019 21:36:12,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Laat stadsregio btw heffen over lokale meerwaarde,150292293,0
+2128145146,2/3/2019 15:06:47,true,4491414836,,2/3/2019 15:06:02,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Laat stadsregio btw heffen over lokale meerwaarde,150292293,0
+2128145146,2/4/2019 06:41:40,true,4492740501,,2/4/2019 06:40:57,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Laat stadsregio btw heffen over lokale meerwaarde,150292293,0
+2128145147,2/1/2019 21:42:44,true,4486921081,,2/1/2019 21:42:16,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Een Amerikaans recept voor groei in de eurozone,150287397,1
+2128145147,2/4/2019 11:49:43,true,4493300215,,2/4/2019 11:49:19,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Een Amerikaans recept voor groei in de eurozone,150287397,1
+2128145148,2/1/2019 17:31:12,true,4486146914,,2/1/2019 17:30:43,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Laat rijke Grieken betalen,148571851,0
+2128145148,2/3/2019 15:13:48,true,4491424841,,2/3/2019 15:13:17,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Laat rijke Grieken betalen,148571851,0
+2128145148,2/4/2019 06:39:54,true,4492737826,,2/4/2019 06:39:22,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Laat rijke Grieken betalen,148571851,0
+2128145148,2/4/2019 09:21:02,true,4493003754,true,2/4/2019 09:20:48,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Laat rijke Grieken betalen,148571851,0
+2128145149,2/3/2019 12:54:22,true,4491206662,,2/3/2019 12:53:43,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Honderden ontslagen omdat Noordzee-olie niet meer rendabel is,34569,-1
+2128145150,2/3/2019 15:07:37,true,4491416258,,2/3/2019 15:06:49,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,D66 wil reserves provincies aanspreken voor groei,10027,0
+2128145151,2/1/2019 18:11:31,true,4486278162,,2/1/2019 18:10:47,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,'Provincies moeten investeren',20755,0
+2128145151,2/3/2019 13:04:46,true,4491227526,,2/3/2019 13:04:22,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,'Provincies moeten investeren',20755,0
+2128145151,2/4/2019 09:24:43,true,4493011610,true,2/4/2019 09:24:31,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,'Provincies moeten investeren',20755,0
+2128145153,2/1/2019 21:40:02,true,4486914363,,2/1/2019 21:39:40,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Duitse warenhuizen Karstadt staan voor drastische sanering,150292287,-1
+2128145153,2/3/2019 12:52:26,true,4491203279,,2/3/2019 12:51:51,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Duitse warenhuizen Karstadt staan voor drastische sanering,150292287,-1
+2128145153,2/3/2019 15:02:57,true,4491409383,,2/3/2019 15:00:56,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Duitse warenhuizen Karstadt staan voor drastische sanering,150292287,-1
+2128145153,2/4/2019 09:22:38,true,4493007228,,2/4/2019 09:22:21,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Duitse warenhuizen Karstadt staan voor drastische sanering,150292287,-1
+2128145154,2/1/2019 18:07:41,true,4486266511,,2/1/2019 17:51:50,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Beurzen beginnen maand voorzichtig positief,150290838,1
+2128145154,2/3/2019 15:14:19,true,4491425448,,2/3/2019 15:13:50,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Beurzen beginnen maand voorzichtig positief,150290838,1
+2128145155,2/3/2019 12:52:26,true,4491203284,,2/3/2019 12:51:51,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Fugro doet het goed in de AEX,150290207,1
+2128145156,2/4/2019 09:21:22,true,4493004438,,2/4/2019 09:21:09,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Meer banen door uitbreiding terminal,150290205,1
+2128145157,2/1/2019 17:38:15,true,4486170846,true,2/1/2019 17:37:36,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Industrie trapt het gaspedaal dieper in,150290201,1
+2128145157,2/1/2019 21:30:59,true,4486893253,,2/1/2019 21:30:06,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Industrie trapt het gaspedaal dieper in,150290201,1
+2128145157,2/3/2019 12:52:26,true,4491203282,,2/3/2019 12:51:51,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Industrie trapt het gaspedaal dieper in,150290201,1
+2128145157,2/3/2019 15:18:41,true,4491431725,,2/3/2019 15:17:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Industrie trapt het gaspedaal dieper in,150290201,1
+2128145157,2/4/2019 09:25:58,true,4493014507,,2/4/2019 09:25:36,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Industrie trapt het gaspedaal dieper in,150290201,1
+2128145158,2/3/2019 15:06:00,true,4491413838,,2/3/2019 15:05:26,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Dekkingsgraad keldert,150290200,-1
+2128145158,2/4/2019 06:40:56,true,4492739502,,2/4/2019 06:40:31,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Dekkingsgraad keldert,150290200,-1
+2128145158,2/4/2019 09:25:34,true,4493013581,,2/4/2019 09:25:20,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Dekkingsgraad keldert,150290200,-1
+2128145159,2/1/2019 21:30:59,true,4486893243,,2/1/2019 21:30:06,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,AEX wacht op nieuws en sluit nipt hoger dankzij eindsprintje,150287369,1
+2128145159,2/3/2019 12:53:41,true,4491205221,,2/3/2019 12:52:53,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,AEX wacht op nieuws en sluit nipt hoger dankzij eindsprintje,150287369,1
+2128145160,2/1/2019 17:51:49,true,4486212811,,2/1/2019 17:50:50,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Spaanse industrie sterker gegroeid,150287366,1
+2128145160,2/4/2019 09:20:24,true,4493002613,,2/4/2019 09:20:10,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Spaanse industrie sterker gegroeid,150287366,1
+2128145161,2/1/2019 21:41:09,true,4486917191,,2/1/2019 21:40:38,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Winst van ExxonMobil daalt in vierde kwartaal met 21%,150287365,-1
+2128145162,2/1/2019 21:46:48,true,4486933990,,2/1/2019 21:45:51,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Rabobank waarschuwt voor hogere rentelasten,150285335,-1
+2128145162,2/3/2019 15:16:28,true,4491428594,,2/3/2019 15:15:53,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Rabobank waarschuwt voor hogere rentelasten,150285335,-1
+2128145163,2/1/2019 18:13:03,true,4486283031,,2/1/2019 18:12:02,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,V,150282498,0
+2128145163,2/1/2019 21:30:59,true,4486893249,,2/1/2019 21:30:06,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,V,150282498,0
+2128145164,2/1/2019 21:39:36,true,4486913335,,2/1/2019 21:38:41,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Amerikanen zien slechte cijfers,150282294,-1
+2128145164,2/3/2019 15:10:50,true,4491420512,,2/3/2019 15:10:20,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Amerikanen zien slechte cijfers,150282294,-1
+2128145165,2/1/2019 21:44:51,true,4486926841,,2/1/2019 21:44:19,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Kamp-Knot; Finanscoop,150282286,0
+2128145166,2/1/2019 21:32:59,true,4486897917,,2/1/2019 21:32:24,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Bedrijvigheid industrie neemt toe,150282285,1
+2128145166,2/4/2019 12:33:56,true,4493401173,,2/4/2019 12:33:00,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Bedrijvigheid industrie neemt toe,150282285,1
+2128145167,2/1/2019 18:11:54,true,4486279425,true,2/1/2019 18:11:33,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Al die zzp'ers zijn vogelvrij en zonder perspectief,148571841,-1
+2128145167,2/1/2019 21:34:34,true,4486901509,true,2/1/2019 21:33:43,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Al die zzp'ers zijn vogelvrij en zonder perspectief,148571841,-1
+2128145167,2/4/2019 09:19:12,true,4492999896,,2/4/2019 09:18:59,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Al die zzp'ers zijn vogelvrij en zonder perspectief,148571841,-1
+2128145168,2/3/2019 15:03:50,true,4491410671,,2/3/2019 15:02:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,'Ondernemers verwachten groei',148571839,1
+2128145168,2/4/2019 08:53:05,true,4492952228,,2/4/2019 08:52:44,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,'Ondernemers verwachten groei',148571839,1
+2128145169,2/1/2019 17:31:12,true,4486146910,,2/1/2019 17:30:43,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Schuiven met de flexibele schil,148571836,0
+2128145169,2/3/2019 15:17:57,true,4491430603,,2/3/2019 15:17:25,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Schuiven met de flexibele schil,148571836,0
+2128145169,2/4/2019 09:19:49,true,4493001156,,2/4/2019 09:19:31,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Schuiven met de flexibele schil,148571836,0
+2128145170,2/1/2019 17:31:36,true,4486147926,,2/1/2019 17:31:14,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Aantal banen zal voor het eerst in jaren weer groeien,148571833,1
+2128145170,2/1/2019 21:47:55,true,4486937921,,2/1/2019 21:47:29,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Aantal banen zal voor het eerst in jaren weer groeien,148571833,1
+2128145170,2/3/2019 15:08:54,true,4491417970,,2/3/2019 15:08:19,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Aantal banen zal voor het eerst in jaren weer groeien,148571833,1
+2128145171,2/2/2019 18:11:14,true,4489644895,,2/2/2019 18:08:06,false,clixsense,1.0,43771873,NLD,07,Weesp,89.98.188.110,-1,TNT schrijft miljoenen af,148571831,-1
+2128145171,2/3/2019 15:15:14,true,4491426725,,2/3/2019 15:14:21,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,TNT schrijft miljoenen af,148571831,-1
+2128145171,2/4/2019 09:17:02,true,4492995235,,2/4/2019 09:16:41,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,TNT schrijft miljoenen af,148571831,-1
+2128145172,2/1/2019 21:44:15,true,4486925287,,2/1/2019 21:43:35,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,"Obama's begroting: meer voor middenklasse, minder voor rijken",34631,0
+2128145173,2/1/2019 18:08:00,true,4486267527,,2/1/2019 18:07:43,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Nederlandse ondernemers geloven weer in de economie,15033,1
+2128145173,2/1/2019 21:38:09,true,4486909820,,2/1/2019 21:37:28,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Nederlandse ondernemers geloven weer in de economie,15033,1
+2128145173,2/4/2019 09:18:42,true,4492998778,,2/4/2019 09:18:26,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Nederlandse ondernemers geloven weer in de economie,15033,1
+2128145174,2/1/2019 17:37:03,true,4486167004,,2/1/2019 17:36:26,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,UWV: dit jaar meer banen,10037,1
+2128145174,2/3/2019 13:04:20,true,4491226670,,2/3/2019 12:56:27,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,UWV: dit jaar meer banen,10037,1
+2128145174,2/3/2019 15:02:57,true,4491409378,,2/3/2019 15:00:56,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,UWV: dit jaar meer banen,10037,1
+2128145174,2/4/2019 09:25:19,true,4493012974,,2/4/2019 09:25:00,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,UWV: dit jaar meer banen,10037,1
+2128145175,2/3/2019 15:10:18,true,4491419822,,2/3/2019 15:09:49,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Hoogste groei Ierse economie sinds 2005,20811,1
+2128145175,2/4/2019 09:20:46,true,4493003301,,2/4/2019 09:20:25,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Hoogste groei Ierse economie sinds 2005,20811,1
+2128145176,2/1/2019 17:37:34,true,4486168667,,2/1/2019 17:37:04,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,'V&D failliet als het geen korting krijgt van verhuurder',34669,-1
+2128145176,2/1/2019 21:48:15,true,4486938938,,2/1/2019 21:48:00,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,'V&D failliet als het geen korting krijgt van verhuurder',34669,-1
+2128145176,2/3/2019 12:54:47,true,4491207231,,2/3/2019 12:54:23,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,'V&D failliet als het geen korting krijgt van verhuurder',34669,-1
+2128145176,2/3/2019 15:18:58,true,4491432145,,2/3/2019 15:18:43,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,'V&D failliet als het geen korting krijgt van verhuurder',34669,-1
+2128145176,2/4/2019 09:17:21,true,4492995959,,2/4/2019 09:17:04,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,'V&D failliet als het geen korting krijgt van verhuurder',34669,-1
+2128145177,2/1/2019 21:38:37,true,4486910915,,2/1/2019 21:38:13,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Arbeidsmarkt kruipt voorzichtig uit het dal,150293193,1
+2128145177,2/4/2019 08:52:42,true,4492951397,,2/4/2019 08:52:13,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Arbeidsmarkt kruipt voorzichtig uit het dal,150293193,1
+2128145177,2/4/2019 09:17:02,true,4492995226,,2/4/2019 09:16:41,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Arbeidsmarkt kruipt voorzichtig uit het dal,150293193,1
+2128145178,2/1/2019 18:08:59,true,4486270742,,2/1/2019 18:08:26,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Herstel economie levert na drie jaar weer banen op,150292274,1
+2128145178,2/4/2019 09:17:02,true,4492995229,,2/4/2019 09:16:41,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Herstel economie levert na drie jaar weer banen op,150292274,1
+2128145178,2/4/2019 12:34:10,true,4493401589,,2/4/2019 12:33:58,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Herstel economie levert na drie jaar weer banen op,150292274,1
+2128145179,2/1/2019 18:10:45,true,4486276010,,2/1/2019 18:09:00,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Bouw is banenmotor,150290835,1
+2128145179,2/4/2019 09:19:30,true,4493000528,,2/4/2019 09:19:14,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Bouw is banenmotor,150290835,1
+2128145180,2/1/2019 17:40:40,true,4486177985,,2/1/2019 17:39:07,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Er komen eindelijk banen bij,150290191,1
+2128145180,2/3/2019 15:09:47,true,4491419251,,2/3/2019 15:08:56,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Er komen eindelijk banen bij,150290191,1
+2128145180,2/4/2019 06:42:02,true,4492741033,,2/4/2019 06:41:42,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Er komen eindelijk banen bij,150290191,1
+2128145180,2/4/2019 09:20:09,true,4493001992,,2/4/2019 09:19:50,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Er komen eindelijk banen bij,150290191,1
+2128145181,2/1/2019 18:08:24,true,4486268801,,2/1/2019 18:08:02,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,31.000 extra banen én 88.000 vacatures erbij,150290187,1
+2128145181,2/1/2019 21:47:23,true,4486935998,,2/1/2019 21:46:53,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,31.000 extra banen én 88.000 vacatures erbij,150290187,1
+2128145181,2/4/2019 06:40:30,true,4492738791,,2/4/2019 06:39:56,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,31.000 extra banen én 88.000 vacatures erbij,150290187,1
+2128145181,2/4/2019 09:26:35,true,4493016006,true,2/4/2019 09:26:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,31.000 extra banen én 88.000 vacatures erbij,150290187,1
+2128145182,2/1/2019 18:13:31,true,4486284387,,2/1/2019 18:13:05,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Aantal mkb-bedrijven groeit hard,150290186,1
+2128145183,2/1/2019 17:31:12,true,4486146922,,2/1/2019 17:30:43,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Bouw helpt economie verder op gang,150288227,1
+2128145183,2/2/2019 18:11:14,true,4489644896,,2/2/2019 18:08:06,false,clixsense,1.0,43771873,NLD,07,Weesp,89.98.188.110,1,Bouw helpt economie verder op gang,150288227,1
+2128145184,2/1/2019 21:35:30,true,4486903750,,2/1/2019 21:34:47,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Grote ontwrichting door ECB,150287359,-1
+2128145184,2/2/2019 18:12:45,true,4489647380,,2/2/2019 18:11:16,false,clixsense,1.0,43771873,NLD,07,Weesp,89.98.188.110,-1,Grote ontwrichting door ECB,150287359,-1
+2128145184,2/3/2019 15:17:23,true,4491429824,,2/3/2019 15:16:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Grote ontwrichting door ECB,150287359,-1
+2128145184,2/4/2019 11:48:56,true,4493298792,true,2/4/2019 11:47:50,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Grote ontwrichting door ECB,150287359,-1
+2128145185,2/1/2019 17:44:52,true,4486190918,,2/1/2019 17:43:05,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Trend economie blijft positief; orderontvangsten industrie blijven in de lift,150287338,1
+2128145185,2/2/2019 18:11:14,true,4489644891,,2/2/2019 18:08:06,false,clixsense,1.0,43771873,NLD,07,Weesp,89.98.188.110,1,Trend economie blijft positief; orderontvangsten industrie blijven in de lift,150287338,1
+2128145185,2/3/2019 15:02:57,true,4491409375,,2/3/2019 15:00:56,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Trend economie blijft positief; orderontvangsten industrie blijven in de lift,150287338,1
+2128145185,2/4/2019 09:17:38,true,4492996406,,2/4/2019 09:17:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Trend economie blijft positief; orderontvangsten industrie blijven in de lift,150287338,1
+2128145186,2/3/2019 12:52:26,true,4491203273,,2/3/2019 12:51:51,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,Hoe goed is deflatie voor jouw beurs?,150282496,0
+2128145186,2/3/2019 15:16:57,true,4491429323,,2/3/2019 15:16:30,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Hoe goed is deflatie voor jouw beurs?,150282496,0
+2128145186,2/4/2019 09:17:57,true,4492997028,false,2/4/2019 09:17:40,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Hoe goed is deflatie voor jouw beurs?,150282496,0
+2128145187,2/1/2019 17:46:07,true,4486194964,,2/1/2019 17:44:54,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,De pijn van de werkloosheid: ruim 11 miljard,148571824,-1
+2128145187,2/3/2019 12:56:26,true,4491209743,,2/3/2019 12:55:55,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,De pijn van de werkloosheid: ruim 11 miljard,148571824,-1
+2128145188,2/4/2019 11:50:33,true,4493301766,,2/4/2019 11:50:12,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Proosten op geslaagde beursgang Bols,10059,1
+2128145189,2/1/2019 21:37:25,true,4486908295,,2/1/2019 21:36:46,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Veel gemeenten lopen fors risico,150290828,-1
+2128145191,2/3/2019 15:02:57,true,4491409379,,2/3/2019 15:00:56,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,ECB bant Grieks papier; Gesprek met Juncker loopt goed; tegenvaller uit Frankfurt,150282242,0
+2128145192,2/1/2019 17:33:45,true,4486154657,,2/1/2019 17:31:37,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Griekse beurs hard onderuit,20957,-1
+2128145192,2/4/2019 09:18:57,true,4492999389,,2/4/2019 09:18:43,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Griekse beurs hard onderuit,20957,-1
+2128145193,2/1/2019 21:31:45,true,4486895135,,2/1/2019 21:31:01,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Eredivisieclubs lijden weer verlies,150288210,-1
+2128145194,2/1/2019 21:30:59,true,4486893256,,2/1/2019 21:30:06,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Winstdruk BNP Paribas door regels,150287304,-1
+2128145194,2/2/2019 18:11:14,true,4489644899,,2/2/2019 18:08:06,false,clixsense,1.0,43771873,NLD,07,Weesp,89.98.188.110,-1,Winstdruk BNP Paribas door regels,150287304,-1
+2128145194,2/3/2019 15:04:40,true,4491411812,,2/3/2019 15:03:52,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Winstdruk BNP Paribas door regels,150287304,-1
+2128145194,2/4/2019 09:26:20,true,4493015374,,2/4/2019 09:26:00,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Winstdruk BNP Paribas door regels,150287304,-1
+2128145196,2/1/2019 21:40:34,true,4486915654,,2/1/2019 21:40:10,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Oekraïense munt in vrije val,150285308,-1
+2128145196,2/2/2019 18:11:14,true,4489644892,,2/2/2019 18:08:06,false,clixsense,1.0,43771873,NLD,07,Weesp,89.98.188.110,-1,Oekraïense munt in vrije val,150285308,-1
+2128145196,2/3/2019 12:55:32,true,4491208361,,2/3/2019 12:54:48,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Oekraïense munt in vrije val,150285308,-1
+2128145197,2/1/2019 17:38:55,true,4486172849,true,2/1/2019 17:38:27,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Werkloosheid is hoog ondanks goed nieuws,150282492,0
+2128145197,2/4/2019 08:53:43,true,4492953407,false,2/4/2019 08:53:09,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Werkloosheid is hoog ondanks goed nieuws,150282492,0
+2128145199,2/1/2019 21:41:58,true,4486919338,true,2/1/2019 21:41:13,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Argwaan is nog lang niet geweken,150277975,-1
+2128145199,2/3/2019 13:06:01,true,4491229801,,2/3/2019 13:04:47,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Argwaan is nog lang niet geweken,150277975,-1
+2128145199,2/3/2019 15:05:25,true,4491413054,,2/3/2019 15:04:42,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Argwaan is nog lang niet geweken,150277975,-1
+2128145200,2/1/2019 21:30:59,true,4486893246,,2/1/2019 21:30:06,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Elektronica Siemens schrapt 7.800 banen ; Economie Kort,148571806,-1
+2128145201,2/1/2019 17:48:56,true,4486203452,true,2/1/2019 17:48:36,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Twitter en LinkedIn blinken uit op tobberige beursdag,150292234,0
+2128145202,2/1/2019 18:13:42,true,4486285036,true,2/1/2019 18:13:32,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Banenfeest VS helpt weinig,150282208,0
+2128145202,2/1/2019 21:45:36,true,4486929305,true,2/1/2019 21:44:57,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Banenfeest VS helpt weinig,150282208,0
+2128145202,2/3/2019 15:08:17,true,4491417065,,2/3/2019 15:07:39,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Banenfeest VS helpt weinig,150282208,0
+2128145202,2/4/2019 09:22:12,true,4493006267,true,2/4/2019 09:21:24,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Banenfeest VS helpt weinig,150282208,0
+2128145203,2/1/2019 21:36:09,true,4486905384,,2/1/2019 21:35:33,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,"V&D voorlopig gered, al zijn bonden nog niet akkoord",150292205,0
+2128145204,2/1/2019 17:31:12,true,4486146918,,2/1/2019 17:30:43,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,"Bittere sanering, maar ook opluchting bij Blokker",150288197,0
+2128145204,2/3/2019 15:02:57,true,4491409381,,2/3/2019 15:00:56,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,"Bittere sanering, maar ook opluchting bij Blokker",150288197,0
+2128145204,2/4/2019 09:24:21,true,4493010806,true,2/4/2019 09:23:59,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,"Bittere sanering, maar ook opluchting bij Blokker",150288197,0
+2128145205,2/1/2019 17:35:16,true,4486160308,,2/1/2019 17:33:47,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,GEEN KOP,150288142,0
+2128145205,2/3/2019 12:55:53,true,4491208939,,2/3/2019 12:55:33,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,GEEN KOP,150288142,0
+2128145206,2/1/2019 17:48:35,true,4486202464,,2/1/2019 17:46:09,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,FINANCIËLE AGENDA,150287050,0
+2128145206,2/3/2019 15:15:51,true,4491427604,,2/3/2019 15:15:16,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,FINANCIËLE AGENDA,150287050,0
+2128145206,2/4/2019 09:17:02,true,4492995232,,2/4/2019 09:16:41,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,FINANCIËLE AGENDA,150287050,0
+2128145206,2/4/2019 11:50:10,true,4493301019,,2/4/2019 11:49:45,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,FINANCIËLE AGENDA,150287050,0
+2128145345,2/1/2019 18:13:03,false,4486283040,,2/1/2019 18:12:02,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Dijsselbloem pessimistisch over snelle stappen Grieken,10367,
+2128145345,2/1/2019 21:47:23,false,4486935985,,2/1/2019 21:46:53,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Dijsselbloem pessimistisch over snelle stappen Grieken,10367,
+2128145345,2/3/2019 15:17:57,false,4491430613,,2/3/2019 15:17:25,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Dijsselbloem pessimistisch over snelle stappen Grieken,10367,
+2128145345,2/4/2019 09:25:58,false,4493014504,,2/4/2019 09:25:36,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Dijsselbloem pessimistisch over snelle stappen Grieken,10367,
+2128145345,2/4/2019 11:54:16,false,4493309255,,2/4/2019 11:50:34,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Dijsselbloem pessimistisch over snelle stappen Grieken,10367,
+2128145346,2/1/2019 18:08:00,false,4486267550,,2/1/2019 18:07:43,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Aandelenbeurzen zetten koersopmars voort,11191,
+2128145346,2/1/2019 21:42:44,false,4486921092,,2/1/2019 21:42:16,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Aandelenbeurzen zetten koersopmars voort,11191,
+2128145346,2/3/2019 15:14:19,false,4491425442,,2/3/2019 15:13:50,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Aandelenbeurzen zetten koersopmars voort,11191,
+2128145346,2/4/2019 08:53:05,false,4492952233,,2/4/2019 08:52:44,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Aandelenbeurzen zetten koersopmars voort,11191,
+2128145346,2/4/2019 09:23:21,false,4493008753,,2/4/2019 09:23:07,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Aandelenbeurzen zetten koersopmars voort,11191,
+2128145347,2/1/2019 17:43:03,false,4486185269,,2/1/2019 17:40:42,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Deutsche Bank bezuinigt miljarden na megaboete,12363,
+2128145347,2/1/2019 21:38:09,false,4486909823,,2/1/2019 21:37:28,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Deutsche Bank bezuinigt miljarden na megaboete,12363,
+2128145347,2/3/2019 13:06:01,false,4491229799,,2/3/2019 13:04:47,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Deutsche Bank bezuinigt miljarden na megaboete,12363,
+2128145347,2/3/2019 15:10:18,false,4491419818,,2/3/2019 15:09:49,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Deutsche Bank bezuinigt miljarden na megaboete,12363,
+2128145347,2/4/2019 09:20:24,false,4493002619,,2/4/2019 09:20:10,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Deutsche Bank bezuinigt miljarden na megaboete,12363,
+2128145348,2/1/2019 18:13:31,false,4486284390,,2/1/2019 18:13:05,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Spanje rekent op grootste groei in 8 jaar,12367,
+2128145348,2/1/2019 21:47:55,false,4486937913,,2/1/2019 21:47:29,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Spanje rekent op grootste groei in 8 jaar,12367,
+2128145348,2/3/2019 15:18:41,false,4491431732,,2/3/2019 15:17:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Spanje rekent op grootste groei in 8 jaar,12367,
+2128145348,2/4/2019 09:26:20,false,4493015379,,2/4/2019 09:26:00,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Spanje rekent op grootste groei in 8 jaar,12367,
+2128145348,2/4/2019 12:33:56,false,4493401171,,2/4/2019 12:33:00,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Spanje rekent op grootste groei in 8 jaar,12367,
+2128145349,2/1/2019 17:40:40,false,4486177992,,2/1/2019 17:39:07,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Van Baalen (VVD) wil Griekenland uit de euro,12501,
+2128145349,2/1/2019 21:37:25,false,4486908282,,2/1/2019 21:36:46,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Van Baalen (VVD) wil Griekenland uit de euro,12501,
+2128145349,2/3/2019 13:04:46,false,4491227519,,2/3/2019 13:04:22,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Van Baalen (VVD) wil Griekenland uit de euro,12501,
+2128145349,2/3/2019 15:09:47,false,4491419256,,2/3/2019 15:08:56,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Van Baalen (VVD) wil Griekenland uit de euro,12501,
+2128145349,2/4/2019 09:20:09,false,4493001985,,2/4/2019 09:19:50,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Van Baalen (VVD) wil Griekenland uit de euro,12501,
+2128145350,2/1/2019 18:13:31,false,4486284397,,2/1/2019 18:13:05,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,'EU-ministers nog niet tevreden over Griekenland',12681,
+2128145350,2/1/2019 21:47:55,false,4486937905,,2/1/2019 21:47:29,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,'EU-ministers nog niet tevreden over Griekenland',12681,
+2128145350,2/3/2019 15:18:41,false,4491431729,,2/3/2019 15:17:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,'EU-ministers nog niet tevreden over Griekenland',12681,
+2128145350,2/4/2019 09:26:20,false,4493015376,,2/4/2019 09:26:00,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,'EU-ministers nog niet tevreden over Griekenland',12681,
+2128145350,2/4/2019 12:33:56,false,4493401172,,2/4/2019 12:33:00,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,'EU-ministers nog niet tevreden over Griekenland',12681,
+2128145351,2/1/2019 17:38:15,false,4486170850,,2/1/2019 17:37:36,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Bonden bezorgd over flirt tussen Delhaize en Ahold,13105,
+2128145351,2/1/2019 21:36:09,false,4486905382,,2/1/2019 21:35:33,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Bonden bezorgd over flirt tussen Delhaize en Ahold,13105,
+2128145351,2/3/2019 12:56:26,false,4491209735,,2/3/2019 12:55:55,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,Bonden bezorgd over flirt tussen Delhaize en Ahold,13105,
+2128145351,2/3/2019 15:08:17,false,4491417073,,2/3/2019 15:07:39,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Bonden bezorgd over flirt tussen Delhaize en Ahold,13105,
+2128145351,2/4/2019 09:19:30,false,4493000523,,2/4/2019 09:19:14,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Bonden bezorgd over flirt tussen Delhaize en Ahold,13105,
+2128145352,2/1/2019 18:08:24,false,4486268797,,2/1/2019 18:08:02,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Inflatie gedaald naar laagste niveau in 27 jaar: nul procent,15261,
+2128145352,2/1/2019 21:43:30,false,4486923150,,2/1/2019 21:42:49,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Inflatie gedaald naar laagste niveau in 27 jaar: nul procent,15261,
+2128145352,2/3/2019 15:15:14,false,4491426722,,2/3/2019 15:14:21,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Inflatie gedaald naar laagste niveau in 27 jaar: nul procent,15261,
+2128145352,2/4/2019 08:53:43,false,4492953404,,2/4/2019 08:53:09,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Inflatie gedaald naar laagste niveau in 27 jaar: nul procent,15261,
+2128145352,2/4/2019 09:23:38,false,4493009297,,2/4/2019 09:23:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Inflatie gedaald naar laagste niveau in 27 jaar: nul procent,15261,
+2128145353,2/1/2019 17:35:16,false,4486160319,,2/1/2019 17:33:47,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Duizenden Grieken protesteren in Athene tegen bezuinigingen,18751,
+2128145353,2/1/2019 21:32:59,false,4486897915,,2/1/2019 21:32:24,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Duizenden Grieken protesteren in Athene tegen bezuinigingen,18751,
+2128145353,2/3/2019 12:54:22,false,4491206661,,2/3/2019 12:53:43,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Duizenden Grieken protesteren in Athene tegen bezuinigingen,18751,
+2128145353,2/3/2019 15:05:25,false,4491413053,,2/3/2019 15:04:42,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Duizenden Grieken protesteren in Athene tegen bezuinigingen,18751,
+2128145353,2/4/2019 09:17:57,false,4492997026,,2/4/2019 09:17:40,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Duizenden Grieken protesteren in Athene tegen bezuinigingen,18751,
+2128145354,2/1/2019 17:31:36,false,4486147917,,2/1/2019 17:31:14,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Dow weer boven 18.000 punten,21653,
+2128145354,2/1/2019 21:31:45,false,4486895119,,2/1/2019 21:31:01,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Dow weer boven 18.000 punten,21653,
+2128145354,2/2/2019 18:12:45,false,4489647388,,2/2/2019 18:11:16,false,clixsense,1.0,43771873,NLD,07,Weesp,89.98.188.110,1,Dow weer boven 18.000 punten,21653,
+2128145354,2/3/2019 12:52:51,false,4491203886,,2/3/2019 12:52:28,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Dow weer boven 18.000 punten,21653,
+2128145354,2/3/2019 15:03:50,false,4491410674,,2/3/2019 15:02:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Dow weer boven 18.000 punten,21653,
+2128145354,2/4/2019 09:17:21,false,4492995955,,2/4/2019 09:17:04,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Dow weer boven 18.000 punten,21653,
+2128145355,2/1/2019 17:31:36,false,4486147911,,2/1/2019 17:31:14,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Britse werkloosheid daalt verder,21973,
+2128145355,2/1/2019 21:31:45,false,4486895114,,2/1/2019 21:31:01,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Britse werkloosheid daalt verder,21973,
+2128145355,2/2/2019 18:12:45,false,4489647386,,2/2/2019 18:11:16,false,clixsense,1.0,43771873,NLD,07,Weesp,89.98.188.110,1,Britse werkloosheid daalt verder,21973,
+2128145355,2/3/2019 12:52:51,false,4491203895,,2/3/2019 12:52:28,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Britse werkloosheid daalt verder,21973,
+2128145355,2/3/2019 15:03:50,false,4491410661,,2/3/2019 15:02:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Britse werkloosheid daalt verder,21973,
+2128145355,2/4/2019 09:17:21,false,4492995952,,2/4/2019 09:17:04,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Britse werkloosheid daalt verder,21973,
+2128145356,2/1/2019 17:46:07,false,4486194971,,2/1/2019 17:44:54,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,'Grieken kunnen nog enkele weken vooruit',23549,
+2128145356,2/1/2019 21:39:36,false,4486913339,,2/1/2019 21:38:41,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,'Grieken kunnen nog enkele weken vooruit',23549,
+2128145356,2/3/2019 15:11:22,false,4491421304,,2/3/2019 15:10:52,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,'Grieken kunnen nog enkele weken vooruit',23549,
+2128145356,2/4/2019 06:40:30,false,4492738801,,2/4/2019 06:39:56,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,'Grieken kunnen nog enkele weken vooruit',23549,
+2128145356,2/4/2019 09:21:02,false,4493003759,,2/4/2019 09:20:48,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,'Grieken kunnen nog enkele weken vooruit',23549,
+2128145357,2/1/2019 17:48:56,false,4486203457,,2/1/2019 17:48:36,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,S&#38;P blijft somber over Griekenland,23939,
+2128145357,2/1/2019 21:40:34,false,4486915634,,2/1/2019 21:40:10,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,S&#38;P blijft somber over Griekenland,23939,
+2128145357,2/3/2019 15:12:40,false,4491423235,,2/3/2019 15:12:12,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,S&#38;P blijft somber over Griekenland,23939,
+2128145357,2/4/2019 06:41:40,false,4492740503,,2/4/2019 06:40:57,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,S&#38;P blijft somber over Griekenland,23939,
+2128145357,2/4/2019 09:22:12,false,4493006253,,2/4/2019 09:21:24,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,S&#38;P blijft somber over Griekenland,23939,
+2128145358,2/1/2019 18:08:59,false,4486270739,,2/1/2019 18:08:26,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Wisselkoersen drukken winstgroei Michael Page,26193,
+2128145358,2/1/2019 21:44:15,false,4486925273,,2/1/2019 21:43:35,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Wisselkoersen drukken winstgroei Michael Page,26193,
+2128145358,2/3/2019 15:15:51,false,4491427603,,2/3/2019 15:15:16,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Wisselkoersen drukken winstgroei Michael Page,26193,
+2128145358,2/4/2019 09:24:21,false,4493010813,,2/4/2019 09:23:59,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Wisselkoersen drukken winstgroei Michael Page,26193,
+2128145358,2/4/2019 11:48:56,false,4493298796,,2/4/2019 11:47:50,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Wisselkoersen drukken winstgroei Michael Page,26193,
+2128145359,2/1/2019 17:33:45,false,4486154650,,2/1/2019 17:31:37,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Draghi: scherp zijn op gevaren lage rente,26615,
+2128145359,2/1/2019 21:32:22,false,4486896612,,2/1/2019 21:31:47,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Draghi: scherp zijn op gevaren lage rente,26615,
+2128145359,2/3/2019 12:53:41,false,4491205223,,2/3/2019 12:52:53,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Draghi: scherp zijn op gevaren lage rente,26615,
+2128145359,2/3/2019 15:04:40,false,4491411825,,2/3/2019 15:03:52,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Draghi: scherp zijn op gevaren lage rente,26615,
+2128145359,2/4/2019 09:17:38,false,4492996402,,2/4/2019 09:17:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Draghi: scherp zijn op gevaren lage rente,26615,
+2128145360,2/1/2019 17:46:07,false,4486194976,,2/1/2019 17:44:54,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,TSN Thuiszorg wil 650 medewerkers kwijt,26857,
+2128145360,2/1/2019 21:39:36,false,4486913332,,2/1/2019 21:38:41,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,TSN Thuiszorg wil 650 medewerkers kwijt,26857,
+2128145360,2/3/2019 15:11:22,false,4491421301,,2/3/2019 15:10:52,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,TSN Thuiszorg wil 650 medewerkers kwijt,26857,
+2128145360,2/4/2019 06:40:30,false,4492738809,,2/4/2019 06:39:56,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,TSN Thuiszorg wil 650 medewerkers kwijt,26857,
+2128145360,2/4/2019 09:21:02,false,4493003748,,2/4/2019 09:20:48,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,TSN Thuiszorg wil 650 medewerkers kwijt,26857,
+2128145361,2/1/2019 17:51:49,false,4486212816,,2/1/2019 17:50:50,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Grieks drama of Griekse redding?,26983,
+2128145361,2/1/2019 21:41:09,false,4486917196,,2/1/2019 21:40:38,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Grieks drama of Griekse redding?,26983,
+2128145361,2/3/2019 15:13:15,false,4491424008,,2/3/2019 15:12:42,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Grieks drama of Griekse redding?,26983,
+2128145361,2/4/2019 06:42:02,false,4492741040,,2/4/2019 06:41:42,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Grieks drama of Griekse redding?,26983,
+2128145361,2/4/2019 09:22:38,false,4493007234,,2/4/2019 09:22:21,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Grieks drama of Griekse redding?,26983,
+2128145362,2/1/2019 17:48:56,false,4486203447,,2/1/2019 17:48:36,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Spaarrente duikt onder 1 procent,27069,
+2128145362,2/1/2019 21:40:34,false,4486915642,,2/1/2019 21:40:10,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Spaarrente duikt onder 1 procent,27069,
+2128145362,2/3/2019 15:12:40,false,4491423229,,2/3/2019 15:12:12,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Spaarrente duikt onder 1 procent,27069,
+2128145362,2/4/2019 06:41:40,false,4492740505,,2/4/2019 06:40:57,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Spaarrente duikt onder 1 procent,27069,
+2128145362,2/4/2019 09:22:12,false,4493006262,,2/4/2019 09:21:24,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Spaarrente duikt onder 1 procent,27069,
+2128145363,2/1/2019 18:11:54,false,4486279435,,2/1/2019 18:11:33,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Meer hoop voor Grieken,29203,
+2128145363,2/1/2019 21:46:48,false,4486933977,,2/1/2019 21:45:51,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Meer hoop voor Grieken,29203,
+2128145363,2/3/2019 15:17:23,false,4491429827,,2/3/2019 15:16:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Meer hoop voor Grieken,29203,
+2128145363,2/4/2019 09:25:34,false,4493013568,,2/4/2019 09:25:20,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Meer hoop voor Grieken,29203,
+2128145363,2/4/2019 11:50:33,false,4493301768,,2/4/2019 11:50:12,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Meer hoop voor Grieken,29203,
+2128145364,2/1/2019 17:48:35,false,4486202467,,2/1/2019 17:46:09,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,'Wall Street opent vrijwel onveranderd',30591,
+2128145364,2/1/2019 21:40:02,false,4486914360,,2/1/2019 21:39:40,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,'Wall Street opent vrijwel onveranderd',30591,
+2128145364,2/3/2019 15:12:10,false,4491422531,,2/3/2019 15:11:24,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,'Wall Street opent vrijwel onveranderd',30591,
+2128145364,2/4/2019 06:40:56,false,4492739516,,2/4/2019 06:40:31,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,'Wall Street opent vrijwel onveranderd',30591,
+2128145364,2/4/2019 09:21:22,false,4493004443,,2/4/2019 09:21:09,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,'Wall Street opent vrijwel onveranderd',30591,
+2128145365,2/1/2019 17:48:56,false,4486203462,,2/1/2019 17:48:36,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,'Technologie kan groei VS aanjagen' ',30629,
+2128145365,2/1/2019 21:40:34,false,4486915657,,2/1/2019 21:40:10,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,'Technologie kan groei VS aanjagen' ',30629,
+2128145365,2/3/2019 15:12:40,false,4491423239,,2/3/2019 15:12:12,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,'Technologie kan groei VS aanjagen' ',30629,
+2128145365,2/4/2019 06:41:40,false,4492740502,,2/4/2019 06:40:57,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,'Technologie kan groei VS aanjagen' ',30629,
+2128145365,2/4/2019 09:22:12,false,4493006274,,2/4/2019 09:21:24,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,'Technologie kan groei VS aanjagen' ',30629,
+2128145366,2/1/2019 18:10:45,false,4486276002,,2/1/2019 18:09:00,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,'Laagopgeleide raakt verder achterop',31705,
+2128145366,2/1/2019 21:44:51,false,4486926828,,2/1/2019 21:44:19,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,'Laagopgeleide raakt verder achterop',31705,
+2128145366,2/3/2019 15:16:28,false,4491428588,,2/3/2019 15:15:53,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,'Laagopgeleide raakt verder achterop',31705,
+2128145366,2/4/2019 09:24:43,false,4493011616,,2/4/2019 09:24:31,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,'Laagopgeleide raakt verder achterop',31705,
+2128145366,2/4/2019 11:49:43,false,4493300225,,2/4/2019 11:49:19,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,'Laagopgeleide raakt verder achterop',31705,
+2128145367,2/1/2019 17:40:40,false,4486177989,,2/1/2019 17:39:07,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,'Beurshandel in teken Grieks marathonoverleg',33235,
+2128145367,2/1/2019 21:37:25,false,4486908298,,2/1/2019 21:36:46,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,'Beurshandel in teken Grieks marathonoverleg',33235,
+2128145367,2/3/2019 13:04:46,false,4491227512,,2/3/2019 13:04:22,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,'Beurshandel in teken Grieks marathonoverleg',33235,
+2128145367,2/3/2019 15:09:47,false,4491419248,,2/3/2019 15:08:56,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,'Beurshandel in teken Grieks marathonoverleg',33235,
+2128145367,2/4/2019 09:20:09,false,4493001978,,2/4/2019 09:19:50,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,'Beurshandel in teken Grieks marathonoverleg',33235,
+2128145368,2/1/2019 17:48:35,false,4486202471,,2/1/2019 17:46:09,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Nog nooit exporteerde Duitsland zoveel als in 2014,34959,
+2128145368,2/1/2019 21:40:02,false,4486914375,,2/1/2019 21:39:40,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Nog nooit exporteerde Duitsland zoveel als in 2014,34959,
+2128145368,2/3/2019 15:12:10,false,4491422537,,2/3/2019 15:11:24,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Nog nooit exporteerde Duitsland zoveel als in 2014,34959,
+2128145368,2/4/2019 06:40:56,false,4492739511,,2/4/2019 06:40:31,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Nog nooit exporteerde Duitsland zoveel als in 2014,34959,
+2128145368,2/4/2019 09:21:22,false,4493004447,,2/4/2019 09:21:09,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Nog nooit exporteerde Duitsland zoveel als in 2014,34959,
+2128145369,2/1/2019 17:37:34,false,4486168659,,2/1/2019 17:37:04,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Varoufakis: koste wat het kost schuld aflossen,36311,
+2128145369,2/1/2019 21:35:30,false,4486903742,,2/1/2019 21:34:47,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Varoufakis: koste wat het kost schuld aflossen,36311,
+2128145369,2/3/2019 12:55:53,false,4491208932,,2/3/2019 12:55:33,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Varoufakis: koste wat het kost schuld aflossen,36311,
+2128145369,2/3/2019 15:07:37,false,4491416261,,2/3/2019 15:06:49,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Varoufakis: koste wat het kost schuld aflossen,36311,
+2128145369,2/4/2019 09:19:12,false,4492999898,,2/4/2019 09:18:59,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Varoufakis: koste wat het kost schuld aflossen,36311,
+2128145370,2/1/2019 17:37:03,false,4486166994,,2/1/2019 17:36:26,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Is rentestijging een raadsel?,40877,
+2128145370,2/1/2019 21:34:34,false,4486901499,,2/1/2019 21:33:43,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Is rentestijging een raadsel?,40877,
+2128145370,2/3/2019 12:55:32,false,4491208362,,2/3/2019 12:54:48,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,Is rentestijging een raadsel?,40877,
+2128145370,2/3/2019 15:06:47,false,4491414838,,2/3/2019 15:06:02,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Is rentestijging een raadsel?,40877,
+2128145370,2/4/2019 09:18:57,false,4492999401,,2/4/2019 09:18:43,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Is rentestijging een raadsel?,40877,
+2128145371,2/1/2019 17:37:34,false,4486168663,,2/1/2019 17:37:04,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,IMF verwacht herstel Russische economie,41249,
+2128145371,2/1/2019 21:35:30,false,4486903753,,2/1/2019 21:34:47,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,IMF verwacht herstel Russische economie,41249,
+2128145371,2/3/2019 12:55:53,false,4491208930,,2/3/2019 12:55:33,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,IMF verwacht herstel Russische economie,41249,
+2128145371,2/3/2019 15:07:37,false,4491416257,,2/3/2019 15:06:49,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,IMF verwacht herstel Russische economie,41249,
+2128145371,2/4/2019 09:19:12,false,4492999894,,2/4/2019 09:18:59,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,IMF verwacht herstel Russische economie,41249,
+2128145372,2/1/2019 17:31:36,false,4486147898,,2/1/2019 17:31:14,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Belastingplan: btw gaat op veel producten naar 21 procent,42729,
+2128145372,2/1/2019 21:31:45,false,4486895130,,2/1/2019 21:31:01,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Belastingplan: btw gaat op veel producten naar 21 procent,42729,
+2128145372,2/2/2019 18:12:45,false,4489647385,,2/2/2019 18:11:16,false,clixsense,1.0,43771873,NLD,07,Weesp,89.98.188.110,0,Belastingplan: btw gaat op veel producten naar 21 procent,42729,
+2128145372,2/3/2019 12:52:51,false,4491203893,,2/3/2019 12:52:28,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Belastingplan: btw gaat op veel producten naar 21 procent,42729,
+2128145372,2/3/2019 15:03:50,false,4491410668,,2/3/2019 15:02:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Belastingplan: btw gaat op veel producten naar 21 procent,42729,
+2128145372,2/4/2019 09:17:21,false,4492995950,,2/4/2019 09:17:04,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Belastingplan: btw gaat op veel producten naar 21 procent,42729,
+2128145373,2/1/2019 18:11:31,false,4486278171,,2/1/2019 18:10:47,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Live - Merkel: Grieken mogen hun eigen keuze maken,43589,
+2128145373,2/1/2019 21:45:36,false,4486929287,,2/1/2019 21:44:57,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Live - Merkel: Grieken mogen hun eigen keuze maken,43589,
+2128145373,2/3/2019 15:16:57,false,4491429321,,2/3/2019 15:16:30,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Live - Merkel: Grieken mogen hun eigen keuze maken,43589,
+2128145373,2/4/2019 09:25:19,false,4493012973,,2/4/2019 09:25:00,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Live - Merkel: Grieken mogen hun eigen keuze maken,43589,
+2128145373,2/4/2019 11:50:10,false,4493301015,,2/4/2019 11:49:45,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Live - Merkel: Grieken mogen hun eigen keuze maken,43589,
+2128145374,2/1/2019 18:07:41,false,4486266513,,2/1/2019 17:51:50,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,"Help! De prijzen dalen!; Staat van de Nederlandse economie Bestendige groei, hoge werkloosheid en deflatie",148571717,
+2128145374,2/1/2019 21:41:58,false,4486919334,,2/1/2019 21:41:13,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,"Help! De prijzen dalen!; Staat van de Nederlandse economie Bestendige groei, hoge werkloosheid en deflatie",148571717,
+2128145374,2/3/2019 15:13:48,false,4491424840,,2/3/2019 15:13:17,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,"Help! De prijzen dalen!; Staat van de Nederlandse economie Bestendige groei, hoge werkloosheid en deflatie",148571717,
+2128145374,2/4/2019 08:52:42,false,4492951392,,2/4/2019 08:52:13,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,"Help! De prijzen dalen!; Staat van de Nederlandse economie Bestendige groei, hoge werkloosheid en deflatie",148571717,
+2128145374,2/4/2019 09:23:05,false,4493008193,,2/4/2019 09:22:39,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,"Help! De prijzen dalen!; Staat van de Nederlandse economie Bestendige groei, hoge werkloosheid en deflatie",148571717,
+2128145375,2/1/2019 17:37:34,false,4486168651,,2/1/2019 17:37:04,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Er zit vaart in de economie,148571718,
+2128145375,2/1/2019 21:35:30,false,4486903745,,2/1/2019 21:34:47,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Er zit vaart in de economie,148571718,
+2128145375,2/3/2019 12:55:53,false,4491208935,,2/3/2019 12:55:33,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Er zit vaart in de economie,148571718,
+2128145375,2/3/2019 15:07:37,false,4491416259,,2/3/2019 15:06:49,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Er zit vaart in de economie,148571718,
+2128145375,2/4/2019 09:19:12,false,4492999891,,2/4/2019 09:18:59,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Er zit vaart in de economie,148571718,
+2128145376,2/1/2019 18:10:45,false,4486276006,,2/1/2019 18:09:00,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,"CBS Economie is met 0,5 procent gegroeid",148571724,
+2128145376,2/1/2019 21:44:51,false,4486926835,,2/1/2019 21:44:19,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,"CBS Economie is met 0,5 procent gegroeid",148571724,
+2128145376,2/3/2019 15:16:28,false,4491428591,,2/3/2019 15:15:53,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,"CBS Economie is met 0,5 procent gegroeid",148571724,
+2128145376,2/4/2019 09:24:43,false,4493011619,,2/4/2019 09:24:31,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,"CBS Economie is met 0,5 procent gegroeid",148571724,
+2128145376,2/4/2019 11:49:43,false,4493300231,,2/4/2019 11:49:19,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,"CBS Economie is met 0,5 procent gegroeid",148571724,
+2128145377,2/1/2019 17:37:03,false,4486167011,,2/1/2019 17:36:26,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Huizenkoper grijpt kans; Hypotheekrente nooit zo laag,150280829,
+2128145377,2/1/2019 21:34:34,false,4486901511,,2/1/2019 21:33:43,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Huizenkoper grijpt kans; Hypotheekrente nooit zo laag,150280829,
+2128145377,2/3/2019 12:55:32,false,4491208363,,2/3/2019 12:54:48,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Huizenkoper grijpt kans; Hypotheekrente nooit zo laag,150280829,
+2128145377,2/3/2019 15:06:47,false,4491414834,,2/3/2019 15:06:02,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Huizenkoper grijpt kans; Hypotheekrente nooit zo laag,150280829,
+2128145377,2/4/2019 09:18:57,false,4492999394,,2/4/2019 09:18:43,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Huizenkoper grijpt kans; Hypotheekrente nooit zo laag,150280829,
+2128145378,2/1/2019 17:51:49,false,4486212798,,2/1/2019 17:50:50,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Cijfer van de week,150281029,
+2128145378,2/1/2019 21:41:09,false,4486917199,,2/1/2019 21:40:38,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Cijfer van de week,150281029,
+2128145378,2/3/2019 15:13:15,false,4491423997,,2/3/2019 15:12:42,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Cijfer van de week,150281029,
+2128145378,2/4/2019 06:42:02,false,4492741036,,2/4/2019 06:41:42,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Cijfer van de week,150281029,
+2128145378,2/4/2019 09:22:38,false,4493007213,,2/4/2019 09:22:21,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Cijfer van de week,150281029,
+2128145379,2/1/2019 17:33:45,false,4486154659,,2/1/2019 17:31:37,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Hypotheken weer hot; Investeerders keren terug via nieuwe aanbieders,150281053,
+2128145379,2/1/2019 21:32:22,false,4486896621,,2/1/2019 21:31:47,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Hypotheken weer hot; Investeerders keren terug via nieuwe aanbieders,150281053,
+2128145379,2/3/2019 12:53:41,false,4491205227,,2/3/2019 12:52:53,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Hypotheken weer hot; Investeerders keren terug via nieuwe aanbieders,150281053,
+2128145379,2/3/2019 15:04:40,false,4491411822,,2/3/2019 15:03:52,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Hypotheken weer hot; Investeerders keren terug via nieuwe aanbieders,150281053,
+2128145379,2/4/2019 09:17:38,false,4492996404,,2/4/2019 09:17:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Hypotheken weer hot; Investeerders keren terug via nieuwe aanbieders,150281053,
+2128145380,2/1/2019 18:11:54,false,4486279428,,2/1/2019 18:11:33,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Overdracht in mkb sneuvelt voor finish,150281163,
+2128145380,2/1/2019 21:46:48,false,4486933986,,2/1/2019 21:45:51,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Overdracht in mkb sneuvelt voor finish,150281163,
+2128145380,2/3/2019 15:17:23,false,4491429828,,2/3/2019 15:16:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Overdracht in mkb sneuvelt voor finish,150281163,
+2128145380,2/4/2019 09:25:34,false,4493013575,,2/4/2019 09:25:20,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Overdracht in mkb sneuvelt voor finish,150281163,
+2128145380,2/4/2019 11:50:33,false,4493301773,,2/4/2019 11:50:12,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Overdracht in mkb sneuvelt voor finish,150281163,
+2128145381,2/1/2019 18:13:03,false,4486283038,,2/1/2019 18:12:02,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Provincie Utrecht aan kop; DFT legt twaalf provincies voor verkiezingen langs deeconomische meetlat,150281620,
+2128145381,2/1/2019 21:47:23,false,4486935989,,2/1/2019 21:46:53,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Provincie Utrecht aan kop; DFT legt twaalf provincies voor verkiezingen langs deeconomische meetlat,150281620,
+2128145381,2/3/2019 15:17:57,false,4491430609,,2/3/2019 15:17:25,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Provincie Utrecht aan kop; DFT legt twaalf provincies voor verkiezingen langs deeconomische meetlat,150281620,
+2128145381,2/4/2019 09:25:58,false,4493014520,,2/4/2019 09:25:36,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Provincie Utrecht aan kop; DFT legt twaalf provincies voor verkiezingen langs deeconomische meetlat,150281620,
+2128145381,2/4/2019 11:54:16,false,4493309258,,2/4/2019 11:50:34,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Provincie Utrecht aan kop; DFT legt twaalf provincies voor verkiezingen langs deeconomische meetlat,150281620,
+2128145382,2/1/2019 17:36:16,false,4486164120,,2/1/2019 17:35:18,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,"Pensioenfonds klem door ECB; Van beursbonanza wordt niet maximaal geprofiteerd, lage rente doet pijn",150281726,
+2128145382,2/1/2019 21:33:40,false,4486899424,,2/1/2019 21:33:01,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,"Pensioenfonds klem door ECB; Van beursbonanza wordt niet maximaal geprofiteerd, lage rente doet pijn",150281726,
+2128145382,2/3/2019 12:54:47,false,4491207230,,2/3/2019 12:54:23,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,"Pensioenfonds klem door ECB; Van beursbonanza wordt niet maximaal geprofiteerd, lage rente doet pijn",150281726,
+2128145382,2/3/2019 15:06:00,false,4491413842,,2/3/2019 15:05:26,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,"Pensioenfonds klem door ECB; Van beursbonanza wordt niet maximaal geprofiteerd, lage rente doet pijn",150281726,
+2128145382,2/4/2019 09:18:42,false,4492998765,,2/4/2019 09:18:26,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,"Pensioenfonds klem door ECB; Van beursbonanza wordt niet maximaal geprofiteerd, lage rente doet pijn",150281726,
+2128145383,2/1/2019 18:13:42,false,4486285039,,2/1/2019 18:13:32,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Verkoop van huizen daalt,150281956,
+2128145383,2/1/2019 21:48:15,false,4486938940,,2/1/2019 21:48:00,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Verkoop van huizen daalt,150281956,
+2128145383,2/3/2019 15:18:58,false,4491432149,,2/3/2019 15:18:43,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Verkoop van huizen daalt,150281956,
+2128145383,2/4/2019 09:26:35,false,4493016003,,2/4/2019 09:26:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Verkoop van huizen daalt,150281956,
+2128145383,2/4/2019 12:34:10,false,4493401581,,2/4/2019 12:33:58,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Verkoop van huizen daalt,150281956,
+2128145384,2/1/2019 17:35:16,false,4486160304,,2/1/2019 17:33:47,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Tien keer Apple,150282114,
+2128145384,2/1/2019 21:32:59,false,4486897919,,2/1/2019 21:32:24,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Tien keer Apple,150282114,
+2128145384,2/3/2019 12:54:22,false,4491206664,,2/3/2019 12:53:43,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,Tien keer Apple,150282114,
+2128145384,2/3/2019 15:05:25,false,4491413052,,2/3/2019 15:04:42,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Tien keer Apple,150282114,
+2128145384,2/4/2019 09:17:57,false,4492997033,,2/4/2019 09:17:40,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Tien keer Apple,150282114,
+2128145385,2/1/2019 17:38:15,false,4486170834,,2/1/2019 17:37:36,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Melkprijs in vrije val; Laag tarief voor melkveehouders begint zich te wreken,150282115,
+2128145385,2/1/2019 21:36:09,false,4486905386,,2/1/2019 21:35:33,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Melkprijs in vrije val; Laag tarief voor melkveehouders begint zich te wreken,150282115,
+2128145385,2/3/2019 12:56:26,false,4491209747,,2/3/2019 12:55:55,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Melkprijs in vrije val; Laag tarief voor melkveehouders begint zich te wreken,150282115,
+2128145385,2/3/2019 15:08:17,false,4491417067,,2/3/2019 15:07:39,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Melkprijs in vrije val; Laag tarief voor melkveehouders begint zich te wreken,150282115,
+2128145385,2/4/2019 09:19:30,false,4493000525,,2/4/2019 09:19:14,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Melkprijs in vrije val; Laag tarief voor melkveehouders begint zich te wreken,150282115,
+2128145386,2/1/2019 17:38:55,false,4486172844,,2/1/2019 17:38:27,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Zweedse rente onder nulpunt,150282116,
+2128145386,2/1/2019 21:36:43,false,4486906767,,2/1/2019 21:36:12,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Zweedse rente onder nulpunt,150282116,
+2128145386,2/3/2019 13:04:20,false,4491226658,,2/3/2019 12:56:27,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Zweedse rente onder nulpunt,150282116,
+2128145386,2/3/2019 15:08:54,false,4491417972,,2/3/2019 15:08:19,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Zweedse rente onder nulpunt,150282116,
+2128145386,2/4/2019 09:19:49,false,4493001160,,2/4/2019 09:19:31,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Zweedse rente onder nulpunt,150282116,
+2128145387,2/1/2019 17:46:07,false,4486194968,,2/1/2019 17:44:54,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Tik voor begroting door lage inflatie; Daling gasprijs is extra tegenvaller overheid,150282117,
+2128145387,2/1/2019 21:39:36,false,4486913330,,2/1/2019 21:38:41,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Tik voor begroting door lage inflatie; Daling gasprijs is extra tegenvaller overheid,150282117,
+2128145387,2/3/2019 15:11:22,false,4491421302,,2/3/2019 15:10:52,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Tik voor begroting door lage inflatie; Daling gasprijs is extra tegenvaller overheid,150282117,
+2128145387,2/4/2019 06:40:30,false,4492738804,,2/4/2019 06:39:56,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Tik voor begroting door lage inflatie; Daling gasprijs is extra tegenvaller overheid,150282117,
+2128145387,2/4/2019 09:21:02,false,4493003756,,2/4/2019 09:20:48,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Tik voor begroting door lage inflatie; Daling gasprijs is extra tegenvaller overheid,150282117,
+2128145388,2/1/2019 18:11:31,false,4486278177,,2/1/2019 18:10:47,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Glas op Wall Street halfvol,150282118,
+2128145388,2/1/2019 21:45:36,false,4486929311,,2/1/2019 21:44:57,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Glas op Wall Street halfvol,150282118,
+2128145388,2/3/2019 15:16:57,false,4491429325,,2/3/2019 15:16:30,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Glas op Wall Street halfvol,150282118,
+2128145388,2/4/2019 09:25:19,false,4493012970,,2/4/2019 09:25:00,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Glas op Wall Street halfvol,150282118,
+2128145388,2/4/2019 11:50:10,false,4493301021,,2/4/2019 11:49:45,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Glas op Wall Street halfvol,150282118,
+2128145389,2/1/2019 17:48:35,false,4486202459,,2/1/2019 17:46:09,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Opleving huizenmarkt zet ook door in 2015,150282124,
+2128145389,2/1/2019 21:40:02,false,4486914370,,2/1/2019 21:39:40,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Opleving huizenmarkt zet ook door in 2015,150282124,
+2128145389,2/3/2019 15:12:10,false,4491422533,,2/3/2019 15:11:24,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Opleving huizenmarkt zet ook door in 2015,150282124,
+2128145389,2/4/2019 06:40:56,false,4492739506,,2/4/2019 06:40:31,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Opleving huizenmarkt zet ook door in 2015,150282124,
+2128145389,2/4/2019 09:21:22,false,4493004441,,2/4/2019 09:21:09,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Opleving huizenmarkt zet ook door in 2015,150282124,
+2128145390,2/1/2019 17:44:52,false,4486190916,,2/1/2019 17:43:05,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Banen weg door inzet postscooter,150282126,
+2128145390,2/1/2019 21:38:37,false,4486910924,,2/1/2019 21:38:13,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Banen weg door inzet postscooter,150282126,
+2128145390,2/3/2019 15:10:50,false,4491420523,,2/3/2019 15:10:20,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Banen weg door inzet postscooter,150282126,
+2128145390,2/4/2019 06:39:54,false,4492737824,,2/4/2019 06:39:22,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Banen weg door inzet postscooter,150282126,
+2128145390,2/4/2019 09:20:46,false,4493003304,,2/4/2019 09:20:25,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Banen weg door inzet postscooter,150282126,
+2128145391,2/1/2019 17:48:35,false,4486202453,,2/1/2019 17:46:09,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Onderzoek rentebeleid banken,150282229,
+2128145391,2/1/2019 21:40:02,false,4486914367,,2/1/2019 21:39:40,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Onderzoek rentebeleid banken,150282229,
+2128145391,2/3/2019 15:12:10,false,4491422529,,2/3/2019 15:11:24,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Onderzoek rentebeleid banken,150282229,
+2128145391,2/4/2019 06:40:56,false,4492739513,,2/4/2019 06:40:31,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Onderzoek rentebeleid banken,150282229,
+2128145391,2/4/2019 09:21:22,false,4493004437,,2/4/2019 09:21:09,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Onderzoek rentebeleid banken,150282229,
+2128145392,2/1/2019 17:44:52,false,4486190912,,2/1/2019 17:43:05,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,"Nerd in de lift, manager buitenspel",150282410,
+2128145392,2/1/2019 21:38:37,false,4486910930,,2/1/2019 21:38:13,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,"Nerd in de lift, manager buitenspel",150282410,
+2128145392,2/3/2019 15:10:50,false,4491420515,,2/3/2019 15:10:20,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,"Nerd in de lift, manager buitenspel",150282410,
+2128145392,2/4/2019 06:39:54,false,4492737831,,2/4/2019 06:39:22,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,"Nerd in de lift, manager buitenspel",150282410,
+2128145392,2/4/2019 09:20:46,false,4493003293,,2/4/2019 09:20:25,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,"Nerd in de lift, manager buitenspel",150282410,
+2128145393,2/1/2019 17:37:03,false,4486166976,,2/1/2019 17:36:26,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Geld. Goedkope benzine leidt tot extreem lage inflatie begin dit jaar,150282475,
+2128145393,2/1/2019 21:34:34,false,4486901505,,2/1/2019 21:33:43,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Geld. Goedkope benzine leidt tot extreem lage inflatie begin dit jaar,150282475,
+2128145393,2/3/2019 12:55:32,false,4491208360,,2/3/2019 12:54:48,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Geld. Goedkope benzine leidt tot extreem lage inflatie begin dit jaar,150282475,
+2128145393,2/3/2019 15:06:47,false,4491414833,,2/3/2019 15:06:02,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Geld. Goedkope benzine leidt tot extreem lage inflatie begin dit jaar,150282475,
+2128145393,2/4/2019 09:18:57,false,4492999398,,2/4/2019 09:18:43,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Geld. Goedkope benzine leidt tot extreem lage inflatie begin dit jaar,150282475,
+2128145394,2/1/2019 17:36:16,false,4486164135,,2/1/2019 17:35:18,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Minder woningen onder water,150284544,
+2128145394,2/1/2019 21:33:40,false,4486899430,,2/1/2019 21:33:01,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Minder woningen onder water,150284544,
+2128145394,2/3/2019 12:54:47,false,4491207228,,2/3/2019 12:54:23,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Minder woningen onder water,150284544,
+2128145394,2/3/2019 15:06:00,false,4491413836,,2/3/2019 15:05:26,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Minder woningen onder water,150284544,
+2128145394,2/4/2019 09:18:42,false,4492998770,,2/4/2019 09:18:26,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Minder woningen onder water,150284544,
+2128145395,2/1/2019 17:35:16,false,4486160315,,2/1/2019 17:33:47,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Werkloosheid iets gedaald in eurozone,150284790,
+2128145395,2/1/2019 21:32:59,false,4486897922,,2/1/2019 21:32:24,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Werkloosheid iets gedaald in eurozone,150284790,
+2128145395,2/3/2019 12:54:22,false,4491206663,,2/3/2019 12:53:43,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Werkloosheid iets gedaald in eurozone,150284790,
+2128145395,2/3/2019 15:05:25,false,4491413055,,2/3/2019 15:04:42,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Werkloosheid iets gedaald in eurozone,150284790,
+2128145395,2/4/2019 09:17:57,false,4492997030,,2/4/2019 09:17:40,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Werkloosheid iets gedaald in eurozone,150284790,
+2128145396,2/1/2019 18:11:31,false,4486278187,,2/1/2019 18:10:47,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Dijsselbloem maakt voortgang met Grieken,150285229,
+2128145396,2/1/2019 21:45:36,false,4486929294,,2/1/2019 21:44:57,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Dijsselbloem maakt voortgang met Grieken,150285229,
+2128145396,2/3/2019 15:16:57,false,4491429319,,2/3/2019 15:16:30,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Dijsselbloem maakt voortgang met Grieken,150285229,
+2128145396,2/4/2019 09:25:19,false,4493012959,,2/4/2019 09:25:00,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Dijsselbloem maakt voortgang met Grieken,150285229,
+2128145396,2/4/2019 11:50:10,false,4493301023,,2/4/2019 11:49:45,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Dijsselbloem maakt voortgang met Grieken,150285229,
+2128145397,2/1/2019 17:51:49,false,4486212807,,2/1/2019 17:50:50,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Inflatie in Nederland gezakt naar nulpunt,150285231,
+2128145397,2/1/2019 21:41:09,false,4486917194,,2/1/2019 21:40:38,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Inflatie in Nederland gezakt naar nulpunt,150285231,
+2128145397,2/3/2019 15:13:15,false,4491424003,,2/3/2019 15:12:42,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Inflatie in Nederland gezakt naar nulpunt,150285231,
+2128145397,2/4/2019 06:42:02,false,4492741038,,2/4/2019 06:41:42,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Inflatie in Nederland gezakt naar nulpunt,150285231,
+2128145397,2/4/2019 09:22:38,false,4493007222,,2/4/2019 09:22:21,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Inflatie in Nederland gezakt naar nulpunt,150285231,
+2128145398,2/1/2019 18:10:45,false,4486276008,,2/1/2019 18:09:00,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Webwinkel Zalando boekt eerste winst,150285232,
+2128145398,2/1/2019 21:44:51,false,4486926824,,2/1/2019 21:44:19,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Webwinkel Zalando boekt eerste winst,150285232,
+2128145398,2/3/2019 15:16:28,false,4491428584,,2/3/2019 15:15:53,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Webwinkel Zalando boekt eerste winst,150285232,
+2128145398,2/4/2019 09:24:43,false,4493011603,,2/4/2019 09:24:31,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Webwinkel Zalando boekt eerste winst,150285232,
+2128145398,2/4/2019 11:49:43,false,4493300220,,2/4/2019 11:49:19,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Webwinkel Zalando boekt eerste winst,150285232,
+2128145399,2/1/2019 17:40:40,false,4486177994,,2/1/2019 17:39:07,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,IEA voorziet mogelijk herstel van olieprijs,150285254,
+2128145399,2/1/2019 21:37:25,false,4486908286,,2/1/2019 21:36:46,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,IEA voorziet mogelijk herstel van olieprijs,150285254,
+2128145399,2/3/2019 13:04:46,false,4491227522,,2/3/2019 13:04:22,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,IEA voorziet mogelijk herstel van olieprijs,150285254,
+2128145399,2/3/2019 15:09:47,false,4491419254,,2/3/2019 15:08:56,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,IEA voorziet mogelijk herstel van olieprijs,150285254,
+2128145399,2/4/2019 09:20:09,false,4493001964,,2/4/2019 09:19:50,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,IEA voorziet mogelijk herstel van olieprijs,150285254,
+2128145400,2/1/2019 18:08:00,false,4486267532,,2/1/2019 18:07:43,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Opeens is er groei in heel Europa,150285303,
+2128145400,2/1/2019 21:42:44,false,4486921085,,2/1/2019 21:42:16,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Opeens is er groei in heel Europa,150285303,
+2128145400,2/3/2019 15:14:19,false,4491425461,,2/3/2019 15:13:50,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Opeens is er groei in heel Europa,150285303,
+2128145400,2/4/2019 08:53:05,false,4492952225,,2/4/2019 08:52:44,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Opeens is er groei in heel Europa,150285303,
+2128145400,2/4/2019 09:23:21,false,4493008762,,2/4/2019 09:23:07,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Opeens is er groei in heel Europa,150285303,
+2128145401,2/1/2019 17:38:55,false,4486172852,,2/1/2019 17:38:27,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Werkgelegenheid EU is verbeterd,150285706,
+2128145401,2/1/2019 21:36:43,false,4486906769,,2/1/2019 21:36:12,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Werkgelegenheid EU is verbeterd,150285706,
+2128145401,2/3/2019 13:04:20,false,4491226664,,2/3/2019 12:56:27,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Werkgelegenheid EU is verbeterd,150285706,
+2128145401,2/3/2019 15:08:54,false,4491417971,,2/3/2019 15:08:19,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Werkgelegenheid EU is verbeterd,150285706,
+2128145401,2/4/2019 09:19:49,false,4493001158,,2/4/2019 09:19:31,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Werkgelegenheid EU is verbeterd,150285706,
+2128145402,2/1/2019 18:11:31,false,4486278181,,2/1/2019 18:10:47,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Vergrijzing remt huizenprijzen,150285949,
+2128145402,2/1/2019 21:45:36,false,4486929299,,2/1/2019 21:44:57,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Vergrijzing remt huizenprijzen,150285949,
+2128145402,2/3/2019 15:16:57,false,4491429327,,2/3/2019 15:16:30,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Vergrijzing remt huizenprijzen,150285949,
+2128145402,2/4/2019 09:25:19,false,4493012964,,2/4/2019 09:25:00,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Vergrijzing remt huizenprijzen,150285949,
+2128145402,2/4/2019 11:50:10,false,4493301017,,2/4/2019 11:49:45,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Vergrijzing remt huizenprijzen,150285949,
+2128145403,2/1/2019 18:13:31,false,4486284383,,2/1/2019 18:13:05,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,`Klein bedrijf meest gebaat bij akkoord met VS',150285997,
+2128145403,2/1/2019 21:47:55,false,4486937897,,2/1/2019 21:47:29,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,`Klein bedrijf meest gebaat bij akkoord met VS',150285997,
+2128145403,2/3/2019 15:18:41,false,4491431727,,2/3/2019 15:17:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,`Klein bedrijf meest gebaat bij akkoord met VS',150285997,
+2128145403,2/4/2019 09:26:20,false,4493015380,,2/4/2019 09:26:00,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,`Klein bedrijf meest gebaat bij akkoord met VS',150285997,
+2128145403,2/4/2019 12:33:56,false,4493401174,,2/4/2019 12:33:00,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,`Klein bedrijf meest gebaat bij akkoord met VS',150285997,
+2128145404,2/1/2019 17:35:16,false,4486160297,,2/1/2019 17:33:47,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Breng gevaren fondsen in kaart,150286193,
+2128145404,2/1/2019 21:32:59,false,4486897913,,2/1/2019 21:32:24,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Breng gevaren fondsen in kaart,150286193,
+2128145404,2/3/2019 12:54:22,false,4491206665,,2/3/2019 12:53:43,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,Breng gevaren fondsen in kaart,150286193,
+2128145404,2/3/2019 15:05:25,false,4491413050,,2/3/2019 15:04:42,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Breng gevaren fondsen in kaart,150286193,
+2128145404,2/4/2019 09:17:57,false,4492997025,,2/4/2019 09:17:40,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Breng gevaren fondsen in kaart,150286193,
+2128145405,2/1/2019 18:07:41,false,4486266510,,2/1/2019 17:51:50,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Een zomers scenario,150286207,
+2128145405,2/1/2019 21:41:58,false,4486919346,,2/1/2019 21:41:13,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Een zomers scenario,150286207,
+2128145405,2/3/2019 15:13:48,false,4491424837,,2/3/2019 15:13:17,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Een zomers scenario,150286207,
+2128145405,2/4/2019 08:52:42,false,4492951380,,2/4/2019 08:52:13,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Een zomers scenario,150286207,
+2128145405,2/4/2019 09:23:05,false,4493008196,,2/4/2019 09:22:39,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Een zomers scenario,150286207,
+2128145406,2/1/2019 18:08:59,false,4486270749,,2/1/2019 18:08:26,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Ziek van vrijhandel,150286325,
+2128145406,2/1/2019 21:44:15,false,4486925293,,2/1/2019 21:43:35,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Ziek van vrijhandel,150286325,
+2128145406,2/3/2019 15:15:51,false,4491427607,,2/3/2019 15:15:16,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Ziek van vrijhandel,150286325,
+2128145406,2/4/2019 09:24:21,false,4493010812,,2/4/2019 09:23:59,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Ziek van vrijhandel,150286325,
+2128145406,2/4/2019 11:48:56,false,4493298791,,2/4/2019 11:47:50,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Ziek van vrijhandel,150286325,
+2128145407,2/1/2019 18:11:54,false,4486279430,,2/1/2019 18:11:33,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Zwakke start beursjaar,150286328,
+2128145407,2/1/2019 21:46:48,false,4486933973,,2/1/2019 21:45:51,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Zwakke start beursjaar,150286328,
+2128145407,2/3/2019 15:17:23,false,4491429829,,2/3/2019 15:16:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Zwakke start beursjaar,150286328,
+2128145407,2/4/2019 09:25:34,false,4493013579,,2/4/2019 09:25:20,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Zwakke start beursjaar,150286328,
+2128145407,2/4/2019 11:50:33,false,4493301776,,2/4/2019 11:50:12,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Zwakke start beursjaar,150286328,
+2128145408,2/1/2019 18:13:03,false,4486283042,,2/1/2019 18:12:02,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Bronzen pensioenstelsel maakt Nederland gevaarlijk illiquide,150286710,
+2128145408,2/1/2019 21:47:23,false,4486935992,,2/1/2019 21:46:53,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Bronzen pensioenstelsel maakt Nederland gevaarlijk illiquide,150286710,
+2128145408,2/3/2019 15:17:57,false,4491430591,,2/3/2019 15:17:25,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Bronzen pensioenstelsel maakt Nederland gevaarlijk illiquide,150286710,
+2128145408,2/4/2019 09:25:58,false,4493014512,,2/4/2019 09:25:36,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Bronzen pensioenstelsel maakt Nederland gevaarlijk illiquide,150286710,
+2128145408,2/4/2019 11:54:16,false,4493309256,,2/4/2019 11:50:34,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Bronzen pensioenstelsel maakt Nederland gevaarlijk illiquide,150286710,
+2128145409,2/1/2019 18:11:54,false,4486279420,,2/1/2019 18:11:33,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Noodlijdend Oekraïne hoopt op IMF-noodkrediet,150286729,
+2128145409,2/1/2019 21:46:48,false,4486933981,,2/1/2019 21:45:51,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Noodlijdend Oekraïne hoopt op IMF-noodkrediet,150286729,
+2128145409,2/3/2019 15:17:23,false,4491429830,,2/3/2019 15:16:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Noodlijdend Oekraïne hoopt op IMF-noodkrediet,150286729,
+2128145409,2/4/2019 09:25:34,false,4493013571,,2/4/2019 09:25:20,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Noodlijdend Oekraïne hoopt op IMF-noodkrediet,150286729,
+2128145409,2/4/2019 11:50:33,false,4493301771,,2/4/2019 11:50:12,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Noodlijdend Oekraïne hoopt op IMF-noodkrediet,150286729,
+2128145410,2/1/2019 18:13:31,false,4486284394,,2/1/2019 18:13:05,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Huizenverkopen VS gedaald,150286991,
+2128145410,2/1/2019 21:47:55,false,4486937887,,2/1/2019 21:47:29,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Huizenverkopen VS gedaald,150286991,
+2128145410,2/3/2019 15:18:41,false,4491431735,,2/3/2019 15:17:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Huizenverkopen VS gedaald,150286991,
+2128145410,2/4/2019 09:26:20,false,4493015377,,2/4/2019 09:26:00,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Huizenverkopen VS gedaald,150286991,
+2128145410,2/4/2019 12:33:56,false,4493401176,,2/4/2019 12:33:00,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Huizenverkopen VS gedaald,150286991,
+2128145411,2/1/2019 17:44:52,false,4486190923,,2/1/2019 17:43:05,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Commerzbank voorziet nieuwe tegenslagen,150287149,
+2128145411,2/1/2019 21:38:37,false,4486910920,,2/1/2019 21:38:13,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Commerzbank voorziet nieuwe tegenslagen,150287149,
+2128145411,2/3/2019 15:10:50,false,4491420520,,2/3/2019 15:10:20,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Commerzbank voorziet nieuwe tegenslagen,150287149,
+2128145411,2/4/2019 06:39:54,false,4492737828,,2/4/2019 06:39:22,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Commerzbank voorziet nieuwe tegenslagen,150287149,
+2128145411,2/4/2019 09:20:46,false,4493003297,,2/4/2019 09:20:25,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Commerzbank voorziet nieuwe tegenslagen,150287149,
+2128145412,2/1/2019 18:08:24,false,4486268788,,2/1/2019 18:08:02,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Lening tegen laagste rente ooit,150287150,
+2128145412,2/1/2019 21:43:30,false,4486923139,,2/1/2019 21:42:49,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Lening tegen laagste rente ooit,150287150,
+2128145412,2/3/2019 15:15:14,false,4491426730,,2/3/2019 15:14:21,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Lening tegen laagste rente ooit,150287150,
+2128145412,2/4/2019 08:53:43,false,4492953401,,2/4/2019 08:53:09,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Lening tegen laagste rente ooit,150287150,
+2128145412,2/4/2019 09:23:38,false,4493009289,,2/4/2019 09:23:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Lening tegen laagste rente ooit,150287150,
+2128145413,2/1/2019 17:38:15,false,4486170842,,2/1/2019 17:37:36,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Snelle daling van inflatie goed voor de koopkracht,150287152,
+2128145413,2/1/2019 21:36:09,false,4486905379,,2/1/2019 21:35:33,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Snelle daling van inflatie goed voor de koopkracht,150287152,
+2128145413,2/3/2019 12:56:26,false,4491209752,,2/3/2019 12:55:55,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Snelle daling van inflatie goed voor de koopkracht,150287152,
+2128145413,2/3/2019 15:08:17,false,4491417071,,2/3/2019 15:07:39,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Snelle daling van inflatie goed voor de koopkracht,150287152,
+2128145413,2/4/2019 09:19:30,false,4493000530,,2/4/2019 09:19:14,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Snelle daling van inflatie goed voor de koopkracht,150287152,
+2128145414,2/1/2019 17:38:55,false,4486172855,,2/1/2019 17:38:27,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Webwinkelgigant Zalando maakt voor het eerst sinds bestaan winst,150287153,
+2128145414,2/1/2019 21:36:43,false,4486906771,,2/1/2019 21:36:12,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Webwinkelgigant Zalando maakt voor het eerst sinds bestaan winst,150287153,
+2128145414,2/3/2019 13:04:20,false,4491226667,,2/3/2019 12:56:27,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Webwinkelgigant Zalando maakt voor het eerst sinds bestaan winst,150287153,
+2128145414,2/3/2019 15:08:54,false,4491417968,,2/3/2019 15:08:19,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Webwinkelgigant Zalando maakt voor het eerst sinds bestaan winst,150287153,
+2128145414,2/4/2019 09:19:49,false,4493001155,,2/4/2019 09:19:31,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Webwinkelgigant Zalando maakt voor het eerst sinds bestaan winst,150287153,
+2128145415,2/1/2019 17:46:07,false,4486194979,,2/1/2019 17:44:54,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Zweedse centrale bank stapt over op negatieve rente,150287154,
+2128145415,2/1/2019 21:39:36,false,4486913337,,2/1/2019 21:38:41,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Zweedse centrale bank stapt over op negatieve rente,150287154,
+2128145415,2/3/2019 15:11:22,false,4491421300,,2/3/2019 15:10:52,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Zweedse centrale bank stapt over op negatieve rente,150287154,
+2128145415,2/4/2019 06:40:30,false,4492738797,,2/4/2019 06:39:56,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Zweedse centrale bank stapt over op negatieve rente,150287154,
+2128145415,2/4/2019 09:21:02,false,4493003761,,2/4/2019 09:20:48,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Zweedse centrale bank stapt over op negatieve rente,150287154,
+2128145416,2/1/2019 18:08:00,false,4486267545,,2/1/2019 18:07:43,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,State of the market,150287155,
+2128145416,2/1/2019 21:42:44,false,4486921088,,2/1/2019 21:42:16,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,State of the market,150287155,
+2128145416,2/3/2019 15:14:19,false,4491425452,,2/3/2019 15:13:50,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,State of the market,150287155,
+2128145416,2/4/2019 08:53:05,false,4492952213,,2/4/2019 08:52:44,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,State of the market,150287155,
+2128145416,2/4/2019 09:23:21,false,4493008756,,2/4/2019 09:23:07,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,State of the market,150287155,
+2128145417,2/1/2019 17:37:03,false,4486166984,,2/1/2019 17:36:26,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Minder gas winnen hoeft geen geld te kosten,150287158,
+2128145417,2/1/2019 21:34:34,false,4486901503,,2/1/2019 21:33:43,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Minder gas winnen hoeft geen geld te kosten,150287158,
+2128145417,2/3/2019 12:55:32,false,4491208359,,2/3/2019 12:54:48,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,Minder gas winnen hoeft geen geld te kosten,150287158,
+2128145417,2/3/2019 15:06:47,false,4491414832,,2/3/2019 15:06:02,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Minder gas winnen hoeft geen geld te kosten,150287158,
+2128145417,2/4/2019 09:18:57,false,4492999405,,2/4/2019 09:18:43,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Minder gas winnen hoeft geen geld te kosten,150287158,
+2128145418,2/1/2019 17:44:52,false,4486190921,,2/1/2019 17:43:05,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,`Britse inflatie zal verder dalen',150287160,
+2128145418,2/1/2019 21:38:37,false,4486910928,,2/1/2019 21:38:13,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,`Britse inflatie zal verder dalen',150287160,
+2128145418,2/3/2019 15:10:50,false,4491420517,,2/3/2019 15:10:20,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,`Britse inflatie zal verder dalen',150287160,
+2128145418,2/4/2019 06:39:54,false,4492737830,,2/4/2019 06:39:22,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,`Britse inflatie zal verder dalen',150287160,
+2128145418,2/4/2019 09:20:46,false,4493003307,,2/4/2019 09:20:25,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,`Britse inflatie zal verder dalen',150287160,
+2128145419,2/1/2019 17:33:45,false,4486154646,,2/1/2019 17:31:37,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,FNV pleit voor crisispakket pensioenfondsen,150287733,
+2128145419,2/1/2019 21:32:22,false,4486896617,,2/1/2019 21:31:47,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,FNV pleit voor crisispakket pensioenfondsen,150287733,
+2128145419,2/3/2019 12:53:41,false,4491205225,,2/3/2019 12:52:53,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,FNV pleit voor crisispakket pensioenfondsen,150287733,
+2128145419,2/3/2019 15:04:40,false,4491411815,,2/3/2019 15:03:52,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,FNV pleit voor crisispakket pensioenfondsen,150287733,
+2128145419,2/4/2019 09:17:38,false,4492996407,,2/4/2019 09:17:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,FNV pleit voor crisispakket pensioenfondsen,150287733,
+2128145420,2/1/2019 17:37:34,false,4486168671,,2/1/2019 17:37:04,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,EU-miljardenfonds creëert 34.000 banen in Nederland,150289181,
+2128145420,2/1/2019 21:35:30,false,4486903747,,2/1/2019 21:34:47,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,EU-miljardenfonds creëert 34.000 banen in Nederland,150289181,
+2128145420,2/3/2019 12:55:53,false,4491208941,,2/3/2019 12:55:33,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,EU-miljardenfonds creëert 34.000 banen in Nederland,150289181,
+2128145420,2/3/2019 15:07:37,false,4491416260,,2/3/2019 15:06:49,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,EU-miljardenfonds creëert 34.000 banen in Nederland,150289181,
+2128145420,2/4/2019 09:19:12,false,4492999900,,2/4/2019 09:18:59,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,EU-miljardenfonds creëert 34.000 banen in Nederland,150289181,
+2128145421,2/1/2019 18:13:03,false,4486283036,,2/1/2019 18:12:02,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Geld rolt weer,150289763,
+2128145421,2/1/2019 21:47:23,false,4486936000,,2/1/2019 21:46:53,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Geld rolt weer,150289763,
+2128145421,2/3/2019 15:17:57,false,4491430596,,2/3/2019 15:17:25,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Geld rolt weer,150289763,
+2128145421,2/4/2019 09:25:58,false,4493014517,,2/4/2019 09:25:36,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Geld rolt weer,150289763,
+2128145421,2/4/2019 11:54:16,false,4493309254,,2/4/2019 11:50:34,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Geld rolt weer,150289763,
+2128145422,2/1/2019 17:43:03,false,4486185266,,2/1/2019 17:40:42,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Griekenland met blufpoker op weg naar de verlenging,150290047,
+2128145422,2/1/2019 21:38:09,false,4486909830,,2/1/2019 21:37:28,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Griekenland met blufpoker op weg naar de verlenging,150290047,
+2128145422,2/3/2019 13:06:01,false,4491229805,,2/3/2019 13:04:47,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,Griekenland met blufpoker op weg naar de verlenging,150290047,
+2128145422,2/3/2019 15:10:18,false,4491419823,,2/3/2019 15:09:49,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Griekenland met blufpoker op weg naar de verlenging,150290047,
+2128145422,2/4/2019 09:20:24,false,4493002609,,2/4/2019 09:20:10,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Griekenland met blufpoker op weg naar de verlenging,150290047,
+2128145423,2/1/2019 18:10:45,false,4486275998,,2/1/2019 18:09:00,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Cijfers uit VS drukken sentiment op beurzen,150290282,
+2128145423,2/1/2019 21:44:51,false,4486926817,,2/1/2019 21:44:19,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Cijfers uit VS drukken sentiment op beurzen,150290282,
+2128145423,2/3/2019 15:16:28,false,4491428597,,2/3/2019 15:15:53,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Cijfers uit VS drukken sentiment op beurzen,150290282,
+2128145423,2/4/2019 09:24:43,false,4493011607,,2/4/2019 09:24:31,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Cijfers uit VS drukken sentiment op beurzen,150290282,
+2128145423,2/4/2019 11:49:43,false,4493300218,,2/4/2019 11:49:19,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Cijfers uit VS drukken sentiment op beurzen,150290282,
+2128145424,2/1/2019 17:36:16,false,4486164130,,2/1/2019 17:35:18,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,'ECB geeft Grieken lucht',150290740,
+2128145424,2/1/2019 21:33:40,false,4486899427,,2/1/2019 21:33:01,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,'ECB geeft Grieken lucht',150290740,
+2128145424,2/3/2019 12:54:47,false,4491207223,,2/3/2019 12:54:23,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,'ECB geeft Grieken lucht',150290740,
+2128145424,2/3/2019 15:06:00,false,4491413840,,2/3/2019 15:05:26,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,'ECB geeft Grieken lucht',150290740,
+2128145424,2/4/2019 09:18:42,false,4492998773,,2/4/2019 09:18:26,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,'ECB geeft Grieken lucht',150290740,
+2128145425,2/1/2019 17:51:49,false,4486212803,,2/1/2019 17:50:50,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Rechtsbijstand moet zuiniger,150290814,
+2128145425,2/1/2019 21:41:09,false,4486917185,,2/1/2019 21:40:38,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Rechtsbijstand moet zuiniger,150290814,
+2128145425,2/3/2019 15:13:15,false,4491423990,,2/3/2019 15:12:42,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Rechtsbijstand moet zuiniger,150290814,
+2128145425,2/4/2019 06:42:02,false,4492741044,,2/4/2019 06:41:42,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Rechtsbijstand moet zuiniger,150290814,
+2128145425,2/4/2019 09:22:38,false,4493007218,,2/4/2019 09:22:21,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Rechtsbijstand moet zuiniger,150290814,
+2128145426,2/1/2019 18:08:00,false,4486267540,,2/1/2019 18:07:43,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,"Voorstel komt te snel, eerst even uitblazen",150290877,
+2128145426,2/1/2019 21:42:44,false,4486921096,,2/1/2019 21:42:16,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,"Voorstel komt te snel, eerst even uitblazen",150290877,
+2128145426,2/3/2019 15:14:19,false,4491425457,,2/3/2019 15:13:50,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,"Voorstel komt te snel, eerst even uitblazen",150290877,
+2128145426,2/4/2019 08:53:05,false,4492952219,,2/4/2019 08:52:44,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,"Voorstel komt te snel, eerst even uitblazen",150290877,
+2128145426,2/4/2019 09:23:21,false,4493008759,,2/4/2019 09:23:07,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,"Voorstel komt te snel, eerst even uitblazen",150290877,
+2128145427,2/1/2019 17:38:55,false,4486172839,,2/1/2019 17:38:27,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Banken lonken naar - sommige - zzp'ers,150291001,
+2128145427,2/1/2019 21:36:43,false,4486906765,,2/1/2019 21:36:12,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Banken lonken naar - sommige - zzp'ers,150291001,
+2128145427,2/3/2019 13:04:20,false,4491226660,,2/3/2019 12:56:27,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,Banken lonken naar - sommige - zzp'ers,150291001,
+2128145427,2/3/2019 15:08:54,false,4491417969,,2/3/2019 15:08:19,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Banken lonken naar - sommige - zzp'ers,150291001,
+2128145427,2/4/2019 09:19:49,false,4493001159,,2/4/2019 09:19:31,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Banken lonken naar - sommige - zzp'ers,150291001,
+2128145428,2/1/2019 18:07:41,false,4486266508,,2/1/2019 17:51:50,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Burger is wakker: TTIP komt eraan,150291466,
+2128145428,2/1/2019 21:41:58,false,4486919342,,2/1/2019 21:41:13,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Burger is wakker: TTIP komt eraan,150291466,
+2128145428,2/3/2019 15:13:48,false,4491424838,,2/3/2019 15:13:17,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Burger is wakker: TTIP komt eraan,150291466,
+2128145428,2/4/2019 08:52:42,false,4492951385,,2/4/2019 08:52:13,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Burger is wakker: TTIP komt eraan,150291466,
+2128145428,2/4/2019 09:23:05,false,4493008201,,2/4/2019 09:22:39,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Burger is wakker: TTIP komt eraan,150291466,
+2128145429,2/1/2019 17:38:15,false,4486170828,,2/1/2019 17:37:36,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,Jongeren boos om 'oneerlijk' laag minimumloon,150291742,
+2128145429,2/1/2019 21:36:09,false,4486905389,,2/1/2019 21:35:33,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Jongeren boos om 'oneerlijk' laag minimumloon,150291742,
+2128145429,2/3/2019 12:56:26,false,4491209740,,2/3/2019 12:55:55,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,Jongeren boos om 'oneerlijk' laag minimumloon,150291742,
+2128145429,2/3/2019 15:08:17,false,4491417069,,2/3/2019 15:07:39,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Jongeren boos om 'oneerlijk' laag minimumloon,150291742,
+2128145429,2/4/2019 09:19:30,false,4493000521,,2/4/2019 09:19:14,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Jongeren boos om 'oneerlijk' laag minimumloon,150291742,
+2128145430,2/1/2019 17:43:03,false,4486185272,,2/1/2019 17:40:42,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,In één dag 300 mln. aan spaargeld weg,150291782,
+2128145430,2/1/2019 21:38:09,false,4486909826,,2/1/2019 21:37:28,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,In één dag 300 mln. aan spaargeld weg,150291782,
+2128145430,2/3/2019 13:06:01,false,4491229807,,2/3/2019 13:04:47,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,In één dag 300 mln. aan spaargeld weg,150291782,
+2128145430,2/3/2019 15:10:18,false,4491419816,,2/3/2019 15:09:49,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,In één dag 300 mln. aan spaargeld weg,150291782,
+2128145430,2/4/2019 09:20:24,false,4493002617,,2/4/2019 09:20:10,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,In één dag 300 mln. aan spaargeld weg,150291782,
+2128145431,2/1/2019 18:08:24,false,4486268786,,2/1/2019 18:08:02,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Kans op tijdige oplossing Griekse crisis 'minimaal',150291802,
+2128145431,2/1/2019 21:43:30,false,4486923147,,2/1/2019 21:42:49,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,Kans op tijdige oplossing Griekse crisis 'minimaal',150291802,
+2128145431,2/3/2019 15:15:14,false,4491426720,,2/3/2019 15:14:21,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,Kans op tijdige oplossing Griekse crisis 'minimaal',150291802,
+2128145431,2/4/2019 08:53:43,false,4492953414,,2/4/2019 08:53:09,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,Kans op tijdige oplossing Griekse crisis 'minimaal',150291802,
+2128145431,2/4/2019 09:23:38,false,4493009293,,2/4/2019 09:23:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Kans op tijdige oplossing Griekse crisis 'minimaal',150291802,
+2128145432,2/1/2019 17:43:03,false,4486185275,,2/1/2019 17:40:42,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,G20-top in teken van Grexit en dreigende valuta-oorlog,150292190,
+2128145432,2/1/2019 21:38:09,false,4486909828,,2/1/2019 21:37:28,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,G20-top in teken van Grexit en dreigende valuta-oorlog,150292190,
+2128145432,2/3/2019 13:06:01,false,4491229798,,2/3/2019 13:04:47,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,G20-top in teken van Grexit en dreigende valuta-oorlog,150292190,
+2128145432,2/3/2019 15:10:18,false,4491419820,,2/3/2019 15:09:49,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,-1,G20-top in teken van Grexit en dreigende valuta-oorlog,150292190,
+2128145432,2/4/2019 09:20:24,false,4493002604,,2/4/2019 09:20:10,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,G20-top in teken van Grexit en dreigende valuta-oorlog,150292190,
+2128145433,2/1/2019 17:48:56,false,4486203471,,2/1/2019 17:48:36,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Asscher: Wet flexwerk niet na paar incidenten aanpassen,150292612,
+2128145433,2/1/2019 21:40:34,false,4486915649,,2/1/2019 21:40:10,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Asscher: Wet flexwerk niet na paar incidenten aanpassen,150292612,
+2128145433,2/3/2019 15:12:40,false,4491423232,,2/3/2019 15:12:12,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Asscher: Wet flexwerk niet na paar incidenten aanpassen,150292612,
+2128145433,2/4/2019 06:41:40,false,4492740507,,2/4/2019 06:40:57,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Asscher: Wet flexwerk niet na paar incidenten aanpassen,150292612,
+2128145433,2/4/2019 09:22:12,false,4493006270,,2/4/2019 09:21:24,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Asscher: Wet flexwerk niet na paar incidenten aanpassen,150292612,
+2128145434,2/1/2019 17:36:16,false,4486164126,,2/1/2019 17:35:18,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Triodos wil sterker inzetten op hypotheken,150292974,
+2128145434,2/1/2019 21:33:40,false,4486899428,,2/1/2019 21:33:01,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Triodos wil sterker inzetten op hypotheken,150292974,
+2128145434,2/3/2019 12:54:47,false,4491207226,,2/3/2019 12:54:23,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Triodos wil sterker inzetten op hypotheken,150292974,
+2128145434,2/3/2019 15:06:00,false,4491413834,,2/3/2019 15:05:26,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Triodos wil sterker inzetten op hypotheken,150292974,
+2128145434,2/4/2019 09:18:42,false,4492998761,,2/4/2019 09:18:26,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Triodos wil sterker inzetten op hypotheken,150292974,
+2128145435,2/1/2019 18:08:24,false,4486268792,,2/1/2019 18:08:02,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,WW teruggeschroefd,163416476,
+2128145435,2/1/2019 21:43:30,false,4486923143,,2/1/2019 21:42:49,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,-1,WW teruggeschroefd,163416476,
+2128145435,2/3/2019 15:15:14,false,4491426728,,2/3/2019 15:14:21,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,WW teruggeschroefd,163416476,
+2128145435,2/4/2019 08:53:43,false,4492953410,,2/4/2019 08:53:09,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,WW teruggeschroefd,163416476,
+2128145435,2/4/2019 09:23:38,false,4493009285,,2/4/2019 09:23:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,WW teruggeschroefd,163416476,
+2128145436,2/1/2019 18:08:59,false,4486270747,,2/1/2019 18:08:26,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Geen lagere belastingen maar banen,163464790,
+2128145436,2/1/2019 21:44:15,false,4486925280,,2/1/2019 21:43:35,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Geen lagere belastingen maar banen,163464790,
+2128145436,2/3/2019 15:15:51,false,4491427606,,2/3/2019 15:15:16,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Geen lagere belastingen maar banen,163464790,
+2128145436,2/4/2019 09:24:21,false,4493010809,,2/4/2019 09:23:59,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Geen lagere belastingen maar banen,163464790,
+2128145436,2/4/2019 11:48:56,false,4493298795,,2/4/2019 11:47:50,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,0,Geen lagere belastingen maar banen,163464790,
+2128145437,2/1/2019 18:08:59,false,4486270745,,2/1/2019 18:08:26,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,1,Hypotheekaanvragen stijgen explosief door aantrekkende woningmarkt,163500076,
+2128145437,2/1/2019 21:44:15,false,4486925285,,2/1/2019 21:43:35,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,1,Hypotheekaanvragen stijgen explosief door aantrekkende woningmarkt,163500076,
+2128145437,2/3/2019 15:15:51,false,4491427605,,2/3/2019 15:15:16,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,1,Hypotheekaanvragen stijgen explosief door aantrekkende woningmarkt,163500076,
+2128145437,2/4/2019 09:24:21,false,4493010804,,2/4/2019 09:23:59,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,1,Hypotheekaanvragen stijgen explosief door aantrekkende woningmarkt,163500076,
+2128145437,2/4/2019 11:48:56,false,4493298794,,2/4/2019 11:47:50,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,1,Hypotheekaanvragen stijgen explosief door aantrekkende woningmarkt,163500076,
+2128145438,2/1/2019 17:31:36,false,4486147932,,2/1/2019 17:31:14,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,"V&D : geen loonoffer, wel 400 ontslagen",164107322,
+2128145438,2/1/2019 21:31:45,false,4486895123,,2/1/2019 21:31:01,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,"V&D : geen loonoffer, wel 400 ontslagen",164107322,
+2128145438,2/2/2019 18:12:45,false,4489647382,,2/2/2019 18:11:16,false,clixsense,1.0,43771873,NLD,07,Weesp,89.98.188.110,-1,"V&D : geen loonoffer, wel 400 ontslagen",164107322,
+2128145438,2/3/2019 12:52:51,false,4491203889,,2/3/2019 12:52:28,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,-1,"V&D : geen loonoffer, wel 400 ontslagen",164107322,
+2128145438,2/3/2019 15:03:50,false,4491410677,,2/3/2019 15:02:59,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,"V&D : geen loonoffer, wel 400 ontslagen",164107322,
+2128145438,2/4/2019 09:17:21,false,4492995958,,2/4/2019 09:17:04,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,"V&D : geen loonoffer, wel 400 ontslagen",164107322,
+2128145439,2/1/2019 17:33:45,false,4486154653,,2/1/2019 17:31:37,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Het gevecht voor 15 dollar per uur,164107571,
+2128145439,2/1/2019 21:32:22,false,4486896600,,2/1/2019 21:31:47,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Het gevecht voor 15 dollar per uur,164107571,
+2128145439,2/3/2019 12:53:41,false,4491205220,,2/3/2019 12:52:53,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,0,Het gevecht voor 15 dollar per uur,164107571,
+2128145439,2/3/2019 15:04:40,false,4491411819,,2/3/2019 15:03:52,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Het gevecht voor 15 dollar per uur,164107571,
+2128145439,2/4/2019 09:17:38,false,4492996403,,2/4/2019 09:17:22,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,Het gevecht voor 15 dollar per uur,164107571,
+2128145440,2/1/2019 18:07:41,false,4486266515,,2/1/2019 17:51:50,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,-1,"V&D schrapt 400 banen, lonen hoeven niet omlaag",164107572,
+2128145440,2/1/2019 21:41:58,false,4486919351,,2/1/2019 21:41:13,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,"V&D schrapt 400 banen, lonen hoeven niet omlaag",164107572,
+2128145440,2/3/2019 15:13:48,false,4491424839,,2/3/2019 15:13:17,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,"V&D schrapt 400 banen, lonen hoeven niet omlaag",164107572,
+2128145440,2/4/2019 08:52:42,false,4492951389,,2/4/2019 08:52:13,false,clixsense,0.9667,33644886,NLD,"","",195.169.155.61,-1,"V&D schrapt 400 banen, lonen hoeven niet omlaag",164107572,
+2128145440,2/4/2019 09:23:05,false,4493008198,,2/4/2019 09:22:39,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,-1,"V&D schrapt 400 banen, lonen hoeven niet omlaag",164107572,
+2128145441,2/1/2019 17:40:40,false,4486177998,,2/1/2019 17:39:07,false,clixsense,0.8,32277061,NLD,"","",85.145.80.152,0,Huurstijging bepaald door kwaliteit woning,164107832,
+2128145441,2/1/2019 21:37:25,false,4486908284,,2/1/2019 21:36:46,false,clixsense,0.9,10414542,NLD,"","",80.127.237.9,0,Huurstijging bepaald door kwaliteit woning,164107832,
+2128145441,2/3/2019 13:04:46,false,4491227517,,2/3/2019 13:04:22,false,clixsense,0.9667,33644886,NLD,07,Purmerend,178.84.93.146,1,Huurstijging bepaald door kwaliteit woning,164107832,
+2128145441,2/3/2019 15:09:47,false,4491419243,,2/3/2019 15:08:56,false,neodev,1.0,29823055,NLD,03,Zwartebroek,46.129.10.19,0,Huurstijging bepaald door kwaliteit woning,164107832,
+2128145441,2/4/2019 09:20:09,false,4493001971,,2/4/2019 09:19:50,false,clixsense,0.8333,27037105,NLD,"","",213.126.236.162,0,Huurstijging bepaald door kwaliteit woning,164107832,
