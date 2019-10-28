@@ -1,19 +1,15 @@
-"""
-Tests the learning curve of the chosen CNN model
-Requires:
-  - the initialized embeddings matrix (tmp/embeddings.npy) created by prep_ml_features.py
-  - the lemmata and codings (intermediate/sentences_ml.csv) created by ml_features.R
+#! /usr/bin/env python3
+#DESCRIPTION: Test the learning curve of the chosen CNN model
+#DEPENDS: data/intermediate/sentences_ml.csv, data/tmp/w2v_320d
+#CREATES: data/intermediate/learningcurve.csv
 
-From the grid search, use: output_dim=1, 64 hidden neurons, MAE loss function, .004 learning rate, 4 epochs
-
-"""
 import csv
 import logging
-import os
-import sys
+import random
+from pathlib import Path
+
 import numpy as np
 import deeplib as lib
-import krippendorff
 from keras import backend as keras_backend
 
 # best settings according to grid search:
@@ -27,32 +23,39 @@ settings = dict(
     output_dim=2,
     batch_size=128,
     )
-np.random.seed(1)
+
+random_seed = 1
+np.random.seed(random_seed)
+random.seed(random_seed)
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s %(name)-12s %(levelname)-5s] %(message)s')
 
-base_path = os.path.dirname(sys.argv[0])
-data_path = os.path.abspath(os.path.join(base_path, "..", "..", "data"))
-data_file = os.path.join(data_path, "intermediate", "sentences_ml.csv")
-output_file = os.path.join(data_path, "intermediate", "learningcurve_dim2.csv")
-embeddings_file = os.path.join(data_path, "tmp", "w2v_320d")
+data_root = Path.cwd()/"data"
+data_file = data_root/"intermediate"/"sentences_ml.csv"
+embeddings_file = data_root/"tmp"/"w2v_320d"
+output_file = data_root/"intermediate"/"learningcurve.csv"
 
 logging.info("Loading data")
 
-train_texts, train_labels = lib.get_data(data_file, output_dim=settings['output_dim'], gold=0)
-test_texts, test_labels = lib.get_data(data_file, output_dim=settings['output_dim'], gold=1)
+train_texts, train_labels = lib.get_data(data_file, gold=0)
+test_texts, test_labels = lib.get_data(data_file, gold=1)
 
-# we tokenize on test data as well because the word_index is also used to initialize the embeddings
+train_labels = lib.encode_labels(train_labels, output_dim=settings['output_dim'])
+test_labels = lib.encode_labels(test_labels, output_dim=settings['output_dim'])
+
+# Tokenize on test data as well because the word_index is also used to initialize the embeddings
+# (and since actual words are never used this is permitted, alternative would be to rewrite the tokenization
+#  to use vocabulary from embeddings instead, but has the same result for more work)
 data, word_index = lib.tokenize(train_texts.append(test_texts))
 
 train_data = data[:len(train_texts)]
 test_data = data[len(train_texts):]
 
 logging.info("Loading embeddings")
-embeddings = lib.embeddings_matrix(word_index, embeddings_file)
+embeddings = lib.embeddings_matrix(word_index, str(embeddings_file))
 
 
-with open(output_file, 'w') as of:
+with output_file.open('w') as of:
     w = csv.writer(of)
     w.writerow(['i', 'perc', 'n', 'acc', 'cor', 'alpha'])
     of.flush()

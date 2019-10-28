@@ -1,5 +1,5 @@
 import csv
-from typing import Tuple
+from typing import Tuple, Sequence
 
 import krippendorff
 import numpy as np
@@ -29,7 +29,7 @@ def embeddings_matrix(vocabulary, embeddings_file):
     return embedding_matrix
 
 
-def get_data(data_file, shuffle=True, gold=0) -> Tuple[str, int]:
+def get_data(data_file, shuffle=True, gold=0):
     """Get the data, returning the texts and labels"""
     h = pd.read_csv(data_file)
     # drop gold, randomize rows, select train/val
@@ -41,7 +41,7 @@ def get_data(data_file, shuffle=True, gold=0) -> Tuple[str, int]:
     return texts, labels
 
 
-def encode_labels(labels: int, output_dim: int) -> np.array:
+def encode_labels(labels: Sequence[int], output_dim: int) -> np.array:
     if output_dim == 1:
         return np.asarray([[x] for x in labels])
     elif output_dim == 2:
@@ -105,14 +105,14 @@ class ValidationLogger(Callback):
         self.w.writerow(["rep", "experiment"] + keys + ["epoch", "fold", "acc", "cor", "mse", "cortot"])
         self.experiment = 0
 
-    def start_experiment(self, settings, seed=None, i=None):
+    def start_experiment(self, settings, rep=None, i=None):
         self.fold = 0
-        self.seed = seed
+        self.rep = rep
         if i is None:
             self.experiment += 1
         else:
             self.experiment = i
-        self.settings_row = [self.seed, self.experiment] + [settings[k] for k in self.keys]
+        self.settings_row = [self.rep, self.experiment] + [settings[k] for k in self.keys]
 
     def start_fold(self, x_val, y_val):
         self.fold += 1
