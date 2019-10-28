@@ -7,11 +7,13 @@ import csv
 import logging
 import random
 from pathlib import Path
+import tensorflow
 
 import numpy as np
 import pandas as pd
 import deeplib as lib
 from keras import backend as keras_backend
+import os
 
 # best settings according to grid search:
 settings = dict(
@@ -24,10 +26,15 @@ settings = dict(
     output_dim=2,
     batch_size=128,
     )
+N_REP = 10
+
+# Note: This doesn't seem to actually make it deterministic, also not after following instructions from
+# https://github.com/NVIDIA/tensorflow-determinism
 
 random_seed = 1
 np.random.seed(random_seed)
 random.seed(random_seed)
+tensorflow.random.set_seed(random_seed)
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s %(name)-12s %(levelname)-5s] %(message)s')
 
@@ -66,21 +73,27 @@ model = lib.cnn_model(settings=settings,
                       max_sequence_length=train_data.shape[1],
                       embeddings_matrix=embeddings)
 
-model.fit(train_data, train_labels, epochs=settings['epochs'], batch_size=settings['batch_size'], verbose=0)
-
-output = model.predict(test_data)
-keras_backend.clear_session()
-
-p = list(lib.predict(output))
-
-# Also 'predict' the true labels to convert from N neurons to single value
-actual = lib.predict(test_labels)
-acc = sum([x == y for (x, y) in zip(p, actual)]) / len(p)
-logging.info(f"Accuracy: {acc}")
-
+accs = []
 with output_file.open('w') as outf:
     w = csv.writer(outf)
-    w.writerow(["id", "prediction", "actual"])
-    for i, pred in enumerate(p):
-        w.writerow([test_ids[i], pred, actual[i]])
+    w.writerow(["i", "id", "prediction", "actual"])
 
+    for it in range(N_REP):
+
+        model.fit(train_data, train_labels, epochs=settings['epochs'], batch_size=settings['batch_size'], verbose=0)
+
+        output = model.predict(test_data)
+        keras_backend.clear_session()
+
+        p = list(lib.predict(output))
+
+        # Also 'predict' the true labels to convert from N neurons to single value
+        actual = lib.predict(test_labels)
+        acc = sum([x == y for (x, y) in zip(p, actual)]) / len(p)
+        accs.append(acc)
+        logging.info(f"Iteration {it}/{N_REP}, accuracy: {acc}")
+
+        for i, pred in enumerate(p):
+            w.writerow([it, test_ids[i], pred, actual[i]])
+
+logging.info(f"Done, overall accuracy {sum(accs)/len(accs)}")
