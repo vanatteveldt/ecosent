@@ -1,16 +1,17 @@
 #! /usr/bin/env Rscript
-#DESCRIPTION: Get crowd coding data from figure-8
+#DESCRIPTION: Get crowd coding data from figure-8 exports
 #CREATES: data/intermediate/crowdcodings.csv
-#DEPENDS: data/raw-private/figure8_api_key, data/intermediate/gold.csv
+#DEPENDS: data/raw/f1345162.csv, data/raw/f1386488.csv
 #OPTIONAL: TRUE
 
-# Note: Requires the figure 8 API key 
-library(tidyverse)
-key = read_file("data/raw-private/figure8_api_key")
-figr8::set.api.key(key)
+library(dplyr)
+library(readr)
 
-gold = read_csv("data/intermediate/gold.csv")
+read_crowd = function(filename) read_csv(filename, col_types=cols_only(id="i", `_golden`="l", `_trust`="d", sentiment="i")) %>%
+  filter(!`_golden`) %>% select(id, trust=`_trust`, tone=sentiment)
 
-crowd = figr8::results(1345162) %>% as_tibble
-crowd = crowd %>% filter(id %in% gold$id) %>% select(id, tone=sentiment) %>% mutate(id=as.integer(id), tone=as.numeric(tone))
+files = c("1345162"="data/raw/f1345162.csv", "1386488"="data/raw/f1386488.csv")
+
+crowd = purrr::map_df(files, read_crowd, .id="job")
+
 write_csv(crowd, "data/intermediate/crowdcodings.csv")

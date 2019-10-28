@@ -5,7 +5,6 @@
 
 ### Article metadata and manual codings
 # Requires access to the SPSS file from Boukes et al.. Metadata and codings are saved to (public) intermediate folder)
-library(haven)
 source("src/lib/functions.R")
 
 d_raw = haven::read_sav("data/raw-private/Inhoudsanalyse_AllesMerged_noICR_Wouter.sav")
@@ -20,7 +19,7 @@ d = d_raw %>% mutate(ID=as.integer(ID),
          is_economy=as.integer(is_economy),
          coder=as.integer(coder))
 
-d2_raw = read_csv2("data/raw/icr_data.csv")
+d2_raw =read_csv2("data/raw/icr_data.csv", col_types = cols_only(ID="i", Codeur="i", outlet="i", Source="i", Toon_Kop="i", headline="c", Economisch="i", date="c"))
 d2 = d2_raw %>% mutate(medium=value_labels(outlet, labels_col=d_raw$outlet), 
                        medtype=value_labels(Source, labels_col=d_raw$Source), 
                        tone_raw=value_labels(Toon_Kop, labels_col=d_raw$Toon_Kop),
