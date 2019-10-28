@@ -1,5 +1,4 @@
 library(tidyverse)
-library(magrittr)
 
 .project_root = getwd()
 while (!str_ends(.project_root, "/ecosent")) .project_root = normalizePath(file.path(.project_root, ".."))
