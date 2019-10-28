@@ -11,7 +11,7 @@ DATA_PRIVATE = Path("data/raw-private")
 
 SRC_PROCESSING = Path("src/data-processing")
 
-EXT_SCRIPT = {".py", ".R", ".Rmd"}
+EXT_SCRIPT = {".py", ".R", ".Rmd", ".sh"}
 
 def get_scripts(folder):
     return get_files(folder, EXT_SCRIPT)
@@ -49,8 +49,22 @@ def task_install():
         yield {
             'name': f"Install R dependencies using {packrat}",
             'file_dep': [packrat],
-            'actions': [f"Rscript -e 'packrat::restore()'"]
+            'actions': [f"Rscript -e 'if (!require(packrat)) install.packages(\"packrat\"); packrat::restore()'"]
         }
+    requirements = Path("requirements.txt")
+    if requirements.is_file():
+        lib = Path.cwd()/"src"/"lib"
+        yield {
+            'name': f"Install python dependencies in virtual environment env from {requirements}",
+            'file_dep': [requirements],
+            'targets': ['env'],
+            'actions': ["python3 -m venv env",
+                        "env/bin/pip install -U pip wheel",
+                        f"env/bin/pip install -r {requirements}",
+                        f'export LIB=`ls env/lib`; echo "{lib}" > "env/lib/$LIB/site-packages/compendium_extra.pth"'],
+            'verbosity': 2
+        }
+
 
 def _get_passphrase():
     if get_var('passphrase'):
@@ -69,7 +83,7 @@ def task_decrypt():
         for inf in gpg_files:
             outf = DATA_PRIVATE/inf.stem
             if passphrase:
-                action = f'gpg --batch --yes --passphrase "{passphrase}" -o {outf} -d {inf}'
+                action = f'mkdir -p {DATA_PRIVATE} &&  gpg --batch --yes --passphrase "{passphrase}" -o {outf} -d {inf}'
             else:
                 action = error_cannot_decrypt
                 
@@ -94,6 +108,9 @@ def task_process():
                 if inf:
                     action = f"{action} < {inf}"
                 action = f"{action} > {target}"
+            if file.suffix == ".py":
+                # Activate virtual environent before calling script
+                action = f"(. env/bin/activate; {action})"
             action = f'{action} && echo "[OK] {file.name} completed" 1>&2'
                 
             result = dict(
@@ -105,10 +122,11 @@ def task_process():
                 result['doc'] = headers['DESCRIPTION']
 
             if inf:
-                result['file_dep']=inf
+                result['file_dep'] = inf
             else:
-                result['uptodate']=[True]  # task is up-to-date if target exists
+                result['uptodate'] = [True]  # task is up-to-date if target exists
             yield(result)
+
 
 def do_encrypt(args):
     if args.files:
@@ -125,7 +143,6 @@ def do_encrypt(args):
         subprocess.check_call(cmd)
 
 
-            
 if __name__ == '__main__':
     import argparse
     import sys
