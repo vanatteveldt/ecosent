@@ -34,7 +34,7 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s %(name)-12s %(level
 data_root = Path.cwd()/"data"
 data_file = data_root/"intermediate"/"sentences_ml.csv"
 embeddings_file = data_root/"tmp"/"w2v_320d"
-output_file = data_root/"intermediate"/"learningcurve.csv"
+output_file = data_root/"intermediate"/"cnn_predictions.csv"
 
 logging.info("Loading data")
 
@@ -54,7 +54,7 @@ test_data = tokens[data.gold == 1]
 train_labels = labels[data.gold == 0]
 test_labels = labels[data.gold == 1]
 
-test_ids = data.id[data.gold == 1]
+test_ids = data.id[data.gold == 1].values
 
 logging.info("Loading embeddings")
 embeddings = lib.embeddings_matrix(word_index, str(embeddings_file))
