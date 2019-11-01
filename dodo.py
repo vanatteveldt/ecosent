@@ -1,7 +1,10 @@
 import subprocess
 import re
+from collections import namedtuple
 from pathlib import Path
 import logging
+from typing import Iterable, List, Tuple, Optional, NamedTuple, Dict
+
 from doit.action import CmdAction
 from doit import get_var
 
@@ -13,10 +16,16 @@ SRC_PROCESSING = Path("src/data-processing")
 
 EXT_SCRIPT = {".py", ".R", ".Rmd", ".sh"}
 
-def get_scripts(folder):
-    return get_files(folder, EXT_SCRIPT)
-    
-def get_files(folder, suffix=None):
+
+class Action(NamedTuple):
+    file: Path
+    action: str
+    targets: List[Path]
+    inputs: List[Path]
+    headers: Dict[str, str]
+
+
+def get_files(folder: Path, suffix=None) -> List[Path]:
     if isinstance(suffix, str):
         suffix = [suffix]
     path = Path.cwd()/folder
@@ -26,11 +35,8 @@ def get_files(folder, suffix=None):
     return [f for f in path.iterdir() if (f.is_file() and ((suffix is None) or (f.suffix in suffix)))]
 
 
-def parse_files(text):
-    return [Path(x.strip()) for x in text.split(",")]
-
-def get_headers(file: Path):
-    for i, line in enumerate(open(file)):
+def get_headers(file: Path) -> Iterable[Tuple[str, str]]:
+    for i, line in enumerate(file.open()):
         if not line.strip():
             continue
         if not line.startswith("#"):
@@ -40,6 +46,34 @@ def get_headers(file: Path):
         m = re.match(r"#(\w+?):(.*)", line)
         if m:
             yield m.groups()[0].strip(), m.groups()[1].strip()
+
+
+def parse_files(text: str) -> List[Path]:
+    if not text or not text.strip():
+        return []
+    return [Path(x.strip()) for x in re.split("[ ,]+", text)]
+
+
+def get_actions():
+    """Yield all processing and analysis scripts"""
+    for file in get_files(SRC_PROCESSING, suffix=EXT_SCRIPT):
+        headers = dict(get_headers(file))
+        if "CREATES" in headers and "COMMAND" in headers:
+            targets = parse_files(headers["CREATES"])
+            inputs = parse_files(headers.get("DEPENDS"))
+            # build action
+            action = f"{headers['COMMAND']} {file}"
+            if headers.get("PIPE", "F")[0].lower() == "t":
+                if len(inputs) > 1 or len(targets) > 1:
+                    raise ValueError("File {file}: Cannot use PIPE with multiple inputs or outputs")
+                if inputs:
+                    action = f"{action} < {inputs[0]}"
+                action = f"{action} > {targets[0]}"
+            if file.suffix == ".py":
+                # Activate virtual environent before calling script
+                action = f"(. env/bin/activate; {action})"
+            action = f'{action} && echo "[OK] {file.name} completed" 1>&2'
+            yield Action(file, action, targets, inputs, headers)
 
 
 def task_install():
@@ -71,6 +105,7 @@ def _get_passphrase():
         return get_var('passphrase')
     return None
 
+
 def error_cannot_decrypt():
     raise Exception('Cannot decrypt files as no passphrase is given. Use `doit passphrase="Your passphrase"` to specify')
 
@@ -86,7 +121,6 @@ def task_decrypt():
                 action = f'mkdir -p {DATA_PRIVATE} &&  gpg --batch --yes --passphrase "{passphrase}" -o {outf} -d {inf}'
             else:
                 action = error_cannot_decrypt
-                
 
             yield {
                 'name': outf,
@@ -97,32 +131,17 @@ def task_decrypt():
 
 
 def task_process():
-    """Run processing scripts from src/data-processing"""
-    for file in get_scripts(SRC_PROCESSING):
-        headers = dict(get_headers(file))
-        if "CREATES" in headers and "COMMAND" in headers:
-            target = parse_files(headers["CREATES"])
-            inf = parse_files(headers["DEPENDS"]) if "DEPENDS" in headers else None
-            action = f"{headers['COMMAND']} {file}"
-            if headers.get("PIPE", "F")[0].lower() == "t":
-                if inf:
-                    action = f"{action} < {inf}"
-                action = f"{action} > {target}"
-            if file.suffix == ".py":
-                # Activate virtual environent before calling script
-                action = f"(. env/bin/activate; {action})"
-            action = f'{action} && echo "[OK] {file.name} completed" 1>&2'
-                
+    """Create tasks for the processing scripts in src/data-processing"""
+    for action in get_actions():
             result = dict(
-                basename=f"process:{file.name}",
-                targets=target,
-                actions=[action],
+                basename=f"process:{action.file.name}",
+                targets=action.targets,
+                actions=[action.action],
             )
-            if 'DESCRIPTION' in headers:
-                result['doc'] = headers['DESCRIPTION']
-
-            if inf:
-                result['file_dep'] = inf
+            if 'DESCRIPTION' in action.headers:
+                result['doc'] = action.headers['DESCRIPTION']
+            if action.inputs:
+                result['file_dep'] = action.inputs
             else:
                 result['uptodate'] = [True]  # task is up-to-date if target exists
             yield(result)
@@ -143,6 +162,25 @@ def do_encrypt(args):
         subprocess.check_call(cmd)
 
 
+def do_document(args):
+    actions = list(get_actions())
+    nodes, nodemap, edges = [], {}, []
+    def get_node(file):
+        if file not in nodemap:
+            name = f"n_{len(nodemap)}"
+            nodemap[file] = name
+            nodes.append(f'\n{node} [label="{action.file}"];')
+        return nodemap[file]
+
+    for i, action in enumerate(actions):
+        node = get_node(action.file)
+        for inf in action.inputs:
+            edges.append(f'\n{inf} -> {node};')
+    nodes = "\n".join(nodes)
+    edges = "\n".join(edges)
+    dot = f'digraph G {{\n{nodes}\n\n{edges}\n}}\n'
+    print(dot)
+
 if __name__ == '__main__':
     import argparse
     import sys
@@ -150,11 +188,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description = "Doit file for data compendium. Run `doit` to generate files and results rather than running this script. As author, you can use this script to generate documentation or encrypt private files. ")
 
     subparsers = parser.add_subparsers(help='Action to perform')
-    
+
     encrypt = subparsers.add_parser('encrypt', help='Encrypt private files')
     encrypt.add_argument('passphrase', help='Passphrase for encryption')
     encrypt.add_argument('files', nargs="*", help='Files to encrypt (if blank, encrypt all private files)')
     encrypt.set_defaults(func=do_encrypt)
+
+    encrypt = subparsers.add_parser('document', help='Generate documentation')
+    encrypt.set_defaults(func=do_document)
 
     if len(sys.argv) <= 1:
         parser.print_help()
