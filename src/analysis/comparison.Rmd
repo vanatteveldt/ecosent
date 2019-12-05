@@ -18,6 +18,8 @@ Load the required packages and source the auxilliary functions from `lib/functio
 
 ```{r import, message=F, warning=F}
 library(dplyr)
+library(readr)
+library(stringr)
 library(magrittr)
 source("src/lib/functions.R")
 ```
@@ -42,6 +44,10 @@ gold = read_csv("data/intermediate/gold.csv")  %>% select(id, tone=gold) %>% fil
 ```{r dict}
 dict = read_csv("data/intermediate/dictionary_output.csv") %>% rename(id=ID) %>% select(-headline_recessie) 
 colnames(dict) = colnames(dict) %>% gsub(pattern = "headline_", replacement = "")
+
+dict2 = read_csv("data/intermediate/dictionary_output2.csv")
+dict = left_join(dict, dict2)
+
 cmp = left_join(gold, dict)
 ```
 
@@ -51,7 +57,6 @@ Read data and randomly choose up to 3 coders per article:
 
 ```{r student}
 students = read_csv("data/intermediate/manual_codings.csv") %>% select(id, Codeur=coder, tone) %>% filter(id %in% gold$id, !is.na(tone))
-
 set.seed(1)
 students = students %>% arrange(sample(xtfrm(id)))
 students = students %>% group_by(id) %>% mutate(xcoder = row_number()) %>% ungroup
@@ -63,10 +68,11 @@ Calculate majority vote and add columns for each indidivudal coder and for the m
 ```{r student-vote}
 v = vote(students, 2)
 
+
 cmp = left_join(cmp, students %>% filter(xcoder == 1) %>% select(id, student1_1=tone)) %>% 
   left_join(students %>% filter(xcoder == 2) %>% select(id, student1_2=tone)) %>% 
   left_join(students %>% filter(xcoder == 3) %>% select(id, student1_3=tone)) %>% 
-  left_join(v %>% select(id, student3=tone)) %>% replace_na(list(student3=0))
+  left_join(v %>% select(id, student3=tone))
 ```
 
 ## Crowd coding
@@ -110,15 +116,19 @@ for(keep in names(predictions)[grep("1_._1|3_.0?_2", names(predictions))]) {
 cmp = left_join(cmp, crowd_pred)
 ```
 
-## Classical ML
+## Machine learning
 
 ```{r svm}
 svm = read_csv("data/intermediate/svm_predictions.csv") %>% select(id, SVM=prediction)
+cnn = read_csv("data/intermediate/cnn_predictions.csv")
+cnn = cnn %>% select(id, i, prediction) %>% mutate(i=str_c("CNN_", i)) %>% spread(i, prediction)
 
-cmp = left_join(cmp, svm)
+cmp = left_join(cmp, svm) %>% left_join(cnn)
 ```
 
+
 # Results
+
 
 ## Crowd coding coverage / accuracy
 
@@ -126,8 +136,10 @@ cmp = left_join(cmp, svm)
 
 res = crowd_results %>% group_by(N, support) %>% summarize(cov=mean(cov), acc=mean(acc), alpha=mean(alpha))
 
+pdf("report/figures/crowd.pdf")
 ggplot(res, aes(x=cov, y=alpha, color=factor(N), label=paste0("≥", support, " / ", N))) + geom_point() + geom_line() + geom_text(vjust=1) + 
-  ylim(.8, 1) + theme(legend.position="none") + xlab("Coverage") + ylab("Alpha (ordinal)")
+  ylim(.8, 1) + xlab("Coverage") + ylab("Alpha (ordinal)") + theme_minimal()+ theme(legend.position="none") 
+dev.off()
 
 ```
 
@@ -136,6 +148,8 @@ ggplot(res, aes(x=cov, y=alpha, color=factor(N), label=paste0("≥", support, " 
 Trichotomize all values and compute accuracy for each computed column:
 
 ```{r accuracy-compute}
+cmp$HuLiu = -cmp$HuLiu
+
 # trichotomized accuracy
 bin = function(x) ifelse(x<0, -1, ifelse(x>0, 1, 0))
 res = list()
@@ -147,37 +161,53 @@ for(col in colnames(cmp)[-2:-1]) {
 }
 order = c("tone", "student1", "student3", "crowd1", "crowd3", "crowd5", "CNN", "SVM", "DANEW", "pattern", "polyglot", "boukes", "LMcD", "AFINN", "LSS")
 
-x = bind_rows(res) %>% separate(source, c("method", "i"), fill="right") %>% mutate(method=factor(method, levels=order)) %>% 
+perf = bind_rows(res) %>% separate(source, c("method", "i"), fill="right") %>% mutate(method=  fct_relevel(method, order)) %>% 
   group_by(method) %>% summarize(acc=mean(acc), alpha=mean(alpha), corr=mean(corr))
-x
 ```
 
 Display as heat map:
 
 ```{r accuracy}
-x %>% as.data.frame %>% (function (x) {rownames(x)=x$method; x %>% select(-method)}) %>% as.matrix %>% t %>% 
-  ggcorrplot::ggcorrplot(lab=T, show.legend = F) +   
-  labs(title = "Comparison of different methods to gold standard",
-       caption = paste("Note: student3 (and crowd3, crowd5) are the majority vote between 3 (or 5) student/crowd coders.",
-                       "student1, crowd1, and crowd3 are summary values for multiple (combinations of) coders.",
-                       "RNN=Recursive Neural Network using Amsterdam Embedding Model;",
-                       "Emb+NN=Neural Network trained on embeddings summed per doc;",
-                        "SVM=Support Vector Model on tfidf-weighted freqs",
-                       sep="\n")) +
+trans = c("tone"="Gold", "student1"="Student (single coder)", "student3"="Student (majority of 3)", "crowd1"="Crowd (single coder", "crowd3"="Crowd (majority of 3)", "crowd5"="Crowd (majority of 5)",
+          "CNN"="Convolutional Neural Network", "SVM"="Support Vector Machine", 
+          "DANEW"="DANEW", "pattern"="pattern", "polyglot"="Polyglot", "boukes"="Damstra & Boukes (2018)", "AFINN"="Affective norm for English", 
+          "geninq"="Augmented General Inquirer", "HuLiu"="Hu & Liu (2004)", "LMD"="Loughran & McDonald (2014)", "LSD"="Lexicoder", "rid"="Regressive Imagery")
+trans = tibble(method=names(trans), name=trans)
+
+
+
+
+pdf("report/figures/perf.pdf", width = 5, height=10)
+left_join(perf, trans) %>% as.data.frame %>% (function (x) {rownames(x)=x$name; x %>% select(-name, -method)}) %>% as.matrix %>% t %>% 
+  ggcorrplot::ggcorrplot(lab=T, show.legend = F, colors = c("darkred", "white", "darkgreen")) +   
   scale_x_discrete(position = "top") + theme(axis.text.x = element_text(angle = 0, hjust = .5))
+dev.off()
 ```
+
+
+
 
 ## Correlations between various methods
 
 ```{r corr}
-x = cor(cmp[-1], use="pairwise") %>% as_tibble(rownames="method") %>% gather("method2", "cor", -method) %>% 
+
+corr = cor(cmp[-1], use="pairwise") %>% as_tibble(rownames="method") %>% gather("method2", "cor", -method) %>% 
   separate(method, c("method", "i"), fill="right") %>% separate(method2, c("method2", "i2"), fill="right") %>%
-  mutate(method=factor(method, levels=order), method2=factor(method2, levels=order)) %>% 
-  group_by(method, method2) %>% summarize(cor=round(mean(cor), 2)) %>% spread(method2, cor)
-x %>% as.data.frame %>% (function (x) {rownames(x)=x$method; x %>% select(-method)}) %>% as.matrix %>% t %>% 
-    ggcorrplot::ggcorrplot(lab=T) +   labs(title = "Correlation between methods",
-                                           caption = paste("Note: student3 (and crowd3, crowd5) are the majority vote between 3 (or 5) student/crowd coders.",
-                                                           "studen1, crowd1, and crowd3 are summary values for multiple (combinations of) coders,",
-                                                           "so the diagonal reflects the average correlation between them",
-                                                           sep="\n"))
+  left_join(trans) %>% left_join(trans %>% rename(method2=method, name2=name)) %>% 
+  mutate(name=fct_relevel(name, trans$name), method2=fct_relevel(name2, trans$name)) %>% 
+  group_by(name, name2) %>% summarize(cor=round(mean(cor), 2)) %>% spread(name2, cor)
+corr = as.data.frame(corr)
+rownames(corr) = corr$name
+corr = corr[trans$name]
+
+pdf("report/figures/corr.pdf", width=10)
+corr %>% ggcorrplot::ggcorrplot(lab=T, show.legend = F, colors = c("darkred", "white", "darkgreen"), lab_size=3)  
+dev.off()
+#+   labs(title = "Correlation between methods",
+#                                           caption = paste("Note: student3 (and crowd3, crowd5) are the majority vote between 3 (or 5) student/crowd coders.",
+#                                                           "studen1, crowd1, and crowd3 are summary values for multiple (combinations of) coders,",
+#                                                           "so the diagonal reflects the average correlation between them",
+#                                                           sep="\n"))
+
+
 ```
