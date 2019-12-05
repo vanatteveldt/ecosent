@@ -8,8 +8,8 @@ output:
 editor_options: 
   chunk_output_type: console
 knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding, knit_root_dir="..") 
   })
+  rmarkdown::render(inputFile, encoding = encoding, knit_root_dir="..") 
 ---
 
 # Setup
@@ -17,9 +17,9 @@ knit: (function(inputFile, encoding) {
 Load the required packages and source the auxilliary functions from `lib/functions.R`:
 
 ```{r import, message=F, warning=F}
-library(tidyverse)
+library(dplyr)
 library(magrittr)
-source("lib/functions.R")
+source("src/lib/functions.R")
 ```
 
 ```{r setup, include=FALSE}
@@ -34,13 +34,13 @@ Load the data sets that contain the scoring of the gold data
 ## Gold data
 
 ```{r data}
-gold = read_csv(data_file("gold.csv"))  %>% select(id, tone=gold) %>% filter(!is.na(tone))
+gold = read_csv("data/intermediate/gold.csv")  %>% select(id, tone=gold) %>% filter(!is.na(tone))
 ```
 
 ## Dictionary output
 
 ```{r dict}
-dict = read_csv(data_file("dictionary_output.csv")) %>% rename(id=ID) %>% select(-headline_recessie) 
+dict = read_csv("data/intermediate/dictionary_output.csv") %>% rename(id=ID) %>% select(-headline_recessie) 
 colnames(dict) = colnames(dict) %>% gsub(pattern = "headline_", replacement = "")
 cmp = left_join(gold, dict)
 ```
@@ -50,12 +50,12 @@ cmp = left_join(gold, dict)
 Read data and randomly choose up to 3 coders per article:
 
 ```{r student}
-students = read_csv(data_file("manual_codings.csv"), col_types = "ciici") %>% select(id=ID, Codeur, tone) %>% filter(id %in% gold$id, !is.na(tone)) %>% mutate(id=as.numeric(id))
+students = read_csv("data/intermediate/manual_codings.csv") %>% select(id, Codeur=coder, tone) %>% filter(id %in% gold$id, !is.na(tone))
 
 set.seed(1)
-students %<>% arrange(sample(xtfrm(id)))
-students %<>% group_by(id) %>% mutate(xcoder = row_number()) %>% ungroup
-students %<>% filter(xcoder %in% 1:3) 
+students = students %>% arrange(sample(xtfrm(id)))
+students = students %>% group_by(id) %>% mutate(xcoder = row_number()) %>% ungroup
+students = students %>% filter(xcoder %in% 1:3) 
 ```
 
 Calculate majority vote and add columns for each indidivudal coder and for the majority decision
@@ -63,7 +63,7 @@ Calculate majority vote and add columns for each indidivudal coder and for the m
 ```{r student-vote}
 v = vote(students, 2)
 
-cmp %<>% left_join(students %>% filter(xcoder == 1) %>% select(id, student1_1=tone)) %>% 
+cmp = left_join(cmp, students %>% filter(xcoder == 1) %>% select(id, student1_1=tone)) %>% 
   left_join(students %>% filter(xcoder == 2) %>% select(id, student1_2=tone)) %>% 
   left_join(students %>% filter(xcoder == 3) %>% select(id, student1_3=tone)) %>% 
   left_join(v %>% select(id, student3=tone)) %>% replace_na(list(student3=0))
@@ -72,8 +72,8 @@ cmp %<>% left_join(students %>% filter(xcoder == 1) %>% select(id, student1_1=to
 ## Crowd coding
 
 ```{r crowd}
-crowd = read_csv(data_file("crowdcodings.csv"))
-crowd %<>% group_by(id) %>% mutate(coder = row_number()) %>% filter(coder <= 5)
+crowd = read_csv("data/intermediate/crowdcodings.csv")
+crowd = crowd %>% group_by(id) %>% mutate(coder = row_number()) %>% filter(coder <= 5)
 ```
 
 For each subset of coders, do majority voting, store results and accuracy
@@ -88,7 +88,7 @@ for(N in 1:5) {
   for (i in seq_along(coder_sets)) {
     coders = coder_sets[[i]]
     minthres = floor(N/2) + 1
-      for (thres in minthres:N) {
+    for (thres in minthres:N) {
       v = vote(crowd %>% filter(coder %in% coders), thres)
       predictions[[paste(N, i, thres, sep = "_")]] = v
       crowd_results = rbind(crowd_results, compare(v, gold,  N=N, support=thres, i=i))
@@ -108,6 +108,14 @@ for(keep in names(predictions)[grep("1_._1|3_.0?_2", names(predictions))]) {
   crowd_pred =  full_join(crowd_pred, p, by="id")
 }
 cmp = left_join(cmp, crowd_pred)
+```
+
+## Classical ML
+
+```{r svm}
+svm = read_csv("data/intermediate/svm_predictions.csv") %>% select(id, SVM=prediction)
+
+cmp = left_join(cmp, svm)
 ```
 
 # Results

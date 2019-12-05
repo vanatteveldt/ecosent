@@ -191,11 +191,6 @@ GithubRepo: figr8
 GithubUsername: vanatteveldt
 GithubRef: master
 GithubSha1: 7e119b2c964fd758d94db334e9c1123ff59eef5e
-RemoteHost: api.github.com
-RemoteRepo: figr8
-RemoteUsername: vanatteveldt
-RemoteRef: master
-RemoteSha: 7e119b2c964fd758d94db334e9c1123ff59eef5e
 
 Package: forcats
 Source: CRAN
@@ -295,6 +290,12 @@ Source: CRAN
 Version: 0.3.1
 Hash: 9d6de5178c1cedabfb24e7d2acc9a092
 
+Package: irr
+Source: CRAN
+Version: 0.84.1
+Hash: 3d8a424deea015dfb1828172ad6d1141
+Requires: lpSolve
+
 Package: jsonlite
 Source: CRAN
 Version: 1.6
@@ -327,6 +328,11 @@ Source: CRAN
 Version: 0.1.0
 Hash: fd2ceffa778c010fab2df12b2eccd835
 Requires: glue, rlang
+
+Package: lpSolve
+Source: CRAN
+Version: 5.6.13.3
+Hash: 61dcd741e22ce31dc98a9eeaffdf3d7b
 
 Package: lubridate
 Source: CRAN

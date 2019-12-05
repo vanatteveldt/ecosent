@@ -9,12 +9,22 @@ from doit.action import CmdAction
 from doit import get_var
 
 
-DATA_ENCRYPTED = Path("data/raw-private-encrypted")
-DATA_PRIVATE = Path("data/raw-private")
+ROOT = Path.cwd()
+DATA = ROOT/"data"
+DATA_ENCRYPTED = DATA/"raw-private-encrypted"
+DATA_PRIVATE = DATA/"raw-private"
 
-SRC_PROCESSING = Path("src/data-processing")
+SRC = ROOT/"src"
+SRC_PROCESSING = SRC/"data-processing"
+SRC_ANALYSIS = SRC/"data-processing"
 
 EXT_SCRIPT = {".py", ".R", ".Rmd", ".sh"}
+
+
+def contained_in(parent: Path, descendant: Path) -> bool:
+    if parent.is_absolute():
+        descendant = descendant.absolute()
+    return str(descendant.absolute()).startswith(str(parent))
 
 
 class Action(NamedTuple):
@@ -162,24 +172,63 @@ def do_encrypt(args):
         subprocess.check_call(cmd)
 
 
+def do_document2(args):
+    actions = list(get_actions())
+    md = "# Data processing scripts"
+    md += "\n\nThis folder contains the following scripts:\n\n"
+    for action in actions:
+        inputs =  ",".join(f"[{f.name}]({f})" for f in action.inputs)
+        targets = ",".join(f"[{f.name}]({f})" for f in action.targets)
+        md += f"- [{action.file.name}](action.file): [{inputs} -> {targets}]  \n  {action.headers.get('DESCRIPTION')}  \n  \n"
+    print(md)
+
+
+
 def do_document(args):
     actions = list(get_actions())
     nodes, nodemap, edges = [], {}, []
+
     def get_node(file):
+        file = file.absolute()
+        if contained_in(DATA_ENCRYPTED, file):
+            shape = "box3d"
+            file = file.relative_to(DATA)
+        if contained_in(DATA, file):
+            shape = "note"
+            file = file.relative_to(DATA)
+        elif contained_in(SRC_PROCESSING, file):
+            shape = "cds"
+            file = file.relative_to(SRC_PROCESSING)
+        elif contained_in(SRC_ANALYSIS, file):
+            shape = "component"
+            file = file.relative_to(SRC_ANALYSIS)
+
         if file not in nodemap:
             name = f"n_{len(nodemap)}"
             nodemap[file] = name
-            nodes.append(f'\n{node} [label="{action.file}"];')
+            label = str(file).replace("/", "/\\n")
+            nodes.append(f'\n{name} [label="{label}", shape="{shape}"];')
         return nodemap[file]
+
+    for inf in get_files(DATA_ENCRYPTED, ".gpg"):
+        outf = DATA_PRIVATE/inf.stem
+        node = get_node(inf)
+        node2 = get_node(outf)
+        edges.append(f'\n{node} -> {node2};')
 
     for i, action in enumerate(actions):
         node = get_node(action.file)
-        for inf in action.inputs:
-            edges.append(f'\n{inf} -> {node};')
+        for f in action.inputs:
+            node2 = get_node(f)
+            edges.append(f'\n{node2} -> {node};')
+        for f in action.targets:
+            node2 = get_node(f)
+            edges.append(f'\n{node} -> {node2};')
     nodes = "\n".join(nodes)
     edges = "\n".join(edges)
-    dot = f'digraph G {{\n{nodes}\n\n{edges}\n}}\n'
+    dot = f'digraph G {{graph [rankdir="LR"]; \n{nodes}\n\n{edges}\n}}\n'
     print(dot)
+
 
 if __name__ == '__main__':
     import argparse
@@ -195,7 +244,7 @@ if __name__ == '__main__':
     encrypt.set_defaults(func=do_encrypt)
 
     encrypt = subparsers.add_parser('document', help='Generate documentation')
-    encrypt.set_defaults(func=do_document)
+    encrypt.set_defaults(func=do_document2)
 
     if len(sys.argv) <= 1:
         parser.print_help()

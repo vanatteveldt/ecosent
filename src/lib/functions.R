@@ -1,12 +1,4 @@
-library(tidyverse)
-
-.project_root = getwd()
-while (!str_ends(.project_root, "/ecosent")) .project_root = normalizePath(file.path(.project_root, ".."))
-
-data_file = function(filename, folder="intermediate") {
-  file.path(.project_root, "data", folder) %>% normalizePath(mustWork = T) %>% file.path(filename)
-}
-
+library(dplyr)
 
 #' Majority voting for multiple coders. Assumes that columns id and tone point to a unique doc id and the coded tone, respectively
 vote = function(data, thres) {
