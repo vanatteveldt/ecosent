@@ -1,6 +1,6 @@
 PackratFormat: 1.4
 PackratVersion: 0.5.0
-RVersion: 3.6.0
+RVersion: 3.6.2
 Repos: CRAN=https://cloud.r-project.org
 
 Package: BH
@@ -20,6 +20,11 @@ Hash: f72fd6ee6cf1656384503d6c7ca6cd96
 Requires: crosstalk, htmltools, htmlwidgets, jsonlite, magrittr,
     promises
 
+Package: ISOcodes
+Source: CRAN
+Version: 2020.03.16
+Hash: 2d62b9ffdfb21a674ecef48d2772c894
+
 Package: R6
 Source: CRAN
 Version: 2.4.0
@@ -34,6 +39,27 @@ Package: Rcpp
 Source: CRAN
 Version: 1.0.2
 Hash: d04e441a8d398e3d3a71f294c07fa94d
+
+Package: RcppArmadillo
+Source: CRAN
+Version: 0.9.860.2.0
+Hash: ea7e986da2173a3091d6b5accbb3c7df
+Requires: Rcpp
+
+Package: RcppParallel
+Source: CRAN
+Version: 5.0.0
+Hash: a7b555b4e1e5bee59bac661aca7887b0
+
+Package: Rttf2pt1
+Source: CRAN
+Version: 1.3.8
+Hash: 423c2ce5a03d99baef7b17d6d5b0dbe2
+
+Package: SnowballC
+Source: CRAN
+Version: 0.7.0
+Hash: ff15b7ebc1ab863046b2309eec12166a
 
 Package: askpass
 Source: CRAN
@@ -96,6 +122,11 @@ Source: CRAN
 Version: 1.2.0
 Hash: a76a309884277a4fd8a5d741965fbef5
 
+Package: coda
+Source: CRAN
+Version: 0.19-3
+Hash: a6bd401a844d5fc9e5d9589dc0197acb
+
 Package: colorspace
 Source: CRAN
 Version: 1.4-1
@@ -127,6 +158,11 @@ Package: curl
 Source: CRAN
 Version: 4.2
 Hash: 3d7392b36f838a538683f98e580f35dd
+
+Package: data.table
+Source: CRAN
+Version: 1.12.8
+Hash: 283ad0e503ab521300c6d1d02e58d2ae
 
 Package: dbplyr
 Source: CRAN
@@ -173,6 +209,17 @@ Source: CRAN
 Version: 0.14
 Hash: 18306cc3bc1aec7b7360eea8a0eb0ee1
 
+Package: extrafont
+Source: CRAN
+Version: 0.17
+Hash: d9555d8cfe70b3372d066648400770b5
+Requires: Rttf2pt1, extrafontdb
+
+Package: extrafontdb
+Source: CRAN
+Version: 1.0
+Hash: 72269616f582dc675c90ecd025af2754
+
 Package: fansi
 Source: CRAN
 Version: 0.4.0
@@ -182,6 +229,11 @@ Package: fastmap
 Source: CRAN
 Version: 1.0.1
 Hash: d272cd728e4095b3964181b44763f46c
+
+Package: fastmatch
+Source: CRAN
+Version: 1.1-0
+Hash: 932691e01f5e2d6de914fd4b847f37c8
 
 Package: figr8
 Source: github
@@ -215,6 +267,12 @@ Version: 3.2.1
 Hash: 7cf3f9df0089475f133ec23befca1032
 Requires: digest, gtable, lazyeval, reshape2, rlang, scales, tibble,
     viridisLite, withr
+
+Package: ggrepel
+Source: CRAN
+Version: 0.8.2
+Hash: 15d48b223e4e04b6605850d39c3e44bc
+Requires: Rcpp, ggplot2, scales
 
 Package: gh
 Source: CRAN
@@ -374,6 +432,12 @@ Version: 0.5.0
 Hash: 38d0efee9bb99bef143bde41c4ce715c
 Requires: colorspace
 
+Package: network
+Source: CRAN
+Version: 1.16.0
+Hash: f357d2cd943e99767d78843e56e8e44c
+Requires: magrittr, tibble
+
 Package: openssl
 Source: CRAN
 Version: 1.4.1
@@ -448,6 +512,12 @@ Version: 1.1.0
 Hash: 0404586e7e8dff0de5fde4a65f37e39b
 Requires: R6, Rcpp, later, magrittr, rlang
 
+Package: proxyC
+Source: CRAN
+Version: 0.1.5
+Hash: 4e33b66cad842aca7101396090197b92
+Requires: Rcpp, RcppArmadillo, RcppParallel
+
 Package: ps
 Source: CRAN
 Version: 1.3.0
@@ -458,6 +528,14 @@ Source: CRAN
 Version: 0.3.3
 Hash: d4f497f8a97ef6c7182a87b2476748d1
 Requires: magrittr, rlang
+
+Package: quanteda
+Source: CRAN
+Version: 2.0.1
+Hash: bf975fb5184333e458e3d22a1965a3be
+Requires: Rcpp, RcppArmadillo, RcppParallel, SnowballC, data.table,
+    extrafont, fastmatch, ggplot2, ggrepel, jsonlite, magrittr,
+    network, proxyC, sna, stopwords, stringi, xml2, yaml
 
 Package: rcmdcheck
 Source: CRAN
@@ -573,10 +651,28 @@ Hash: 7a1d8725849ecb792b4df2c084769c23
 Requires: R6, crayon, digest, fastmap, htmltools, httpuv, jsonlite,
     later, mime, promises, rlang, sourcetools, xtable
 
+Package: sna
+Source: CRAN
+Version: 2.5
+Hash: dc2f1f2cae0e1176f6c586f82a539399
+Requires: network, statnet.common
+
 Package: sourcetools
 Source: CRAN
 Version: 0.1.7
 Hash: d093478ac90064e670cd4bf1a99b47b6
+
+Package: statnet.common
+Source: CRAN
+Version: 4.3.0
+Hash: 87c2830bfb7370754554ad6d34f293fe
+Requires: coda
+
+Package: stopwords
+Source: CRAN
+Version: 2.0
+Hash: 50c1080a324c6426e4d114b0a4e7f093
+Requires: ISOcodes, desc, usethis
 
 Package: stringi
 Source: CRAN
