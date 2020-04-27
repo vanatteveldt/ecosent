@@ -47,6 +47,6 @@ acc = sum([a==b for (a,b) in zip(predictions, test.tone.values)]) / len(predicti
 logging.info("Accuracy on test set: {:.3}".format(acc))
 with output_file.open('w') as outf:
     w = csv.writer(outf)
-    w.writerow(['kernel', 'gamma', 'C', 'id', 'prediction'])
+    w.writerow(['id', 'method', 'variable', 'value'])
     for i, pred in enumerate(predictions):
-        w.writerow([kernel, gamma, C, test.id.values[i], pred])
+        w.writerow([test.id.values[i], 'ml', 'svm', pred])
