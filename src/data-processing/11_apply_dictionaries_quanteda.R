@@ -1,15 +1,31 @@
+#! /usr/bin/env python3
+#DESCRIPTION: Apply dictionary analysis using R/Quanteda
+#DEPENDS: data/raw/{gold_sentences.csv,dictionaries/{dictionary_muddiman_combined.csv,db_nl.yml,{db,muddiman}_{google,deepl}.yml}}
+#CREATES: data/intermediate/dictionary_output_quanteda.csv
+
 library(quanteda)
 library(tidyverse)
+
+# Create the dfm
+
+df <- read_csv("data/raw/gold_sentences.csv")
+nl_dfm <- df %>% corpus(docid_field="id", text_field="dutch_lemmas") %>% dfm()
+google_dfm <- df %>% corpus(docid_field="id", text_field="google_lemmas") %>% dfm()
+deepl_dfm <- df %>% corpus(docid_field="id", text_field="deepl_lemmas") %>% dfm()
+
 
 # Define Custom dictionaries:
 
 # Muddiman approach
 muddiman <- read_csv("data/raw/dictionaries/dictionary_muddiman_combined.csv") %>%
-  mutate(majvote_pos = rowSums(d2[,c(3,5,7)], na.rm = T),
-         majvote_neg = rowSums(d2[,c(4,6,8)], na.rm = T))
+  mutate(majvote_pos = rowSums(.[c(3,5,7)], na.rm = T),
+         majvote_neg = rowSums(.[c(4,6,8)], na.rm = T))
 
-muddiman_nl <- dictionary(list(positive = muddiman$words[d2$majvote_pos>1],
-                                 negative = muddiman$words[d2$majvote_neg>1]))
+muddiman_nl <- dictionary(list(positive = muddiman$words[muddiman$majvote_pos>1],
+                               negative = muddiman$words[muddiman$majvote_neg>1]))
+
+nrc <- read_csv("data/raw/dictionaries/NRC-Emotion-Lexicon-v0.92-In105Languages-Nov2017Translations.csv") %>%
+  select(c(Eng = `English (en)`, NL = `Dutch (nl)`, Positive, Negative, Fear, Trust))
 
 # Define set of Dutch and English dictionaries
 dutch_dictionaries <- list(
@@ -50,7 +66,7 @@ apply_dictionary <- function(dictionary, dfm) {
   dfm %>% dfm_lookup(dictionary, valuetype = "glob") %>% 
     convert(to="tripletlist") %>% 
     as_tibble() %>%
-    rename(id=document) %>%
+    rename(id=document, value=frequency) %>%
     mutate(id=as.numeric(id), 
            feature=str_replace_all(tolower(feature), "[ \\.]", "_"))
 }
@@ -61,30 +77,17 @@ results_google = purrr::map(google_dictionaries, apply_dictionary, google_dfm) %
 results_deepl= purrr::map(deepl_dictionaries, apply_dictionary, deepl_dfm) %>% bind_rows(.id="dictionary")
 results = bind_rows(nl=results_nl, google=results_google, deepl=results_deepl, .id="language")
 
-write_csv(results, "data/intermediate/dictionary_output2.csv")
 
 # Compute sentiment and emotionality scores from counts
 sentiment = results %>% 
-  pivot_wider(id_cols = language:id, names_from = feature, values_from = frequency, values_fill=list(frequency=0)) %>%
+  pivot_wider(id_cols = language:id, names_from = feature, values_fill=list(value=0)) %>%
   mutate(sentiment=case_when(! dictionary %in% c("db", "RID") ~ positive - negative),
          emotionality=case_when(dictionary=="nrc" ~ trust - fear,
                                 dictionary=="db" ~ hope - fear,
-                                dictionary=="RID" ~ positive_affect - anxiety)) 
+                                dictionary=="RID" ~ positive_affect - anxiety))  %>%
+  select(language:id, sentiment:emotionality) %>% 
+  pivot_longer(sentiment:emotionality, names_to = "feature") %>%
+  mutate(method="dictionary", variable=str_c(dictionary, language, feature, sep = "_")) %>%
+   select(id, method, variable, everything())
 
-gold = read_csv("data/intermediate/gold.csv") %>%  select(id, gold)
-setdiff(results$id, gold$id)
-setdiff(gold$id, results$id)
-
-# bivariate correlation sentiment (-> to be moved to analysis script)
-inner_join(gold %>% na.omit(),
-           sentiment %>% select(language, dictionary, id, sentiment) %>% na.omit() %>% 
-             pivot_wider(names_from=c("language", "dictionary"), values_from=sentiment, values_fill=list(sentiment=0))) %>% select(-id) %>% cor()
-
-inner_join(gold %>% na.omit(),
-           sentiment %>% select(language, dictionary, id, emotionality) %>% na.omit() %>% 
-             pivot_wider(names_from=c("language", "dictionary"), values_from=emotionality, values_fill=list(emotionality=0))) %>% select(-id) %>% cor()
-
-
-inner_join(gold %>% na.omit(),
-          sentiment %>% select(language, dictionary, id, sentiment) %>% na.omit() %>% 
-            pivot_wider(names_from=c("language", "dictionary"), values_from=sentiment, values_fill=list(sentiment=0))) %>% View
+write_csv(sentiment, "data/intermediate/dictionary_output_quanteda.csv")
