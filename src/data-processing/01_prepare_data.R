@@ -20,6 +20,8 @@ d = d_raw %>% mutate(ID=as.integer(ID),
          coder=as.integer(coder))
 
 d2_raw =read_csv2("data/raw/icr_data.csv", col_types = cols_only(ID="i", Codeur="i", outlet="i", Source="i", Toon_Kop="i", headline="c", Economisch="i", date="c"))
+d2_raw = d2_raw %>% filter(Source != 1) # Remove television
+if (any(is.na(d2_raw$ID))) stop("Missing identifiers in icr_data.csv")
 d2 = d2_raw %>% mutate(medium=value_labels(outlet, labels_col=d_raw$outlet), 
                        medtype=value_labels(Source, labels_col=d_raw$Source), 
                        tone_raw=value_labels(Toon_Kop, labels_col=d_raw$Toon_Kop),
@@ -31,7 +33,7 @@ d2 = d2_raw %>% mutate(medium=value_labels(outlet, labels_col=d_raw$outlet),
 
 d2 = d2 %>% anti_join(d, by=c("id", "coder"))
 
-d = bind_rows(d, d2)
+d = bind_rows(d, d2) %>% arrange(id)
 
 # Note: timestamp can differ for same ID in both data sets (tz issues?), so keep only first ID
 d %>% select(id, date, medtype, medium, headline) %>% group_by(id) %>% filter(row_number()==1, !is.na(headline)) %>%  write_csv("data/intermediate/metadata.csv")
