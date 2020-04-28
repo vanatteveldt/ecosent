@@ -14,6 +14,18 @@ from keras.utils import to_categorical
 
 MAX_NB_WORDS=10000
 
+def cudnn_error_workaround():
+    """
+    Workaround for CUDNN_STATUS_INTERNAL_ERROR
+    See https://github.com/tensorflow/tensorflow/issues/24496
+    """
+    from tensorflow.compat.v1 import ConfigProto
+    from tensorflow.compat.v1 import InteractiveSession
+    config = ConfigProto()
+    config.gpu_options.allow_growth = True
+    InteractiveSession(config=config)
+
+
 
 def embeddings_matrix(vocabulary, embeddings_file):
     """Load the embeddings and create a initial weights matrix

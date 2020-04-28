@@ -7,13 +7,17 @@ import csv
 import logging
 import random
 from pathlib import Path
-import tensorflow
 
 import numpy as np
 import pandas as pd
 import deeplib as lib
 from keras import backend as keras_backend
 import os
+
+import tensorflow as tf
+import os
+
+lib.cudnn_error_workaround()
 
 # best settings according to grid search:
 settings = dict(
@@ -26,15 +30,7 @@ settings = dict(
     output_dim=2,
     batch_size=128,
     )
-N_REP = 10
-
-# Note: This doesn't seem to actually make it deterministic, also not after following instructions from
-# https://github.com/NVIDIA/tensorflow-determinism
-
-random_seed = 1
-np.random.seed(random_seed)
-random.seed(random_seed)
-tensorflow.random.set_seed(random_seed)
+N_REP = 40
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s %(name)-12s %(levelname)-5s] %(message)s')
 
@@ -69,6 +65,17 @@ embeddings = lib.embeddings_matrix(word_index, str(embeddings_file))
 
 logging.info(f"Training model on training data {train_data.shape}")
 
+# Note: This doesn't seem to actually make it deterministic :-(
+# Code from https://github.com/NVIDIA/tensorflow-determinism
+os.environ['TF_DETERMINISTIC_OPS'] = '1'
+random_seed = 1
+np.random.seed(random_seed)
+random.seed(random_seed)
+tf.random.set_seed(random_seed)
+config = tf.compat.v1.ConfigProto(intra_op_parallelism_threads = 1,
+                                  inter_op_parallelism_threads = 1)
+tf.compat.v1.keras.backend.set_session(tf.compat.v1.Session(config=config))
+
 model = lib.cnn_model(settings=settings,
                       max_sequence_length=train_data.shape[1],
                       embeddings_matrix=embeddings)
@@ -76,7 +83,7 @@ model = lib.cnn_model(settings=settings,
 accs = []
 with output_file.open('w') as outf:
     w = csv.writer(outf)
-    w.writerow(["i", "id", "prediction", "actual"])
+    w.writerow(["id", "method", "variable", "repetition", "value"])
 
     for it in range(N_REP):
 
@@ -94,6 +101,6 @@ with output_file.open('w') as outf:
         logging.info(f"Iteration {it}/{N_REP}, accuracy: {acc}")
 
         for i, pred in enumerate(p):
-            w.writerow([it, test_ids[i], pred, actual[i]])
+            w.writerow([test_ids[i], "ml",  "cnn_best", i, pred])
 
 logging.info(f"Done, overall accuracy {sum(accs)/len(accs)}")
