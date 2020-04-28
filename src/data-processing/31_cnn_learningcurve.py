@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 #DESCRIPTION: Test the learning curve of the chosen CNN model
 #DEPENDS: data/intermediate/sentences_ml.csv, data/tmp/w2v_320d
-#CREATES: data/intermediate/learningcurve.csv
+#CREATES: data/intermediate/cnn_curve.csv
 
 import csv
 import logging
@@ -11,6 +11,8 @@ from pathlib import Path
 import numpy as np
 import deeplib as lib
 from keras import backend as keras_backend
+
+lib.cudnn_error_workaround()
 
 # best settings according to grid search:
 settings = dict(
@@ -33,7 +35,7 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s %(name)-12s %(level
 data_root = Path.cwd()/"data"
 data_file = data_root/"intermediate"/"sentences_ml.csv"
 embeddings_file = data_root/"tmp"/"w2v_320d"
-output_file = data_root/"intermediate"/"learningcurve.csv"
+output_file = data_root/"intermediate"/"cnn_curve.csv"
 
 logging.info("Loading data")
 
