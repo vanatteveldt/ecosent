@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env Rscript
 #DESCRIPTION: Apply dictionary analysis using R/Quanteda
 #DEPENDS: data/raw/{gold_sentences.csv,dictionaries/{dictionary_muddiman_combined.csv,db_nl.yml,{db,muddiman}_{google,deepl}.yml}}
 #CREATES: data/intermediate/dictionary_output_quanteda.csv
