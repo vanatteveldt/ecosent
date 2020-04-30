@@ -25,5 +25,4 @@ add_sentiments(data, "headline",
 
 data = data.drop("headline", 1)
 data = pd.melt(data, id_vars=["id"], var_name="variable", value_name="value")
-data.insert(1, "method", "dictionary")
 data.to_csv(DATA/"intermediate"/"dictionary_output.csv", index=False)

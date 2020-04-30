@@ -49,7 +49,7 @@ def get_data(data_file, shuffle=True, gold=0):
     if shuffle:
         h = h.sample(frac=1).reset_index(drop=True)
     texts = h.lemmata
-    labels = h.tone
+    labels = h.value
     return texts, labels
 
 
@@ -59,7 +59,7 @@ def encode_labels(labels: Sequence[int], output_dim: int) -> np.array:
     elif output_dim == 2:
         return np.asarray([[(x + 1) / 2, int(x != 0)] for x in labels])
     elif output_dim == 3:
-        labels = [tone+1 for tone in labels] # -1 -> 0 etc
+        labels = [value+1 for value in labels] # -1 -> 0 etc
         return to_categorical(np.asarray(labels))
     else:
         raise ValueError(output_dim)

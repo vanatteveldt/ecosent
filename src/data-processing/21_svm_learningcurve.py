@@ -52,9 +52,9 @@ with output_file.open('w') as of:
                  ("scaler", Normalizer()),
                  ("SVC", SVC(C=C, gamma=gamma, kernel=kernel))])
 
-            pipe.fit(x.lemmata.values, x.tone.values)
+            pipe.fit(x.lemmata.values, x.value.values)
             p = pipe.predict(test.lemmata.values)
-            actual = test.tone.values
+            actual = test.value.values
             
             acc = sum([x == y for (x, y) in zip(p, actual)]) / len(p)
             cor = np.corrcoef(p, actual)[1][0]

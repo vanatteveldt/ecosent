@@ -39,14 +39,14 @@ train = h.loc[h['gold'] == 0]
 test = h.loc[h['gold'] == 1]
 
 logging.info("Fitting model")
-pipe.fit(train.lemmata.values, train.tone.values)
+pipe.fit(train.lemmata.values, train.value.values)
 logging.info("Predicting gold data")
 predictions = pipe.predict(test.lemmata.values)
 
-acc = sum([a==b for (a,b) in zip(predictions, test.tone.values)]) / len(predictions)
+acc = sum([a==b for (a,b) in zip(predictions, test.value.values)]) / len(predictions)
 logging.info("Accuracy on test set: {:.3}".format(acc))
 with output_file.open('w') as outf:
     w = csv.writer(outf)
-    w.writerow(['id', 'method', 'variable', 'value'])
+    w.writerow(['id', 'value'])
     for i, pred in enumerate(predictions):
-        w.writerow([test.id.values[i], 'ml', 'svm', pred])
+        w.writerow([test.id.values[i], pred])

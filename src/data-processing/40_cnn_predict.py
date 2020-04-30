@@ -44,7 +44,7 @@ logging.info("Loading data")
 data = pd.read_csv(data_file)
 # drop gold, randomize rows, select train/val
 
-labels = lib.encode_labels(data.tone, output_dim=settings['output_dim'])
+labels = lib.encode_labels(data.value, output_dim=settings['output_dim'])
 
 # Tokenize on test data as well because the word_index is also used to initialize the embeddings
 # (and since actual words are never used this is permitted, alternative would be to rewrite the tokenization
@@ -83,7 +83,7 @@ model = lib.cnn_model(settings=settings,
 accs = []
 with output_file.open('w') as outf:
     w = csv.writer(outf)
-    w.writerow(["id", "method", "variable", "repetition", "value"])
+    w.writerow(["id", "repetition", "value"])
 
     for it in range(N_REP):
 
@@ -101,6 +101,6 @@ with output_file.open('w') as outf:
         logging.info(f"Iteration {it}/{N_REP}, accuracy: {acc}")
 
         for i, pred in enumerate(p):
-            w.writerow([test_ids[i], "ml",  "cnn_best", i, pred])
+            w.writerow([test_ids[i], i, pred])
 
 logging.info(f"Done, overall accuracy {sum(accs)/len(accs)}")

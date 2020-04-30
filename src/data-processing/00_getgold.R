@@ -14,4 +14,6 @@ gold2 = gs_read(sheet, "second set - combined")
 gold1 = gold1 %>% select(id, gold=`gold final`, mb, mvdv, wva) %>% mutate(gold_set=1)
 gold2 = gold2 %>% select(id, gold=`gold final`, mb, mvdv, wva) %>% mutate(gold_set=2)
 gold = bind_rows(gold1, gold2)
+gold = gold %>% filter(!is.na(gold)) %>% select(id, value=gold) %>%
+  arrange(id)
 write_csv(gold, "data/intermediate/gold.csv")

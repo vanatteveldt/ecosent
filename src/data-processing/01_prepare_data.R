@@ -1,9 +1,9 @@
 #! /usr/bin/env Rscript
 #DESCRIPTION: Prepare manual codings values and metadata
-#CREATES: data/intermediate/metadata.csv, data/intermediate/manual_codings.csv
-#DEPENDS: data/raw-private/Inhoudsanalyse_AllesMerged_noICR_Wouter.sav, data/raw/icr_data.csv
+#CREATES: data/intermediate/metadata.csv, data/intermediate/sentences_ml.csv
+#DEPENDS: data/raw-private/Inhoudsanalyse_AllesMerged_noICR_Wouter.sav, data/raw/icr_data.csv, data/intermediate/gold.csv
 
-### Article metadata and manual codings
+### Gather article metadata and manual codings
 # Requires access to the SPSS file from Boukes et al.. Metadata and codings are saved to (public) intermediate folder)
 source("src/lib/functions.R")
 
@@ -15,7 +15,7 @@ d = d_raw %>% mutate(ID=as.integer(ID),
                      is_icr=FALSE) %>% 
   select(id=ID, date, medtype, medium, headline, coder=Codeur, is_icr, is_economy=Economisch, tone_raw) %>%
   mutate(tone_raw=str_remove(tone_raw, "\\s*\\(.*"), 
-         tone=recode_tone(tone_raw),
+         value=recode_tone(tone_raw),
          is_economy=as.integer(is_economy),
          coder=as.integer(coder))
 
@@ -28,13 +28,30 @@ d2 = d2_raw %>% mutate(medium=value_labels(outlet, labels_col=d_raw$outlet),
                        is_icr=TRUE) %>%
     select(id=ID, date, medtype, medium, headline, coder=Codeur, is_icr, is_economy=Economisch, tone_raw) %>% 
     mutate(tone_raw=str_remove(tone_raw, "\\s*\\(.*"), 
-           tone=recode_tone(tone_raw), 
+           value=recode_tone(tone_raw), 
            date=as.POSIXct(date, format="%m/%d/%Y %H:%M:%S"))
 
+# combine d (SPSS data containing codings except for Boukes 2019 ICR data) with d2 (csv of codings for ICR data)
 d2 = d2 %>% anti_join(d, by=c("id", "coder"))
-
 d = bind_rows(d, d2) %>% arrange(id)
 
+
+# Output 1: Article metadata
 # Note: timestamp can differ for same ID in both data sets (tz issues?), so keep only first ID
-d %>% select(id, date, medtype, medium, headline) %>% group_by(id) %>% filter(row_number()==1, !is.na(headline)) %>%  write_csv("data/intermediate/metadata.csv")
-d %>% select(id, coder, is_icr, is_economy, tone_raw, tone) %>% unique %>% write_csv("data/intermediate/manual_codings.csv")
+meta = d %>% select(id, date, medtype, medium, headline) %>% 
+  group_by(id) %>% filter(row_number()==1, !is.na(headline)) %>%  ungroup() %>% arrange(id)
+write_csv(meta, "data/intermediate/metadata.csv")
+
+
+# Output 2: Manual codings and Machine Learning training sentences
+gold = read_csv("data/intermediate/gold.csv") %>% 
+  select(id, value) %>% 
+  add_column(gold=TRUE)
+codings = d %>% filter(!is_icr, !is.na(value), !id %in% gold$id) %>% 
+  select(id, value) %>% 
+  add_column(gold=FALSE)
+
+sentences = inner_join(meta, bind_rows(codings, gold))
+lemmata = lemmatize(sentences)
+sentences_ml = inner_join(sentences, lemmata) %>%
+write_csv(sentences_ml, "data/intermediate/sentences_ml.csv")
