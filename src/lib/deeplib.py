@@ -186,6 +186,14 @@ def predict(output):
         return list(np.argmax(output, axis=1) - 1)
 
 
+def confidence(output):
+    """Compute a confidence score for NN output"""
+    dim = output.shape[1]
+    if dim != 2:
+        raise NotImplementedError()
+    return [abs(x[1] - 0.5) + abs(x[0] - 0.5) for x in output]
+        
+
 def iter_grid(grid):
     """
     Iterate over all options (combinations) in the grid.

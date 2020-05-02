@@ -83,7 +83,7 @@ model = lib.cnn_model(settings=settings,
 accs = []
 with output_file.open('w') as outf:
     w = csv.writer(outf)
-    w.writerow(["id", "repetition", "value"])
+    w.writerow(["id", "repetition", "value", "confidence"])
 
     for it in range(N_REP):
 
@@ -93,14 +93,14 @@ with output_file.open('w') as outf:
         keras_backend.clear_session()
 
         p = list(lib.predict(output))
-
+        conf = list(lib.confidence(output))
         # Also 'predict' the true labels to convert from N neurons to single value
         actual = lib.predict(test_labels)
         acc = sum([x == y for (x, y) in zip(p, actual)]) / len(p)
         accs.append(acc)
         logging.info(f"Iteration {it}/{N_REP}, accuracy: {acc}")
 
-        for i, pred in enumerate(p):
-            w.writerow([test_ids[i], it, pred])
+        for id, pred, c in zip(test_ids, p, conf):
+            w.writerow([id, it, pred, c])
 
 logging.info(f"Done, overall accuracy {sum(accs)/len(accs)}")
