@@ -30,7 +30,7 @@ settings = dict(
     output_dim=2,
     batch_size=128,
     )
-N_REP = 40
+N_REP = 10
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s %(name)-12s %(levelname)-5s] %(message)s')
 
@@ -101,6 +101,6 @@ with output_file.open('w') as outf:
         logging.info(f"Iteration {it}/{N_REP}, accuracy: {acc}")
 
         for i, pred in enumerate(p):
-            w.writerow([test_ids[i], i, pred])
+            w.writerow([test_ids[i], it, pred])
 
 logging.info(f"Done, overall accuracy {sum(accs)/len(accs)}")
