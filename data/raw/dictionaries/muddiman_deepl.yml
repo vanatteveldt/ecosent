@@ -1,6 +1,6 @@
 # Dictionary created for Dutch using Muddiman approach
 # Translated to English using deepl
-pos:
+positive:
   - growth
   - remediation
   - chance
@@ -29,7 +29,7 @@ pos:
   - boost
   - resistant
   - expanded
-neg:
+negative:
   - low
   - drop
   - road

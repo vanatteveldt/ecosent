@@ -61,14 +61,18 @@ deepl_dictionaries <- c(english_dictionaries, list(
 
 # Apply the dictionaries
 
-#' Helper function that applies a dictionary and converts to 'long' results format
+#' Helper function that applies a dictionary and converts to 'long' results format, padding with zeroes as needed
 apply_dictionary <- function(dictionary, dfm) {
-  dfm %>% dfm_lookup(dictionary, valuetype = "glob") %>% 
+  rownames(dfm)
+  counts = dfm %>% dfm_lookup(dictionary, valuetype = "glob") %>% 
     convert(to="tripletlist") %>% 
     as_tibble() %>%
     rename(id=document, value=frequency) %>%
     mutate(id=as.numeric(id), 
            feature=str_replace_all(tolower(feature), "[ \\.]", "_"))
+  zeros = expand_grid(id=as.numeric(rownames(dfm)), feature=names(dictionary)) %>% 
+    anti_join(counts, by=c("id", "feature")) %>% add_column(value=0)
+  rbind(counts, zeros)
 }
 
 # Apply dictionaries
@@ -77,17 +81,16 @@ results_google = purrr::map(google_dictionaries, apply_dictionary, google_dfm) %
 results_deepl= purrr::map(deepl_dictionaries, apply_dictionary, deepl_dfm) %>% bind_rows(.id="dictionary")
 results = bind_rows(nl=results_nl, google=results_google, deepl=results_deepl, .id="language")
 
-
 # Compute sentiment and emotionality scores from counts
 sentiment = results %>% 
   pivot_wider(id_cols = language:id, names_from = feature, values_fill=list(value=0)) %>%
-  mutate(sentiment=case_when(! dictionary %in% c("db", "RID") ~ positive - negative),
-         emotionality=case_when(dictionary=="nrc" ~ trust - fear,
-                                dictionary=="db" ~ hope - fear,
-                                dictionary=="RID" ~ positive_affect - anxiety))  %>%
-  select(language:id, sentiment:emotionality) %>% 
-  pivot_longer(sentiment:emotionality, names_to = "feature") %>%
-  mutate(method="dictionary", variable=str_c(dictionary, language, feature, sep = "_")) %>%
-   select(id, method, variable, everything())
+  mutate(value=case_when(dictionary=="nrc" ~ (trust + positive) - (fear + negative),
+                         dictionary=="db" ~ hope - fear,
+                         dictionary=="RID" ~ positive_affect - anxiety,
+                         T ~ positive - negative)) %>% 
+  select(language:id, value) %>% 
+  mutate(variable=str_c(dictionary, language, sep = "_")) %>%
+  select(id, variable, everything()) %>%
+  arrange(id, variable)
 
 write_csv(sentiment, "data/intermediate/dictionary_output_quanteda.csv")

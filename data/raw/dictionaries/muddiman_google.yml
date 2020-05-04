@@ -1,6 +1,6 @@
 # Dictionary created for Dutch using Muddiman approach
 # Translated to English using google
-pos:
+positive:
   - growth
   - recovery
   - opportunity
@@ -31,7 +31,7 @@ pos:
   - resistant
   - grown
   - taking advantage
-neg:
+negative:
   - low
   - drop
   - away
