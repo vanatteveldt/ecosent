@@ -35,7 +35,8 @@ d2 = d2_raw %>% mutate(medium=value_labels(outlet, labels_col=d_raw$outlet),
 d2 = d2 %>% anti_join(d, by=c("id", "coder"))
 d = bind_rows(d, d2) %>% arrange(id)
 
-
+table(missing %in% d$id)
+d %>% filter(id %in% missing)
 # Output 1: Article metadata
 # Note: timestamp can differ for same ID in both data sets (tz issues?), so keep only first ID
 meta = d %>% select(id, date, medtype, medium, headline) %>% 
@@ -43,7 +44,7 @@ meta = d %>% select(id, date, medtype, medium, headline) %>%
 write_csv(meta, "data/intermediate/metadata.csv")
 
 
-# Output 2: Manual codings and Machine Learning training sentences
+# Output 2: Machine Learning training sentences
 gold = read_csv("data/intermediate/gold.csv") %>% 
   select(id, value) %>% 
   add_column(gold=TRUE)
@@ -53,5 +54,8 @@ codings = d %>% filter(!is_icr, !is.na(value), !id %in% gold$id) %>%
 
 sentences = inner_join(meta, bind_rows(codings, gold))
 lemmata = lemmatize(sentences)
-sentences_ml = inner_join(sentences, lemmata) %>%
+sentences_ml = inner_join(sentences, lemmata)
 write_csv(sentences_ml, "data/intermediate/sentences_ml.csv")
+
+# Output 3: Gold sentences
+d %>% semi_join(gold) %>% na.omit() %>% select(id, coder, value) %>% arrange(id) %>% write_csv("data/intermediate/manual_coding.csv")
