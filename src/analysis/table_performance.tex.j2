@@ -1,0 +1,23 @@
+\begin{table}
+  \caption{Overall performance of the tested sentiment analysis methods}
+\begin{tabularx}{\textwidth}{lXXrrrrrrrrr}
+\toprule
+& & & & & & \multicolumn{3}{c}{Positive} & \multicolumn{3}{c}{Negative} \\
+\cmidrule(r){7-9}\cmidrule(l){10-12} 
+\multicolumn{3}{l}{Method} & Acc. & Cor. & $\alpha$ & Pr. & Re. & F1& Pr. & Re. & F1 \\
+\midrule
+{% for section, table in data.items() %}
+\multicolumn{11}{l}{\emph{ {{ section }} }} \\
+{% for row in table %}
+ {% for cell in row.values() -%}
+ & {% if loop.first -%} \multicolumn{2}{l}{ {{ methods.get(cell,[cell])[0] }} }
+  {%- else %}{% if cell=="NA" %}n/a{% else -%}
+  \cellcolor[gray]{{ '{' }}{{ "%0.2f"|format(1-cell/2) }}{{ '}'}} {{ "%0.2f"|format(cell) }}
+  {%- endif %}{% endif %}
+ {%- endfor %}\\
+{% endfor %}
+{% endfor %}
+\bottomrule
+\end{tabularx}
+Note: Acc.: Accuracy expressed as percentage correct; Cor.: Bivariate (pearson) correlation; $\alpha$: Krippendorff's alpha (ordinal), Pr.: Precision for the specified class (Positive/Negative); Re.: Recall for that class; F1: F1-Score for that class.
+\end{table}

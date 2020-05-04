@@ -1,0 +1,59 @@
+\newcommand{\squeeze}[1]{$\!\!\!\!\!\!\!$#1$\!\!\!\!\!\!$}
+\newcommand{\sectbreak}[1]{$\!\!\!\!\!\!\!\!\!$}
+\begin{table}\footnotesize
+  \caption{Bivariate correlations}
+\begin{tabularx}{\textwidth}{lX
+{#- Add a column per variable plus a (blank) column per section -#}
+{%- for section, vars in names.items() -%}
+  {# Skip two section columns for last section break and last variable #}
+  {%- if not (loop.first or loop.last) %}c{% endif -%}
+  {%- for var in vars %}l{% endfor -%}
+{%- endfor -%}
+}
+\toprule
+{# Column headers: use abbreviations but add negative space to reduce spacing #}
+{% for section, vars in names.items() %}{% set outer=loop -%}
+& $\!\!\!\!\!$
+  {%- for var in vars -%}
+  {%- if not (loop.last and outer.last) -%}
+& \squeeze{ {{var['abbreviation'].replace("G", "Gold")}} }
+  {%- endif -%}
+  {%- endfor %}
+{% endfor %}\\
+\midrule
+{% for section, vars in names.items() %}
+{% if not loop.first %}{# skip gold standard in rows #}
+ {% set s1 = loop %}
+\multicolumn{10}{l}{\emph{ {{section }} }} \\
+{% for var in vars -%}
+ {% set v1 = loop -%}
+& {{ var['abbreviation'] }}: {{var['name']}}
+ {%- for section2, vars2 in names.items() -%}
+ {%- set s2 = loop -%}
+ {%- if not loop.first %} &\sectbreak\ {% endif -%}
+ {%- for var2 in vars2 -%} 
+ {%- set val = data[var.variable][var2.variable] -%}
+ {%- if not (loop.last and s2.last) %}&{% endif -%}
+ {# skip NAs and only keep lower triangle #}
+ {%- if val != "NA" and ((s2.index < s1.index) or (s2.index == s1.index and loop.index < v1.index)) -%} 
+ \cellcolor[gray]{{ '{' }}{{ "%0.2f"|format(0.99-val/2) }}{{ '}'}}
+ \squeeze{ {{ ("%.2f"|format(val)).lstrip('0').replace("-0.01", ".00") }} }
+ {%- endif -%}
+ {%- endfor -%}
+{%- endfor %}\\
+{% endfor %}
+{% endif %}
+{% endfor %}
+\midrule
+{# Repeat column headers #}
+{% for section, vars in names.items() %}{% set outer=loop -%}
+& $\!\!\!\!\!$
+  {%- for var in vars -%}
+  {%- if not (loop.last and outer.last) -%}
+& \squeeze{ {{var['abbreviation'].replace("G", "Gold")}} }
+  {%- endif -%}
+  {%- endfor %}
+{% endfor %}\\
+\bottomrule
+\end{tabularx}
+\end{table}
