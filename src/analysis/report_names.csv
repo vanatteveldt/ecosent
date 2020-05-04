@@ -7,19 +7,18 @@ crowd3,Crowd Coding,C3,Vote (3 Coders)
 crowd5,Crowd Coding,C5,Vote (5 Coders)
 cnn,Machine Learning,ML,CNN
 svm,Machine Learning,DL,SVM
-boukes,Dictionaries,D1,boukes
 DANEW,Dictionaries,D2,DANEW
-db_nl,Dictionaries,D3,db
-muddiman_nl,Dictionaries,D4,muddiman
-nrc_nl,Dictionaries,D5,nrc
-pattern,Dictionaries,D6,pattern
-polyglot,Dictionaries,D7,polyglot
+db_nl,Dictionaries,D3,DamstraBoukes
+muddiman_nl,Dictionaries,D4,Muddiman
+nrc_nl,Dictionaries,D5,NRC
+pattern,Dictionaries,D6,Pattern
+polyglot,Dictionaries,D7,Polyglot
 AFINN_deepl,English Dictionaries (translated using deepl),E1,AFINN
-db_deepl,English Dictionaries (translated using deepl),E2,db
+db_deepl,English Dictionaries (translated using deepl),E2,DamstraBoukes
 GenInq_deepl,English Dictionaries (translated using deepl),E3,GenInq
 HuLiu_deepl,English Dictionaries (translated using deepl),E4,HuLiu
 LMD_deepl,English Dictionaries (translated using deepl),E5,LMD
 LSD_deepl,English Dictionaries (translated using deepl),E6,LSD
-muddiman_deepl,English Dictionaries (translated using deepl),E7,muddiman
-nrc_deepl,English Dictionaries (translated using deepl),E8,nrc
+muddiman_deepl,English Dictionaries (translated using deepl),E7,Muddiman
+nrc_deepl,English Dictionaries (translated using deepl),E8,NRC
 RID_deepl,English Dictionaries (translated using deepl),E9,RID
