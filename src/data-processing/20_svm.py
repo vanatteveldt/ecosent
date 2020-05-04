@@ -38,15 +38,21 @@ h = pd.read_csv(data_file)
 train = h.loc[h['gold'] == 0]
 test = h.loc[h['gold'] == 1]
 
-logging.info("Fitting model")
-pipe.fit(train.lemmata.values, train.value.values)
-logging.info("Predicting gold data")
-predictions = pipe.predict(test.lemmata.values)
-
-acc = sum([a==b for (a,b) in zip(predictions, test.value.values)]) / len(predictions)
-logging.info("Accuracy on test set: {:.3}".format(acc))
 with output_file.open('w') as outf:
     w = csv.writer(outf)
-    w.writerow(['id', 'value'])
-    for i, pred in enumerate(predictions):
-        w.writerow([test.id.values[i], pred])
+    w.writerow(['id', 'confidence', 'value'])
+    logging.info(f"Fitting model")
+    train = train.sample(frac=1).reset_index(drop=True)
+
+    pipe.fit(train.lemmata.values, train.value.values)
+    predictions = pipe.predict(test.lemmata.values)
+    scores = pipe.decision_function(test.lemmata.values)
+    
+    acc = sum([a==b for (a,b) in zip(predictions, test.value.values)]) / len(predictions)
+    logging.info(f"Accuracy on test set: {acc:.4}")
+    
+    for id, pred, score in zip(test.id.values, predictions, scores):
+        score = sorted(score, reverse=True)
+        confidence = score[0] - score[1]
+        w.writerow([id, confidence, pred])
+
