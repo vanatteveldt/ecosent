@@ -2,9 +2,9 @@ variable,section,abbreviation,name
 gold,Gold Standard,G,Gold 
 manual1,Manual Coding,M1,Single Coder
 manual3,Manual Coding,M3,Vote (3 Coders)
-crowd1,Crowd Coding,C1,Single Coder
-crowd3,Crowd Coding,C3,Vote (3 Coders)
-crowd5,Crowd Coding,C5,Vote (5 Coders)
+crowd1,Crowd-Coding,C1,Single Coder
+crowd3,Crowd-Coding,C3,Vote (3 Coders)
+crowd5,Crowd-Coding,C5,Vote (5 Coders)
 cnn,Machine Learning,ML,CNN
 svm,Machine Learning,DL,SVM
 DANEW,Dictionaries,D2,DANEW
