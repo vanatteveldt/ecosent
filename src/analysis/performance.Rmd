@@ -31,7 +31,8 @@ Compute scores per method x repetition, take average score per method:
 perf = inner_join(scores, gold) %>% 
   mutate(correct=gold == value)%>% 
   group_by(method, language, variable, repetition) %>% 
-  summarize(acc=mean(correct), cor=cor(gold, value), alpha=alpha(gold, value), 
+  summarize(acc=mean(correct), #cor=cor(gold, value), 
+            alpha=alpha(gold, value), 
             pos_precision=precision(value, gold, 1), pos_recall=recall(value, gold, 1), pos_f1=f1(pos_precision, pos_recall),
             neg_precision=precision(value, gold, -1), neg_recall=recall(value, gold, -1), neg_f1=f1(neg_precision, neg_recall)) %>%  
   summarize_at(vars(acc:last_col()), mean) %>% 
@@ -55,8 +56,9 @@ render_j2("src/analysis/table_performance.tex.j2", "report/figures/table_perform
 Create a wide data frame with all methods as a column
 
 ```{r}
-wide_scores = scores %>% mutate(value=trichotomize(value), 
-                                variable = ifelse(!is.na(repetition), paste(variable, repetition, sep=":"), variable)) %>%
+wide_scores = scores %>% filter(method=="dictionary") %>%
+  mutate(value=trichotomize(value), 
+         variable = ifelse(!is.na(repetition), paste(variable, repetition, sep=":"), variable)) %>%
    select(id, variable, value) %>% bind_rows(gold %>% add_column(variable="gold") %>% rename(value=gold)) %>% 
   pivot_wider(id_cols="id", names_from = "variable", values_from = "value")
 ```
@@ -76,7 +78,9 @@ cors_dict = purrr::map(variables, function(x1) purrr::map(variables, function(x2
 Create latex table with j2 template
 
 ```{r}
-varnames = purrr::map(sections, ~filter(names, section == .))
+used_names = names %>% filter(variable %in% cors$method)
+used_sections = sections[sections %in% used_names$section]
+varnames = purrr::map(used_sections, ~filter(names, section == .))
 render_j2("src/analysis/table_corr.tex.j2", "report/figures/table_corr.tex", data=list(data=cors_dict, names=varnames))
 ```
 
