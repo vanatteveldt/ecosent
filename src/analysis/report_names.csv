@@ -7,12 +7,12 @@ crowd3,Crowd-Coding,C3,Vote (3 Coders)
 crowd5,Crowd-Coding,C5,Vote (5 Coders)
 cnn,Machine Learning,ML,CNN
 svm,Machine Learning,DL,SVM
-DANEW,Dictionaries,D2,DANEW
-db_nl,Dictionaries,D3,DamstraBoukes
-muddiman_nl,Dictionaries,D4,Muddiman
-nrc_nl,Dictionaries,D5,NRC
-pattern,Dictionaries,D6,Pattern
-polyglot,Dictionaries,D7,Polyglot
+DANEW,Dictionaries,D1,DANEW
+db_nl,Dictionaries,D2,DamstraBoukes
+muddiman_nl,Dictionaries,D3,Muddiman
+nrc_nl,Dictionaries,D4,NRC
+pattern,Dictionaries,D5,Pattern
+polyglot,Dictionaries,D6,Polyglot
 AFINN_deepl,English Dictionaries (translated using deepl),E1,AFINN
 db_deepl,English Dictionaries (translated using deepl),E2,DamstraBoukes
 GenInq_deepl,English Dictionaries (translated using deepl),E3,GenInq
