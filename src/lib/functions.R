@@ -1,10 +1,16 @@
 library(dplyr)
 
 #' Majority voting for multiple coders. Assumes that columns id and value point to a unique doc id and the coded value, respectively
-vote = function(data, thres) {
+#' @param data data frame coltaining id and value columns
+#' @param thres threshol for accepting a value
+#' @param tie what to do when no value meets the threshold: NULL to omit the record or any other value (NA, 0) to insert that
+vote = function(data, thres, tie=NULL) {
   votes = data %>% group_by(id, value) %>% summarize(n=n()) %>% mutate(support=max(n)) %>% filter(support >= thres, n == support)
   if (length(unique(votes$id)) != nrow(votes)) stop("!")
-  votes %>% select(id, value, support)
+  votes = votes %>% select(id, value, support)
+  if (!is.null(tie))
+    votes = bind_rows(votes, tibble(id=setdiff(data$id, votes$id), support=0, value=tie))
+  votes
 }
 
 #' Compare two sets of predictions and give coverage, accuracy, and alpha
@@ -61,3 +67,23 @@ lemmatize = function(data) {
   }
   bind_rows(results) %>% as_tibble()
 }
+
+### Auxilliary functions for perfomance calculation
+#' trichotomize a score into -1, 0, 1, taking +/- 0.5 as boundary point
+trichotomize = function(value) case_when(value>.5 ~ 1, value < -.5 ~ -1, T ~ 0) 
+
+#' Compute precision for given values and target class
+precision = function(predicted, actual, class) (sum(predicted == class & actual == class) / sum(predicted == class)) %>% replace_na(0)
+#' Compute recall for given values and target class
+recall = function(predicted, actual, class) sum(predicted == class & actual == class) / sum(actual == class)
+#' Compute F1 score from precision and recall
+f1 = function(precision, recall) ifelse(precision+recall==0, 0, 2*precision*recall / (precision + recall))
+#' Compute Krippendorff's alpha from given values
+alpha = function(predicted, actual) irr::kripp.alpha(rbind(predicted, actual), method = "ordinal")$value
+
+#' Render a template using jinja2 command line tool
+render_j2 = function(template, output, data, auto_unbox=TRUE, na="string") {
+  data = jsonlite::toJSON(data, pretty=TRUE, auto_unbox=auto_unbox, na=na)
+  system(glue::glue("env/bin/j2 --format json {template} -o {output}"), input=data)
+}
+
