@@ -1,5 +1,5 @@
 # Economic Sentiment
-Data &amp; Analysis compendium for the Economic Sentiment analysis paper
+Data &amp; Analysis compendium for the Economic Sentiment analysis paper.
 
 # Data
 
