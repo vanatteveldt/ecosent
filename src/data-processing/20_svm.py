@@ -25,8 +25,8 @@ data_file = data_root/"intermediate"/"sentences_ml.csv"
 output_file = data_root/"intermediate"/"svm_predictions.csv"
 
 C = 1
-gamma = .1
-kernel = 'linear'
+gamma = "scale"
+kernel = 'rbf'
 
 pipe = Pipeline([("Vectorizer", TfidfVectorizer(min_df=10)),
                  ("scaler", Normalizer()),

@@ -30,8 +30,8 @@ N_REPEAT = 10
 
 PARAM_GRID = dict(
     kernel=['linear', 'poly', 'rbf'],
-    C = [.01, .1, 1, 10, 100],
-    gamma=['scale', 'auto', .001, .01, .1],
+    C = [10**x for x in np.arange(-3, 3.5, .5)],
+    gamma=['scale', 'auto'] + [10**x for x in np.arange(-3, 3.5, .5)]
     )
 
 
