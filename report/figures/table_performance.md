@@ -1,4 +1,6 @@
-# Table 2: Overall Performance of the Tested Sentiment Analysis Approaches|section              |name             |  acc| alpha| pos_precision| pos_recall| pos_f1| neut_precision| neut_recall| neut_f1| neg_precision| neg_recall| neg_f1|
+# Table 2: Overall Performance of the Tested Sentiment Analysis Approaches
+
+|section              |name             |  acc| alpha| pos_precision| pos_recall| pos_f1| neut_precision| neut_recall| neut_f1| neg_precision| neg_recall| neg_f1|
 |:--------------------|:----------------|----:|-----:|-------------:|----------:|------:|--------------:|-----------:|-------:|-------------:|----------:|------:|
 |English Dictionaries |AFINN            | 0.43|  0.27|          0.35|       0.38|   0.37|           0.40|        0.50|    0.45|          0.58|       0.38|   0.46|
 |English Dictionaries |DamstraBoukes    | 0.42|  0.07|          0.67|       0.08|   0.15|           0.40|        0.98|    0.57|          1.00|       0.02|   0.04|

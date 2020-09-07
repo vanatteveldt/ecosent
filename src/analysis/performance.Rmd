@@ -17,7 +17,7 @@ library(here)
 source(here("src/lib/functions.R"))
 gold = read_csv(here("data/intermediate/gold.csv")) %>% rename(gold=value)
 scores = read_csv(here("data/intermediate/combined_predictions.csv"), col_types = "iccccddd")
-scores = scores %>% filter(is.na(language) | language != "google", variable != "recessie")  %>% mutate(value=trichotomize(value))
+scores = scores %>% filter(is.na(language) | language != "google", variable != "recessie", variable != "boukes")  %>% mutate(value=trichotomize(value))
 names = read_csv(here("src/analysis/report_names.csv"))
 sections = setNames(nm=unique(names$section))
 variables = setNames(nm=unique(names$variable))
@@ -40,7 +40,11 @@ perf = inner_join(scores, gold) %>%
   summarize_at(vars(acc:last_col()), mean) %>% 
   arrange(match(method, c("dictionary", "ml", "crowd", "manual")), language, variable ) %>% 
   ungroup() %>% left_join(names) %>% select(section, name, acc:neg_f1)
-knitr::kable(perf, digits=4)
+md = knitr::kable(perf %>% mutate(section=str_remove_all(section, "\\(.*")), digits=2)
+fn = here("report/figures/table_performance.md")
+cat("# Table 2: Overall Performance of the Tested Sentiment Analysis Approaches\n\m", file=fn)
+cat(md, file=fn, sep="\n", append=T)
+
 ```
 
 Make the latex table for the manuscript.
