@@ -6,6 +6,7 @@ crowd1,Crowd-Coding,C1,Single Coder
 crowd3,Crowd-Coding,C3,Vote (3 Coders)
 crowd5,Crowd-Coding,C5,Vote (5 Coders)
 cnn,Machine Learning,ML,CNN
+nb,Machine Learning,ML,NB
 svm,Machine Learning,DL,SVM
 DANEW,Dictionaries,D1,DANEW
 db_nl,Dictionaries,D2,DamstraBoukes

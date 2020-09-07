@@ -13,11 +13,12 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.path="f
 
 ```{r data}
 library(tidyverse)
-source("src/lib/functions.R")
-gold = read_csv("data/intermediate/gold.csv") %>% rename(gold=value)
-scores = read_csv("data/intermediate/combined_predictions.csv", col_types = "iccccddd")
+library(here)
+source(here("src/lib/functions.R"))
+gold = read_csv(here("data/intermediate/gold.csv")) %>% rename(gold=value)
+scores = read_csv(here("data/intermediate/combined_predictions.csv"), col_types = "iccccddd")
 scores = scores %>% filter(is.na(language) | language != "google", variable != "recessie")  %>% mutate(value=trichotomize(value))
-names = read_csv("src/analysis/report_names.csv")
+names = read_csv(here("src/analysis/report_names.csv"))
 sections = setNames(nm=unique(names$section))
 variables = setNames(nm=unique(names$variable))
 ```
@@ -34,6 +35,7 @@ perf = inner_join(scores, gold) %>%
   summarize(acc=mean(correct), #cor=cor(gold, value), 
             alpha=alpha(gold, value), 
             pos_precision=precision(value, gold, 1), pos_recall=recall(value, gold, 1), pos_f1=f1(pos_precision, pos_recall),
+            neut_precision=precision(value, gold, 0), neut_recall=recall(value, gold, 0), neut_f1=f1(neut_precision, neut_recall),
             neg_precision=precision(value, gold, -1), neg_recall=recall(value, gold, -1), neg_f1=f1(neg_precision, neg_recall)) %>%  
   summarize_at(vars(acc:last_col()), mean) %>% 
   arrange(match(method, c("dictionary", "ml", "crowd", "manual")), language, variable ) %>% 
@@ -49,6 +51,32 @@ methodnames = setNames(as.list(names$name), names$variable)
 table = purrr::map(sections, ~filter(perf, section == .) %>% select(name:neg_f1)) 
 table$`Gold Standard` = NULL
 render_j2("src/analysis/table_performance.tex.j2", "report/figures/table_performance.tex", data=list(data=table, methods=methodnames))
+```
+
+## Alternative: performance vs average student coding (from boukes et al) rather than gold standard
+
+Alternative gold standard: voted outcome for headlines coded by 3 students plus simple value for other headlines:
+
+```{r}
+mgold3 = scores %>% filter(variable == "manual3") %>% select(id, gold=value)
+mgold1 = scores %>% filter(variable == "manual1") %>% anti_join(mgold3, by="id") %>% select(id, gold=value)
+mgold = bind_rows(mgold1, mgold3)
+```
+
+Compute performance against these values:
+
+```{r}
+scores %>% filter(method == "ml") %>% inner_join(mgold) %>% 
+  mutate(correct=gold == value)%>% 
+  group_by(method, language, variable, repetition) %>% 
+  summarize(acc=mean(correct), #cor=cor(gold, value), 
+            alpha=alpha(gold, value), 
+            pos_precision=precision(value, gold, 1), pos_recall=recall(value, gold, 1), pos_f1=f1(pos_precision, pos_recall),
+            neut_precision=precision(value, gold, 0), neut_recall=recall(value, gold, 0), neut_f1=f1(neut_precision, neut_recall),
+            neg_precision=precision(value, gold, -1), neg_recall=recall(value, gold, -1), neg_f1=f1(neg_precision, neg_recall)) %>%  
+  summarize_at(vars(acc:last_col()), mean) %>% 
+  arrange(match(method, c("dictionary", "ml", "crowd", "manual")), language, variable ) %>% 
+  ungroup() %>% left_join(names) %>% select(section, name, acc:neg_f1)
 ```
 
 ## Bivariate correlations between dictionaries
@@ -132,7 +160,7 @@ plot = ggplot(combined, aes(x=coverage, y=accuracy)) +
   geom_text(data=combined %>% filter(!label %in% c("3/5", "1/1")), aes(label=label), nudge_y=.008, nudge_x=.004) + 
   geom_text(data=combined %>% filter(label == "3/5"), aes(label=label), nudge_y=-.008, nudge_x=-.004) +
   geom_text(data=combined %>% filter(label == "1/1"), aes(label=label), nudge_y=-.008, nudge_x=-.004) +
-  scale_linetype_manual(name="Method", values=c(CNN=4, SVM=2, "Crowd Coding"=1)) +
+  scale_linetype_manual(name="Method", values=c(CNN=4, SVM=2, NB=5, "Crowd Coding"=1)) +
   scale_size_identity() + scale_shape(name="Method")  + 
   xlab("Coverage") + ylab("Accuracy") + 
   scale_x_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0,1))+

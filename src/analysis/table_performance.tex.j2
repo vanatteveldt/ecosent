@@ -1,9 +1,9 @@
 \footnotesize
-\begin{tabularx}{\textwidth}{lXXrrrrrrrr}
+\begin{tabularx}{\textwidth}{lXXrrrrrrrrrrr}
 \toprule
-& & & & & \multicolumn{3}{c}{Positive} & \multicolumn{3}{c}{Negative} \\
-\cmidrule(r){6-8}\cmidrule(l){9-11} 
-\multicolumn{3}{l}{Method} & Acc. & $\alpha$ & Pr. & Re. & F1& Pr. & Re. & F1 \\
+& & & & & \multicolumn{3}{c}{Positive} & \multicolumn{3}{c}{Neutral} & \multicolumn{3}{c}{Negative} \\
+\cmidrule(r){6-8}\cmidrule(lr){9-11} \cmidrule(l){12-14} 
+\multicolumn{3}{l}{Method} & Acc. & $\alpha$ & Pr. & Re. & F1& Pr. & Re. & F1 & Pr. & Re. & F1 \\
 \midrule
 {% for section, table in data.items() %}
 \multicolumn{11}{l}{\emph{ {{ section }} }} \\

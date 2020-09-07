@@ -1,68 +1,70 @@
 \footnotesize
-\begin{tabularx}{\textwidth}{lXXrrrrrrrr}
+\begin{tabularx}{\textwidth}{lXXrrrrrrrrrrr}
 \toprule
-& & & & & \multicolumn{3}{c}{Positive} & \multicolumn{3}{c}{Negative} \\
-\cmidrule(r){6-8}\cmidrule(l){9-11} 
-\multicolumn{3}{l}{Method} & Acc. & $\alpha$ & Pr. & Re. & F1& Pr. & Re. & F1 \\
+& & & & & \multicolumn{3}{c}{Positive} & \multicolumn{3}{c}{Neutral} & \multicolumn{3}{c}{Negative} \\
+\cmidrule(r){6-8}\cmidrule(lr){9-11} \cmidrule(l){12-14} 
+\multicolumn{3}{l}{Method} & Acc. & $\alpha$ & Pr. & Re. & F1& Pr. & Re. & F1 & Pr. & Re. & F1 \\
 \midrule
 
 \multicolumn{11}{l}{\emph{ Manual Coding }} \\
 
- & \multicolumn{2}{l}{ Single Coder }& \cellcolor[gray]{0.59} 0.82& \cellcolor[gray]{0.59} 0.82& \cellcolor[gray]{0.56} 0.88& \cellcolor[gray]{0.57} 0.86& \cellcolor[gray]{0.57} 0.87& \cellcolor[gray]{0.58} 0.84& \cellcolor[gray]{0.60} 0.80& \cellcolor[gray]{0.59} 0.82\\
+ & \multicolumn{2}{l}{ Single Coder }& \cellcolor[gray]{0.59} 0.82& \cellcolor[gray]{0.59} 0.82& \cellcolor[gray]{0.56} 0.88& \cellcolor[gray]{0.57} 0.86& \cellcolor[gray]{0.57} 0.87& \cellcolor[gray]{0.62} 0.76& \cellcolor[gray]{0.60} 0.81& \cellcolor[gray]{0.61} 0.78& \cellcolor[gray]{0.58} 0.84& \cellcolor[gray]{0.60} 0.80& \cellcolor[gray]{0.59} 0.82\\
 
- & \multicolumn{2}{l}{ Vote (3 Coders) }& \cellcolor[gray]{0.56} 0.88& \cellcolor[gray]{0.55} 0.90& \cellcolor[gray]{0.52} 0.97& \cellcolor[gray]{0.54} 0.91& \cellcolor[gray]{0.53} 0.94& \cellcolor[gray]{0.56} 0.87& \cellcolor[gray]{0.58} 0.84& \cellcolor[gray]{0.57} 0.86\\
+ & \multicolumn{2}{l}{ Vote (3 Coders) }& \cellcolor[gray]{0.56} 0.88& \cellcolor[gray]{0.55} 0.90& \cellcolor[gray]{0.52} 0.97& \cellcolor[gray]{0.54} 0.91& \cellcolor[gray]{0.53} 0.94& \cellcolor[gray]{0.59} 0.82& \cellcolor[gray]{0.56} 0.88& \cellcolor[gray]{0.58} 0.85& \cellcolor[gray]{0.56} 0.87& \cellcolor[gray]{0.58} 0.84& \cellcolor[gray]{0.57} 0.86\\
 
 
 \multicolumn{11}{l}{\emph{ Crowd-Coding }} \\
 
- & \multicolumn{2}{l}{ Single Coder }& \cellcolor[gray]{0.64} 0.72& \cellcolor[gray]{0.62} 0.75& \cellcolor[gray]{0.65} 0.69& \cellcolor[gray]{0.58} 0.84& \cellcolor[gray]{0.62} 0.76& \cellcolor[gray]{0.61} 0.78& \cellcolor[gray]{0.61} 0.78& \cellcolor[gray]{0.61} 0.78\\
+ & \multicolumn{2}{l}{ Single Coder }& \cellcolor[gray]{0.64} 0.72& \cellcolor[gray]{0.62} 0.75& \cellcolor[gray]{0.65} 0.69& \cellcolor[gray]{0.58} 0.84& \cellcolor[gray]{0.62} 0.76& \cellcolor[gray]{0.66} 0.69& \cellcolor[gray]{0.71} 0.58& \cellcolor[gray]{0.69} 0.63& \cellcolor[gray]{0.61} 0.78& \cellcolor[gray]{0.61} 0.78& \cellcolor[gray]{0.61} 0.78\\
 
- & \multicolumn{2}{l}{ Vote (3 Coders) }& \cellcolor[gray]{0.62} 0.77& \cellcolor[gray]{0.60} 0.81& \cellcolor[gray]{0.63} 0.73& \cellcolor[gray]{0.55} 0.89& \cellcolor[gray]{0.60} 0.80& \cellcolor[gray]{0.58} 0.83& \cellcolor[gray]{0.59} 0.81& \cellcolor[gray]{0.59} 0.82\\
+ & \multicolumn{2}{l}{ Vote (3 Coders) }& \cellcolor[gray]{0.62} 0.77& \cellcolor[gray]{0.60} 0.81& \cellcolor[gray]{0.63} 0.73& \cellcolor[gray]{0.55} 0.89& \cellcolor[gray]{0.60} 0.80& \cellcolor[gray]{0.63} 0.74& \cellcolor[gray]{0.67} 0.65& \cellcolor[gray]{0.65} 0.69& \cellcolor[gray]{0.58} 0.83& \cellcolor[gray]{0.59} 0.81& \cellcolor[gray]{0.59} 0.82\\
 
- & \multicolumn{2}{l}{ Vote (5 Coders) }& \cellcolor[gray]{0.62} 0.77& \cellcolor[gray]{0.59} 0.81& \cellcolor[gray]{0.63} 0.73& \cellcolor[gray]{0.55} 0.90& \cellcolor[gray]{0.60} 0.81& \cellcolor[gray]{0.58} 0.84& \cellcolor[gray]{0.60} 0.80& \cellcolor[gray]{0.59} 0.82\\
+ & \multicolumn{2}{l}{ Vote (5 Coders) }& \cellcolor[gray]{0.62} 0.77& \cellcolor[gray]{0.59} 0.81& \cellcolor[gray]{0.63} 0.73& \cellcolor[gray]{0.55} 0.90& \cellcolor[gray]{0.60} 0.81& \cellcolor[gray]{0.64} 0.73& \cellcolor[gray]{0.67} 0.65& \cellcolor[gray]{0.66} 0.69& \cellcolor[gray]{0.58} 0.84& \cellcolor[gray]{0.60} 0.80& \cellcolor[gray]{0.59} 0.82\\
 
 
 \multicolumn{11}{l}{\emph{ Machine Learning }} \\
 
- & \multicolumn{2}{l}{ CNN }& \cellcolor[gray]{0.68} 0.63& \cellcolor[gray]{0.75} 0.50& \cellcolor[gray]{0.66} 0.68& \cellcolor[gray]{0.76} 0.49& \cellcolor[gray]{0.72} 0.56& \cellcolor[gray]{0.64} 0.72& \cellcolor[gray]{0.71} 0.57& \cellcolor[gray]{0.68} 0.63\\
+ & \multicolumn{2}{l}{ CNN }& \cellcolor[gray]{0.68} 0.63& \cellcolor[gray]{0.75} 0.50& \cellcolor[gray]{0.66} 0.68& \cellcolor[gray]{0.76} 0.49& \cellcolor[gray]{0.72} 0.56& \cellcolor[gray]{0.71} 0.58& \cellcolor[gray]{0.61} 0.78& \cellcolor[gray]{0.67} 0.66& \cellcolor[gray]{0.64} 0.72& \cellcolor[gray]{0.71} 0.57& \cellcolor[gray]{0.68} 0.63\\
 
- & \multicolumn{2}{l}{ SVM }& \cellcolor[gray]{0.71} 0.58& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.65} 0.70& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.75} 0.50& \cellcolor[gray]{0.68} 0.64& \cellcolor[gray]{0.75} 0.49& \cellcolor[gray]{0.72} 0.56\\
+ & \multicolumn{2}{l}{ NB }& \cellcolor[gray]{0.71} 0.58& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.63} 0.74& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.77} 0.47& \cellcolor[gray]{0.74} 0.52& \cellcolor[gray]{0.58} 0.83& \cellcolor[gray]{0.68} 0.64& \cellcolor[gray]{0.67} 0.65& \cellcolor[gray]{0.76} 0.47& \cellcolor[gray]{0.73} 0.55\\
+
+ & \multicolumn{2}{l}{ SVM }& \cellcolor[gray]{0.71} 0.57& \cellcolor[gray]{0.80} 0.41& \cellcolor[gray]{0.65} 0.69& \cellcolor[gray]{0.82} 0.37& \cellcolor[gray]{0.76} 0.48& \cellcolor[gray]{0.74} 0.52& \cellcolor[gray]{0.61} 0.79& \cellcolor[gray]{0.69} 0.62& \cellcolor[gray]{0.68} 0.64& \cellcolor[gray]{0.76} 0.48& \cellcolor[gray]{0.72} 0.55\\
 
 
 \multicolumn{11}{l}{\emph{ Dictionaries }} \\
 
- & \multicolumn{2}{l}{ DANEW }& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.95} 0.10& \cellcolor[gray]{0.62} 0.75& \cellcolor[gray]{0.96} 0.08& \cellcolor[gray]{0.93} 0.15& \cellcolor[gray]{0.60} 0.80& \cellcolor[gray]{0.98} 0.04& \cellcolor[gray]{0.96} 0.08\\
+ & \multicolumn{2}{l}{ DANEW }& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.95} 0.10& \cellcolor[gray]{0.62} 0.75& \cellcolor[gray]{0.96} 0.08& \cellcolor[gray]{0.93} 0.15& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.51} 0.97& \cellcolor[gray]{0.72} 0.57& \cellcolor[gray]{0.60} 0.80& \cellcolor[gray]{0.98} 0.04& \cellcolor[gray]{0.96} 0.08\\
 
- & \multicolumn{2}{l}{ DamstraBoukes }& \cellcolor[gray]{0.80} 0.41& \cellcolor[gray]{0.97} 0.05& \cellcolor[gray]{0.58} 0.83& \cellcolor[gray]{0.97} 0.07& \cellcolor[gray]{0.94} 0.13& \cellcolor[gray]{1.00} 0.00& \cellcolor[gray]{1.00} 0.00& \cellcolor[gray]{1.00} 0.00\\
+ & \multicolumn{2}{l}{ DamstraBoukes }& \cellcolor[gray]{0.80} 0.41& \cellcolor[gray]{0.97} 0.05& \cellcolor[gray]{0.58} 0.83& \cellcolor[gray]{0.97} 0.07& \cellcolor[gray]{0.94} 0.13& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.50} 0.99& \cellcolor[gray]{0.72} 0.57& \cellcolor[gray]{1.00} 0.00& \cellcolor[gray]{1.00} 0.00& \cellcolor[gray]{1.00} 0.00\\
 
- & \multicolumn{2}{l}{ Muddiman }& \cellcolor[gray]{0.76} 0.49& \cellcolor[gray]{0.84} 0.31& \cellcolor[gray]{0.74} 0.53& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.78} 0.44& \cellcolor[gray]{0.73} 0.53& \cellcolor[gray]{0.80} 0.39& \cellcolor[gray]{0.77} 0.45\\
+ & \multicolumn{2}{l}{ Muddiman }& \cellcolor[gray]{0.76} 0.49& \cellcolor[gray]{0.84} 0.31& \cellcolor[gray]{0.74} 0.53& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.78} 0.44& \cellcolor[gray]{0.77} 0.46& \cellcolor[gray]{0.68} 0.64& \cellcolor[gray]{0.73} 0.53& \cellcolor[gray]{0.73} 0.53& \cellcolor[gray]{0.80} 0.39& \cellcolor[gray]{0.77} 0.45\\
 
- & \multicolumn{2}{l}{ NRC }& \cellcolor[gray]{0.76} 0.47& \cellcolor[gray]{0.84} 0.32& \cellcolor[gray]{0.80} 0.39& \cellcolor[gray]{0.73} 0.53& \cellcolor[gray]{0.77} 0.45& \cellcolor[gray]{0.71} 0.59& \cellcolor[gray]{0.77} 0.46& \cellcolor[gray]{0.74} 0.52\\
+ & \multicolumn{2}{l}{ NRC }& \cellcolor[gray]{0.76} 0.47& \cellcolor[gray]{0.84} 0.32& \cellcolor[gray]{0.80} 0.39& \cellcolor[gray]{0.73} 0.53& \cellcolor[gray]{0.77} 0.45& \cellcolor[gray]{0.77} 0.46& \cellcolor[gray]{0.78} 0.44& \cellcolor[gray]{0.78} 0.45& \cellcolor[gray]{0.71} 0.59& \cellcolor[gray]{0.77} 0.46& \cellcolor[gray]{0.74} 0.52\\
 
- & \multicolumn{2}{l}{ Pattern }& \cellcolor[gray]{0.81} 0.39& \cellcolor[gray]{0.97} 0.07& \cellcolor[gray]{0.79} 0.43& \cellcolor[gray]{0.96} 0.08& \cellcolor[gray]{0.93} 0.14& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.98} 0.03& \cellcolor[gray]{0.97} 0.06\\
+ & \multicolumn{2}{l}{ Pattern }& \cellcolor[gray]{0.81} 0.39& \cellcolor[gray]{0.97} 0.07& \cellcolor[gray]{0.79} 0.43& \cellcolor[gray]{0.96} 0.08& \cellcolor[gray]{0.93} 0.14& \cellcolor[gray]{0.81} 0.39& \cellcolor[gray]{0.55} 0.90& \cellcolor[gray]{0.73} 0.54& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.98} 0.03& \cellcolor[gray]{0.97} 0.06\\
 
- & \multicolumn{2}{l}{ Polyglot }& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.87} 0.26& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.84} 0.32& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.73} 0.53& \cellcolor[gray]{0.83} 0.33& \cellcolor[gray]{0.80} 0.41\\
+ & \multicolumn{2}{l}{ Polyglot }& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.87} 0.26& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.84} 0.32& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.81} 0.39& \cellcolor[gray]{0.72} 0.55& \cellcolor[gray]{0.77} 0.45& \cellcolor[gray]{0.73} 0.53& \cellcolor[gray]{0.83} 0.33& \cellcolor[gray]{0.80} 0.41\\
 
 
 \multicolumn{11}{l}{\emph{ English Dictionaries (translated using deepl) }} \\
 
- & \multicolumn{2}{l}{ AFINN }& \cellcolor[gray]{0.79} 0.43& \cellcolor[gray]{0.86} 0.27& \cellcolor[gray]{0.82} 0.35& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.82} 0.37& \cellcolor[gray]{0.71} 0.58& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.77} 0.46\\
+ & \multicolumn{2}{l}{ AFINN }& \cellcolor[gray]{0.79} 0.43& \cellcolor[gray]{0.86} 0.27& \cellcolor[gray]{0.82} 0.35& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.82} 0.37& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.75} 0.50& \cellcolor[gray]{0.78} 0.45& \cellcolor[gray]{0.71} 0.58& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.77} 0.46\\
 
- & \multicolumn{2}{l}{ DamstraBoukes }& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.96} 0.07& \cellcolor[gray]{0.67} 0.67& \cellcolor[gray]{0.96} 0.08& \cellcolor[gray]{0.93} 0.15& \cellcolor[gray]{0.50} 1.00& \cellcolor[gray]{0.99} 0.02& \cellcolor[gray]{0.98} 0.04\\
+ & \multicolumn{2}{l}{ DamstraBoukes }& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.96} 0.07& \cellcolor[gray]{0.67} 0.67& \cellcolor[gray]{0.96} 0.08& \cellcolor[gray]{0.93} 0.15& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.51} 0.98& \cellcolor[gray]{0.71} 0.57& \cellcolor[gray]{0.50} 1.00& \cellcolor[gray]{0.99} 0.02& \cellcolor[gray]{0.98} 0.04\\
 
- & \multicolumn{2}{l}{ GenInq }& \cellcolor[gray]{0.80} 0.41& \cellcolor[gray]{0.87} 0.26& \cellcolor[gray]{0.84} 0.31& \cellcolor[gray]{0.82} 0.37& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.73} 0.54& \cellcolor[gray]{0.76} 0.47& \cellcolor[gray]{0.75} 0.51\\
+ & \multicolumn{2}{l}{ GenInq }& \cellcolor[gray]{0.80} 0.41& \cellcolor[gray]{0.87} 0.26& \cellcolor[gray]{0.84} 0.31& \cellcolor[gray]{0.82} 0.37& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.73} 0.54& \cellcolor[gray]{0.76} 0.47& \cellcolor[gray]{0.75} 0.51\\
 
- & \multicolumn{2}{l}{ HuLiu }& \cellcolor[gray]{0.77} 0.46& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.85} 0.30& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.68} 0.65& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.75} 0.50\\
+ & \multicolumn{2}{l}{ HuLiu }& \cellcolor[gray]{0.77} 0.46& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.85} 0.30& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.69} 0.62& \cellcolor[gray]{0.75} 0.50& \cellcolor[gray]{0.68} 0.65& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.75} 0.50\\
 
- & \multicolumn{2}{l}{ LoughranMcDonald }& \cellcolor[gray]{0.75} 0.50& \cellcolor[gray]{0.85} 0.29& \cellcolor[gray]{0.75} 0.50& \cellcolor[gray]{0.93} 0.14& \cellcolor[gray]{0.89} 0.22& \cellcolor[gray]{0.69} 0.62& \cellcolor[gray]{0.78} 0.43& \cellcolor[gray]{0.74} 0.51\\
+ & \multicolumn{2}{l}{ LoughranMcDonald }& \cellcolor[gray]{0.75} 0.50& \cellcolor[gray]{0.85} 0.29& \cellcolor[gray]{0.75} 0.50& \cellcolor[gray]{0.93} 0.14& \cellcolor[gray]{0.89} 0.22& \cellcolor[gray]{0.77} 0.46& \cellcolor[gray]{0.60} 0.79& \cellcolor[gray]{0.71} 0.58& \cellcolor[gray]{0.69} 0.62& \cellcolor[gray]{0.78} 0.43& \cellcolor[gray]{0.74} 0.51\\
 
- & \multicolumn{2}{l}{ LSD }& \cellcolor[gray]{0.77} 0.46& \cellcolor[gray]{0.84} 0.33& \cellcolor[gray]{0.80} 0.39& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.80} 0.39& \cellcolor[gray]{0.69} 0.62& \cellcolor[gray]{0.79} 0.41& \cellcolor[gray]{0.75} 0.50\\
+ & \multicolumn{2}{l}{ LSD }& \cellcolor[gray]{0.77} 0.46& \cellcolor[gray]{0.84} 0.33& \cellcolor[gray]{0.80} 0.39& \cellcolor[gray]{0.80} 0.40& \cellcolor[gray]{0.80} 0.39& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.73} 0.54& \cellcolor[gray]{0.76} 0.48& \cellcolor[gray]{0.69} 0.62& \cellcolor[gray]{0.79} 0.41& \cellcolor[gray]{0.75} 0.50\\
 
- & \multicolumn{2}{l}{ Muddiman }& \cellcolor[gray]{0.76} 0.48& \cellcolor[gray]{0.87} 0.27& \cellcolor[gray]{0.76} 0.48& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.79} 0.43& \cellcolor[gray]{0.72} 0.57& \cellcolor[gray]{0.85} 0.30& \cellcolor[gray]{0.80} 0.39\\
+ & \multicolumn{2}{l}{ Muddiman }& \cellcolor[gray]{0.76} 0.48& \cellcolor[gray]{0.87} 0.27& \cellcolor[gray]{0.76} 0.48& \cellcolor[gray]{0.81} 0.38& \cellcolor[gray]{0.79} 0.43& \cellcolor[gray]{0.77} 0.46& \cellcolor[gray]{0.65} 0.71& \cellcolor[gray]{0.72} 0.55& \cellcolor[gray]{0.72} 0.57& \cellcolor[gray]{0.85} 0.30& \cellcolor[gray]{0.80} 0.39\\
 
- & \multicolumn{2}{l}{ NRC }& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.89} 0.23& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.69} 0.62& \cellcolor[gray]{0.78} 0.44& \cellcolor[gray]{0.72} 0.57& \cellcolor[gray]{0.80} 0.39& \cellcolor[gray]{0.77} 0.46\\
+ & \multicolumn{2}{l}{ NRC }& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.89} 0.23& \cellcolor[gray]{0.83} 0.34& \cellcolor[gray]{0.69} 0.62& \cellcolor[gray]{0.78} 0.44& \cellcolor[gray]{0.79} 0.43& \cellcolor[gray]{0.84} 0.32& \cellcolor[gray]{0.82} 0.37& \cellcolor[gray]{0.72} 0.57& \cellcolor[gray]{0.80} 0.39& \cellcolor[gray]{0.77} 0.46\\
 
- & \multicolumn{2}{l}{ RID }& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.97} 0.06& \cellcolor[gray]{1.00} 0.00& \cellcolor[gray]{1.00} 0.00& \cellcolor[gray]{1.00} 0.00& \cellcolor[gray]{0.59} 0.82& \cellcolor[gray]{0.95} 0.09& \cellcolor[gray]{0.92} 0.16\\
+ & \multicolumn{2}{l}{ RID }& \cellcolor[gray]{0.79} 0.42& \cellcolor[gray]{0.97} 0.06& \cellcolor[gray]{1.00} 0.00& \cellcolor[gray]{1.00} 0.00& \cellcolor[gray]{1.00} 0.00& \cellcolor[gray]{0.80} 0.41& \cellcolor[gray]{0.51} 0.97& \cellcolor[gray]{0.71} 0.57& \cellcolor[gray]{0.59} 0.82& \cellcolor[gray]{0.95} 0.09& \cellcolor[gray]{0.92} 0.16\\
 
 
 \bottomrule

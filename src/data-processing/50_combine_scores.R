@@ -35,8 +35,8 @@ crowd = bind_rows(rename(crowd1, repetition=coder), crowd3, crowd5) %>% select(-
 
 # Read ML predictions
 ml = bind_rows(read_csv("data/intermediate/svm_predictions.csv") %>% add_column(method="ml", variable="svm", .after="id"),
-               read_csv("data/intermediate/cnn_predictions.csv") %>% add_column(method="ml", variable="cnn", .after="id"))
-
+               read_csv("data/intermediate/cnn_predictions.csv") %>% add_column(method="ml", variable="cnn", .after="id"),
+               read_csv("data/intermediate/nb_predictions.csv") %>% add_column(method="ml", variable="nb", .after="id"))
 scores = bind_rows(dict, manual, crowd, ml) %>% semi_join(gold)
 # To check N per method
 # scores %>% group_by(method, variable, repetition) %>% summarize(n=n(), nart=length(unique(id))) %>% View
