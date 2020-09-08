@@ -1,0 +1,48 @@
+---
+title: "Grid search results for SVM"
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.path="figures/")
+```
+
+# Data
+
+```{r}
+library(tidyverse)
+library(here)
+d = read_csv(here("data/intermediate/svm_grid.csv"))
+d = d %>% group_by(experiment, kernel, C, gamma) %>% summarize(m=mean(accuracy), sd=sd(accuracy))
+```
+
+# Best model
+
+```{r}
+d %>% arrange(-m)
+```
+
+# Parameters
+
+```{r svm_gridsearch}
+d = d %>% mutate(gamma2=case_when(gamma %in% c("scale", "auto") ~ gamma, T~as.character(log10(as.numeric(gamma)))))
+
+d %>% group_by(kernel, gamma) %>% arrange(-m) %>% filter(row_number() == 1) %>% 
+  ggplot(aes(x=fct_reorder(gamma2, as.numeric(gamma2)), y=m, group=kernel, color=kernel)) + geom_line() +
+  ggthemes::theme_clean() + xlab("log10(gamma)") + ylab("Accuracy") + ggtitle("Effect of kernel and gamma", "Setting C to maximize accuracy per experiment")
+
+d %>% group_by(kernel, C) %>% arrange(-m) %>% filter(row_number() == 1) %>% 
+  ggplot(aes(x=log10(C), y=m, group=kernel, color=kernel)) + geom_line() +
+  ggthemes::theme_clean() + xlab("log10(C)") + ylab("Accuracy") + ggtitle("Effect of kernel and C", "Setting gamma to maximize accuracy per experiment")
+
+d %>% filter(C==1) %>% ggplot(aes(x=fct_reorder(gamma2, as.numeric(gamma2)), y=m, group=kernel, color=kernel)) + geom_line() +
+  ggthemes::theme_clean() + xlab("log10(gamma)") + ylab("Accuracy") + ggtitle("Effect of kernel and gamma", "Fixing C=1 (global maximum)")
+
+
+d %>% filter(gamma=="1.0") %>% ggplot(aes(x=log10(C), y=m, group=kernel, color=kernel)) + geom_line() +
+  ggthemes::theme_clean() + xlab("log10(C)") + ylab("Accuracy") + ggtitle("Effect of kernel and C", "Fixing gamma=1 (global maximum)")
+```
