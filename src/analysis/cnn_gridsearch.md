@@ -1,23 +1,11 @@
----
-title: "Grid search results for CNN"
-author: "Wouter van Atteveldt"
-date: "2019-05-12"
-output: 
-  github_document:
-    toc: yes
-editor_options: 
-  chunk_output_type: console
-knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding, knit_root_dir="..") })
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.path="figures/")
-```
+Grid search results for CNN
+================
+Wouter van Atteveldt
+2019-05-12
 
 # Data
 
-```{r}
+``` r
 library(tidyverse)
 library(gridExtra)
 library(here)
@@ -37,17 +25,30 @@ d2 = d %>% group_by_at(vars(experiment:epoch)) %>% summarise_at(vars(acc:cortot)
 
 Overall best parameters:
 
-```{r}
+``` r
 d2 %>% arrange(-acc_mean) %>% head()
 ```
+
+    ## # A tibble: 6 x 16
+    ##   experiment depth_hidden learning_rate loss  n_hidden output_dim
+    ##        <dbl>        <dbl>         <dbl> <fct>    <dbl>      <dbl>
+    ## 1        239           32        0.0005 BCE          0          3
+    ## 2        887           96        0.0005 BCE          0          3
+    ## 3        239           32        0.0005 BCE          0          3
+    ## 4        563           64        0.0005 BCE          0          3
+    ## 5        239           32        0.0005 BCE          0          3
+    ## 6        239           32        0.0005 BCE          0          3
+    ## # … with 10 more variables: train_embedding <chr>, epoch <dbl>, acc_mean <dbl>,
+    ## #   cor_mean <dbl>, mse_mean <dbl>, cortot_mean <dbl>, acc_sd <dbl>,
+    ## #   cor_sd <dbl>, mse_sd <dbl>, cortot_sd <dbl>
 
 # Visualization of parameter pairs
 
 For each parameter, the overall effect and confidence interval is given.
-For all parameter pairs, a heatmap of accuracy for each combination is given with the highest score highlighted in red. 
+For all parameter pairs, a heatmap of accuracy for each combination is
+given with the highest score highlighted in red.
 
-```{r cnn_gridsearch}
-
+``` r
 vars = colnames(d2 %>% select(depth_hidden:epoch))
 vars = vars[1:3]
 
@@ -80,4 +81,4 @@ for(var1 in vars) {
 }
 ```
 
-
+![](figures/cnn_gridsearch-1.png)<!-- -->![](figures/cnn_gridsearch-2.png)<!-- -->![](figures/cnn_gridsearch-3.png)<!-- -->![](figures/cnn_gridsearch-4.png)<!-- -->![](figures/cnn_gridsearch-5.png)<!-- -->![](figures/cnn_gridsearch-6.png)<!-- -->![](figures/cnn_gridsearch-7.png)<!-- -->![](figures/cnn_gridsearch-8.png)<!-- -->![](figures/cnn_gridsearch-9.png)<!-- -->
