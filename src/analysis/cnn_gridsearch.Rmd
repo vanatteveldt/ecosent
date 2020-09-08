@@ -1,7 +1,5 @@
 ---
 title: "Grid search results for CNN"
-author: "Wouter van Atteveldt"
-date: "2019-05-12"
 output: 
   github_document:
     toc: yes

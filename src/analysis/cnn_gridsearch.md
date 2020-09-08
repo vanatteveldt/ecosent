@@ -1,7 +1,5 @@
 Grid search results for CNN
 ================
-Wouter van Atteveldt
-2019-05-12
 
 # Data
 
