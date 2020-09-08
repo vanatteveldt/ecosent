@@ -25,7 +25,7 @@ See the files in [src/data](src/data) for details on how these files were constr
 
 # Results as presented in the article
 
-* [Performance, learning curve, correlations](src/analysis/comparison.md)
+* [Performance, learning curve, correlations](src/analysis/performance.md)
 
 # Supplementary Results
 
