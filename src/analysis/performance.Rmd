@@ -161,7 +161,7 @@ knitr::kable(ml_cov, digits=2)
 
 Combine into a single plot:
 
-```{r}
+```{r correlation_heatmap}
 ml_cov2 = ml_cov %>% ungroup() %>% mutate(method=toupper(variable), variable=toupper(variable)) %>% 
   select(method, variable, accuracy, coverage)
 crowd_cov2 = crowd_cov %>% ungroup() %>% mutate(variable="Crowd Coding", method=paste0("Crowd (", ncoder, " Coder)")) %>%
@@ -193,7 +193,7 @@ ggsave(plot=plot, filename="report/figures/fig_coverage.pdf")
 
 ## Learning curve
 
-```{r}
+```{r learningcurve}
 curve = rbind(read_csv("data/intermediate/cnn_curve.csv") %>% add_column(method="CNN", .before=1),
               read_csv("data/intermediate/svm_curve.csv") %>% add_column(method="SVM", .before=1))
 curve = curve %>% group_by(method, perc) %>% summarize(n=mean(n), acc=mean(acc))
@@ -216,7 +216,7 @@ ggsave(plot=plot, filename="report/figures/fig_curve.pdf")
 
 Add asymptotic fit (not used in paper):
 
-```{r}
+```{r asymptotic}
 get_asympt = function(data) coef(nls(acc ~ SSasymp(n, Asym, R0, lrc), data=data))["Asym"]
 asym_cnn = get_asympt(filter(curve, method=="CNN"))
 asym_svm = get_asympt(filter(curve, method=="SVM"))
@@ -228,23 +228,3 @@ ggplot(curve, aes(x=n, y=acc, group=method, lty=method)) +
   geom_smooth(color="grey", lwd=.5, lty=2, data=filter(curve, method=="SVM"), method='nls', formula=y~SSasymp(x, Asym, R0, lrc), se=F) + 
   geom_line() 
 ```
-
-## Confusion Matrices (not used in article)
-
-
-```{r}
-library(glue)
-cm_output = NULL
-for (section in unique(names$section)) {
-  cm_output = c(cm_output, glue("### {section}"))
-  for (v in names$variable[names$section == section]) {
-    cm_output = c(cm_output, glue("#### Confusion matrix for: {v}\n"))
-    cm = inner_join(scores, gold) %>% filter(variable==v) %>% 
-      group_by(value, gold) %>% summarize(n=n()) %>% rename(actual='gold') %>% 
-      pivot_wider(names_from="value", values_from="n", values_fill=0) %>% arrange(actual)
-    cm_output = c(cm_output, knitr::kable(cm))
-}
-}
-```
-
-`r paste(knitr::knit(text = cm_output), collapse = '\n')`

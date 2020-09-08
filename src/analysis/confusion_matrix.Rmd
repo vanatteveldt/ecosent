@@ -10,11 +10,10 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.path="figures/")
 ```
-# Confusion Matrices
 
 Below are the confusion matrices for all automatic sentiment analysis methods tested in the article. 
 
-## Data
+# Data
 
 ```{r data}
 library(tidyverse)
@@ -40,7 +39,7 @@ for (section in setdiff(unique(names$section), "Gold Standard")) {
       group_by(value, gold) %>% summarize(n=n()) %>% rename(actual='gold') %>% 
       pivot_wider(names_from="value", values_from="n", values_fill=0) %>% arrange(actual)
     cm_output = c(cm_output, knitr::kable(cm))
-}
+  }
 }
 ```
 
