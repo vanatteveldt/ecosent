@@ -1,6 +1,8 @@
 ---
 title: "Analysis"
-output: html_document
+output: 
+  github_document:
+    toc: yes
 editor_options: 
   chunk_output_type: console
 ---
@@ -40,11 +42,16 @@ perf = inner_join(scores, gold) %>%
   summarize_at(vars(acc:last_col()), mean) %>% 
   arrange(match(method, c("dictionary", "ml", "crowd", "manual")), language, variable ) %>% 
   ungroup() %>% left_join(names) %>% select(section, name, acc:neg_f1)
-md = knitr::kable(perf %>% mutate(section=str_remove_all(section, "\\(.*")), digits=2)
-fn = here("report/figures/table_performance.md")
-cat("# Table 2: Overall Performance of the Tested Sentiment Analysis Approaches\n\m", file=fn)
-cat(md, file=fn, sep="\n", append=T)
+table2 = knitr::kable(perf %>% mutate(section=str_remove_all(section, "\\(.*")), digits=2)
+table2
+```
 
+Make markdown table for the appendix.
+
+```{r}
+fn = here("report/figures/table_performance.md")
+cat("# Table 2: Overall Performance of the Tested Sentiment Analysis Approaches\n\n", file=fn)
+cat(table2, file=fn, sep="\n", append=T)
 ```
 
 Make the latex table for the manuscript.
@@ -70,7 +77,7 @@ mgold = bind_rows(mgold1, mgold3)
 Compute performance against these values:
 
 ```{r}
-scores %>% filter(method == "ml") %>% inner_join(mgold) %>% 
+table = scores %>% filter(method == "ml") %>% inner_join(mgold) %>% 
   mutate(correct=gold == value)%>% 
   group_by(method, language, variable, repetition) %>% 
   summarize(acc=mean(correct), #cor=cor(gold, value), 
@@ -81,6 +88,10 @@ scores %>% filter(method == "ml") %>% inner_join(mgold) %>%
   summarize_at(vars(acc:last_col()), mean) %>% 
   arrange(match(method, c("dictionary", "ml", "crowd", "manual")), language, variable ) %>% 
   ungroup() %>% left_join(names) %>% select(section, name, acc:neg_f1)
+
+fn = here("report/figures/table_performance_alternative.md")
+cat("# Supplementary table: Performance Machine Learning validated against Student Coding\n\n", file=fn)
+cat(knitr::kable(table, digits=2), file=fn, sep="\n", append=T)
 ```
 
 ## Bivariate correlations between dictionaries
@@ -217,3 +228,23 @@ ggplot(curve, aes(x=n, y=acc, group=method, lty=method)) +
   geom_smooth(color="grey", lwd=.5, lty=2, data=filter(curve, method=="SVM"), method='nls', formula=y~SSasymp(x, Asym, R0, lrc), se=F) + 
   geom_line() 
 ```
+
+## Confusion Matrices (not used in article)
+
+
+```{r}
+library(glue)
+cm_output = NULL
+for (section in unique(names$section)) {
+  cm_output = c(cm_output, glue("### {section}"))
+  for (v in names$variable[names$section == section]) {
+    cm_output = c(cm_output, glue("#### Confusion matrix for: {v}\n"))
+    cm = inner_join(scores, gold) %>% filter(variable==v) %>% 
+      group_by(value, gold) %>% summarize(n=n()) %>% rename(actual='gold') %>% 
+      pivot_wider(names_from="value", values_from="n", values_fill=0) %>% arrange(actual)
+    cm_output = c(cm_output, knitr::kable(cm))
+}
+}
+```
+
+`r paste(knitr::knit(text = cm_output), collapse = '\n')`
