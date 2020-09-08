@@ -1,0 +1,49 @@
+---
+title: "Confusion Matrices"
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.path="figures/")
+```
+# Confusion Matrices
+
+Below are the confusion matrices for all automatic sentiment analysis methods tested in the article. 
+
+## Data
+
+```{r data}
+library(tidyverse)
+library(here)
+source(here("src/lib/functions.R"))
+gold = read_csv(here("data/intermediate/gold.csv")) %>% rename(gold=value)
+scores = read_csv(here("data/intermediate/combined_predictions.csv"), col_types = "iccccddd")
+scores = scores %>% filter(is.na(language) | language != "google", variable != "recessie", variable != "boukes")  %>% mutate(value=trichotomize(value))
+names = read_csv(here("src/analysis/report_names.csv"))
+```
+
+# Code
+
+
+```{r}
+library(glue)
+cm_output = NULL
+for (section in setdiff(unique(names$section), "Gold Standard")) {
+  cm_output = c(cm_output, glue("## {section}"))
+  for (v in names$variable[names$section == section]) {
+    cm_output = c(cm_output, glue("### Confusion matrix for: {v}\n"))
+    cm = inner_join(scores, gold) %>% filter(variable==v) %>% 
+      group_by(value, gold) %>% summarize(n=n()) %>% rename(actual='gold') %>% 
+      pivot_wider(names_from="value", values_from="n", values_fill=0) %>% arrange(actual)
+    cm_output = c(cm_output, knitr::kable(cm))
+}
+}
+```
+
+# Results
+
+`r paste(knitr::knit(text = cm_output), collapse = '\n')`
