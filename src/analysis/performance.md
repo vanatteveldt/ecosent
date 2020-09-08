@@ -80,38 +80,6 @@ table$`Gold Standard` = NULL
 render_j2("src/analysis/table_performance.tex.j2", "report/figures/table_performance.tex", data=list(data=table, methods=methodnames))
 ```
 
-## Alternative: performance vs average student coding (from boukes et al) rather than gold standard
-
-Alternative gold standard: voted outcome for headlines coded by 3
-students plus simple value for other
-headlines:
-
-``` r
-mgold3 = scores %>% filter(variable == "manual3") %>% select(id, gold=value)
-mgold1 = scores %>% filter(variable == "manual1") %>% anti_join(mgold3, by="id") %>% select(id, gold=value)
-mgold = bind_rows(mgold1, mgold3)
-```
-
-Compute performance against these values:
-
-``` r
-table = scores %>% filter(method == "ml") %>% inner_join(mgold) %>% 
-  mutate(correct=gold == value)%>% 
-  group_by(method, language, variable, repetition) %>% 
-  summarize(acc=mean(correct), #cor=cor(gold, value), 
-            alpha=alpha(gold, value), 
-            pos_precision=precision(value, gold, 1), pos_recall=recall(value, gold, 1), pos_f1=f1(pos_precision, pos_recall),
-            neut_precision=precision(value, gold, 0), neut_recall=recall(value, gold, 0), neut_f1=f1(neut_precision, neut_recall),
-            neg_precision=precision(value, gold, -1), neg_recall=recall(value, gold, -1), neg_f1=f1(neg_precision, neg_recall)) %>%  
-  summarize_at(vars(acc:last_col()), mean) %>% 
-  arrange(match(method, c("dictionary", "ml", "crowd", "manual")), language, variable ) %>% 
-  ungroup() %>% left_join(names) %>% select(section, name, acc:neg_f1)
-
-fn = here("report/figures/table_performance_alternative.md")
-cat("# Supplementary table: Performance Machine Learning validated against Student Coding\n\n", file=fn)
-cat(knitr::kable(table, digits=2), file=fn, sep="\n", append=T)
-```
-
 ## Bivariate correlations between dictionaries
 
 Create a wide data frame with all methods as a column
