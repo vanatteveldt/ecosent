@@ -30,6 +30,6 @@ See the files in [src/data](src/data) for details on how these files were constr
 # Supplementary Results
 
 * [Confusion Matrices of all methods](src/analysis/confusion_matrix.md)
-* [Grid Search for CNN](src/analysis/cnn_gridsearch.md) (code: [30_cnn_gridsearch.py](src/data_processing/30_cnn_gridsearch.py)
-* [Grid Search for SVM](src/analysis/svm_gridsearch.md) (code: [19_svm_gridsearch.py](src/data_processing/19_svm_gridsearch.py)
+* [Grid Search for CNN](src/analysis/cnn_gridsearch.md) (code: [30_cnn_gridsearch.py](src/data-processing/30_cnn_gridsearch.py)
+* [Grid Search for SVM](src/analysis/svm_gridsearch.md) (code: [19_svm_gridsearch.py](src/data-processing/19_svm_gridsearch.py)
 * [Validation of ML results against student codings](src/analysis/ml_versus_students.md)
