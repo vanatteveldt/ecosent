@@ -1,0 +1,145 @@
+---
+title: "Error_analysis"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=F, message=F)
+library(here)
+library(tidyverse)
+```
+
+Read performance data
+
+```{r}
+source(here("src/lib/functions.R"))
+headlines = read_csv(here("data/raw/gold_sentences.csv")) %>% select(id, headline)
+gold = read_csv(here("data/intermediate/gold.csv")) %>% rename(gold=value)
+scores = read_csv(here("data/intermediate/combined_predictions.csv"), col_types = "iccccddd")
+scores = scores %>% filter(is.na(language) | language != "google", variable != "recessie", variable != "boukes")  %>% mutate(value=trichotomize(value))
+names = read_csv(here("src/analysis/report_names.csv"))
+sections = setNames(nm=unique(names$section))
+variables = setNames(nm=unique(names$variable))
+perf = inner_join(scores, gold) %>% inner_join(headlines)
+```
+
+```{r}
+cperf = perf %>% filter(variable=="cnn") %>% 
+  group_by(id, gold, headline) %>% summarize(acc=mean(value==gold), value=mean(value), conf=mean(confidence)) 
+```
+
+Sentences misclassified as positive
+
+```{r}
+cperf %>% filter(gold!=1, value >= 0.8) %>% arrange(-conf)%>% knitr::kable()
+```
+
+Sentences misclassified as negative
+
+```{r}
+cperf %>% filter(gold!=-1, value <= -0.8) %>% arrange(-conf)%>% knitr::kable()
+```
+
+Sentences misclassified as neutral (high confidence)
+
+```{r}
+cperf %>% filter(gold!=0, abs(value) <= .2) %>% arrange(-conf) %>% head(10) %>% knitr::kable()
+```
+
+
+Sentences misclassified as neutral (low confidence)
+
+```{r}
+cperf %>% filter(gold!=0, abs(value) <= .2) %>% arrange(conf) %>% head(10) %>% knitr::kable()
+```
+
+# Error analysis of NRC dictionary
+
+Get dictionary, use corpustools to apply at token level
+
+```{r}
+nrc <- read_csv(here("data/raw/dictionaries/NRC-Emotion-Lexicon-v0.92-In105Languages-Nov2017Translations.csv")) %>%
+  select(c(Eng = `English (en)`, NL = `Dutch (nl)`, Positive, Negative, Fear, Trust))
+d = quanteda::dictionary(list(positive = c(nrc$NL[nrc$Positive==1], nrc$NL[nrc$Trust==1]),
+                    negative = c(nrc$NL[nrc$Negative==1], nrc$NL[nrc$Fear==1])))
+
+df <- read_csv(here("data/raw/gold_sentences.csv"))
+tc = corpustools::create_tcorpus(df %>% select(doc_id=id, text=dutch_lemmas))
+tc$code_dictionary(d)
+```
+
+Texts that were misclassified as positive 
+
+```{r}
+fp = perf %>% filter(variable == "nrc_nl", value ==1,  gold==-1) %>% pull(id)
+corpustools::browse_texts(tc$subset(copy=T, subset_meta=doc_id %in% fp), category="code") 
+```
+
+Texts that were misclassified as negative
+
+```{r}
+fn = perf %>% filter(variable == "nrc_nl", value ==-1,  gold==1) %>% pull(id)
+corpustools::browse_texts(tc$subset(copy=T, subset_meta=doc_id %in% fn), category="code") 
+```
+
+List of mismatched tokens and sentences in gold standard: misclassified as positive
+
+```{r}
+matched_tokens = tc$tokens %>% filter(!is.na(code)) %>% group_by(doc_id, token, code) %>% summarize(n=n()) %>% 
+  mutate(id=as.numeric(as.character(doc_id))) %>% ungroup() %>% select(-doc_id)
+
+perf %>% filter(variable == "nrc_nl", value ==1,  gold==-1) %>% select(id, gold, value, headline) %>% 
+  inner_join(matched_tokens) %>% group_by(code, token) %>% mutate(n=sum(n)) %>% arrange(-n) %>% filter(code=="positive") %>% 
+  knitr::kable()
+```
+
+List of mismatched tokens and sentences in gold standard: misclassified as negative
+
+```{r}
+perf %>% filter(variable == "nrc_nl", value ==-1,  gold==1) %>% select(id, gold, value, headline) %>% 
+  inner_join(matched_tokens) %>% group_by(code, token) %>% mutate(n=sum(n)) %>% arrange(-n) %>% filter(code=="negative")  %>% 
+  knitr::kable()
+```
+
+
+# Naive Bayes features
+
+```{r}
+f = read_csv(here("data/intermediate/nb_features.csv")) %>% 
+  pivot_longer(-feature, names_to="class") %>% mutate(p=exp(value))
+intercept = f %>% filter(feature == "___INTERCEPT___") %>% select(class, p)
+nbfeatures = f %>% filter(feature != "___INTERCEPT___") %>% inner_join(intercept, by="class", suffix=c("", "_cls")) %>% 
+  mutate(pp=p*p_cls) %>% group_by(feature) %>% mutate(max=max(pp), sum=sum(pp)) %>% 
+  filter(pp==max) %>% mutate(norm=pp/sum) %>% arrange(-norm) %>% 
+  select(feature, class, norm)
+nbfeatures %>% head(10) %>% knitr::kable()
+```
+
+Positive tokens in texts misclassified as positive
+
+```{r}
+matched_tokens = tc$tokens %>% inner_join(nbfeatures, by=c(token="feature")) %>% select(doc_id, token, class, norm) %>% 
+   mutate(id=as.numeric(as.character(doc_id))) %>% ungroup() %>% select(-doc_id)
+perf %>% filter(variable == "nb", value ==1,  gold==-1) %>% select(id, gold, value, headline) %>% 
+  inner_join(matched_tokens) %>% group_by(class, token) %>% arrange(-norm) %>% filter(class==1) %>% 
+  knitr::kable()
+```
+
+Negative tokens in texts misclassified as negative
+
+```{r}
+perf %>% filter(variable == "nb", value ==-1,  gold==1) %>% select(id, gold, value, headline) %>% 
+  inner_join(matched_tokens) %>% group_by(class, token) %>% arrange(-norm) %>% filter(class==-1) %>% 
+  knitr::kable()
+```
+
+
+Non-neutral tokens in misclassified neutral texts
+
+```{r}
+perf %>% filter(variable == "nb", value != 0,  gold==0) %>% select(id, gold, value, headline) %>% 
+  inner_join(matched_tokens) %>% group_by(class, token) %>% arrange(-norm) %>% filter(class!=0) %>% 
+  knitr::kable()
+```
