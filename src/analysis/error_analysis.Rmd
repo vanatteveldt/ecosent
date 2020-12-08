@@ -16,6 +16,7 @@ Read performance data
 ```{r}
 source(here("src/lib/functions.R"))
 headlines = read_csv(here("data/raw/gold_sentences.csv")) %>% select(id, headline)
+headlines_eng = read_csv(here("data/raw/gold_sentences.csv")) %>% select(id, deepl)
 gold = read_csv(here("data/intermediate/gold.csv")) %>% rename(gold=value)
 scores = read_csv(here("data/intermediate/combined_predictions.csv"), col_types = "iccccddd")
 scores = scores %>% filter(is.na(language) | language != "google", variable != "recessie", variable != "boukes")  %>% mutate(value=trichotomize(value))
@@ -55,6 +56,23 @@ Sentences misclassified as neutral (low confidence)
 
 ```{r}
 cperf %>% filter(gold!=0, abs(value) <= .2) %>% arrange(conf) %>% head(10) %>% knitr::kable()
+```
+
+To check embeddings vectors (run in python)
+
+```
+import gensim
+embeddings = gensim.models.Word2Vec.load("data/tmp/w2v_320d")
+
+def isin(w):
+    try:
+        embeddings.wv[w]
+        return True
+    except KeyError:
+        return False
+
+isin("dubbelfout")
+embeddings.wv.similar_by_word("dubbelfout")
 ```
 
 # Error analysis of NRC dictionary
@@ -102,6 +120,77 @@ List of mismatched tokens and sentences in gold standard: misclassified as negat
 ```{r}
 perf %>% filter(variable == "nrc_nl", value ==-1,  gold==1) %>% select(id, gold, value, headline) %>% 
   inner_join(matched_tokens) %>% group_by(code, token) %>% mutate(n=sum(n)) %>% arrange(-n) %>% filter(code=="negative")  %>% 
+  knitr::kable()
+```
+
+# Error analysis of English NRC dictionary
+
+```{r}
+de = quanteda::dictionary(list(positive = c(nrc$Eng[nrc$Positive==1], nrc$Eng[nrc$Trust==1]),
+                    negative = c(nrc$Eng[nrc$Negative==1], nrc$Eng[nrc$Fear==1])))
+
+tce = corpustools::create_tcorpus(df %>% select(doc_id=id, text=deepl_lemmas))
+tce$code_dictionary(de)
+```
+
+
+Texts that were misclassified as positive 
+
+```{r}
+fp = perf %>% filter(variable == "nrc_deepl", value ==1,  gold==-1) %>% pull(id)
+corpustools::browse_texts(tce$subset(copy=T, subset_meta=doc_id %in% fp), category="code") 
+```
+
+Texts that were misclassified as negative
+
+```{r}
+fn = perf %>% filter(variable == "nrc_deepl", value ==-1,  gold==1) %>% pull(id)
+corpustools::browse_texts(tce$subset(copy=T, subset_meta=doc_id %in% fn), category="code") 
+```
+
+List of mismatched tokens and sentences in gold standard: misclassified as positive
+
+```{r}
+matched_tokens = tce$tokens %>% filter(!is.na(code)) %>% group_by(doc_id, token, code) %>% summarize(n=n()) %>% 
+  mutate(id=as.numeric(as.character(doc_id))) %>% ungroup() %>% select(-doc_id)
+
+perf %>% filter(variable == "nrc_deepl", value ==1,  gold==-1) %>% select(id, gold, value, headline) %>% 
+  inner_join(matched_tokens) %>% group_by(code, token) %>% mutate(n=sum(n)) %>% arrange(-n) %>% filter(code=="positive") %>% 
+  inner_join(headlines_eng) %>% 
+  knitr::kable()
+```
+
+List of mismatched tokens and sentences in gold standard: misclassified as negative
+
+```{r}
+perf %>% filter(variable == "nrc_deepl", value ==-1,  gold==1) %>% select(id, gold, value, headline) %>% 
+  inner_join(matched_tokens) %>% group_by(code, token) %>% mutate(n=sum(n)) %>% arrange(-n) %>% filter(code=="negative")  %>% 
+    inner_join(headlines_eng) %>% 
+  knitr::kable()
+```
+
+List of sentences misclassified by translated that were correct in original
+
+```{r}
+nl_correct = perf %>% filter(variable == "nrc_nl", value == gold)
+trans_error = perf %>% filter(variable == "nrc_deepl", value != gold) %>% semi_join(nl_correct, by="id") %>% select(id, gold, value_deepl=value, headline) %>% inner_join(headlines_eng)
+knitr::kable(trans_error)
+```
+
+Browser
+
+```{r}
+tce$meta
+tce$set_meta("gold_value", gold$gold[match(tce$get_meta("doc_id"), as.character(gold$id))])
+tce$set_meta("nrc_deepl", trans_error$value_deepl[match(tce$get_meta("doc_id"), as.character(trans_error$id))])
+corpustools::browse_texts(tce$subset(copy=T, subset_meta=doc_id %in% trans_error$id), category="code") 
+```
+
+Tokens
+
+```{r}
+trans_error %>% 
+  inner_join(matched_tokens) %>% group_by(code, token) %>% mutate(n=sum(n)) %>% arrange(-n) %>% filter(code=="positive") %>% 
   knitr::kable()
 ```
 
