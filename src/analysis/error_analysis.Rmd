@@ -1,6 +1,6 @@
 ---
-title: "Error_analysis"
-output: html_document
+title: "Economic Sentiment: Error analysis"
+output: github_document
 editor_options: 
   chunk_output_type: console
 ---
@@ -24,6 +24,8 @@ sections = setNames(nm=unique(names$section))
 variables = setNames(nm=unique(names$variable))
 perf = inner_join(scores, gold) %>% inner_join(headlines)
 ```
+
+# Error analysis of CNN / Deep learning
 
 ```{r}
 cperf = perf %>% filter(variable=="cnn") %>% 
@@ -103,8 +105,7 @@ perf %>% filter(variable == "nrc_nl", value ==-1,  gold==1) %>% select(id, gold,
   knitr::kable()
 ```
 
-
-# Naive Bayes features
+# Naive Bayes features and error analysis
 
 ```{r}
 f = read_csv(here("data/intermediate/nb_features.csv")) %>% 
