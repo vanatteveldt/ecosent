@@ -25,7 +25,7 @@ The following data files might be of interest:
 * [crowdcodings.csv](data/intermediate/crowdcodings.csv) Crowd codings 
 * [manual_coding.csv](data/intermediate/manual_coding.csv) Manual (student) coding of headlines
 
-See the files in [src/data](src/data) for details on how these files were constructed.
+See the files in [src/data-processing](src/data-processing) for details on how these files were constructed.
 
 # Results as presented in the article
 
