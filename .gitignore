@@ -52,3 +52,8 @@ packrat/src/
 data/tmp
 data/raw-private
 ecosent.Rproj
+
+*.aux
+*.bbl
+*.blg
+*.log
