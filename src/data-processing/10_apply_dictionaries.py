@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 #DESCRIPTION: Reproduce dictionary scores from Boukes et al., 2019; see lib/economic_sentiment.py
 #DEPENDS: data/raw/{gold_sentences.csv,dictionaries/{boukinator.json,DANEW.csv}}
-#CREATES: data/intermediate/dictionary_output_quanteda.csv
+#CREATES: data/intermediate/dictionary_output.csv
 
 """
 Calls the dictionaries on the gold data using the code copied/adapted from the bobvdvelde/economic_sentiment github.

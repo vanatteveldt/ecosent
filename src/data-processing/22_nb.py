@@ -1,8 +1,7 @@
 #! /usr/bin/env python3
 #DESCRIPTION: Run SVM on the prepared sentences
 #DEPENDS: data/intermediate/sentences_ml.csv
-#CREATES: data/intermediate/svm_predictions.csv
-
+#CREATES: data/intermediate/nb_predictions.csv, data/intermediate/nb_features.csv
 import logging
 import csv
 import numpy as np

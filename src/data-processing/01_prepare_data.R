@@ -6,6 +6,9 @@
 ### Gather article metadata and manual codings
 # Requires access to the SPSS file from Boukes et al.. Metadata and codings are saved to (public) intermediate folder)
 source("src/lib/functions.R")
+library(stringr)
+library(readr)
+library(tibble)
 
 d_raw = haven::read_sav("data/raw-private/Inhoudsanalyse_AllesMerged_noICR_Wouter.sav")
 d = d_raw %>% mutate(ID=as.integer(ID), 
@@ -35,8 +38,6 @@ d2 = d2_raw %>% mutate(medium=value_labels(outlet, labels_col=d_raw$outlet),
 d2 = d2 %>% anti_join(d, by=c("id", "coder"))
 d = bind_rows(d, d2) %>% arrange(id)
 
-table(missing %in% d$id)
-d %>% filter(id %in% missing)
 # Output 1: Article metadata
 # Note: timestamp can differ for same ID in both data sets (tz issues?), so keep only first ID
 meta = d %>% select(id, date, medtype, medium, headline) %>% 
