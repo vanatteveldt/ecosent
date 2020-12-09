@@ -1,0 +1,114 @@
+\section{Discussion}
+
+\noindent Determining the tone or valence of statements is an important task for analyzing communication.
+Sentiment analysis is not an easy task, however.
+Sentiment is conceptually not trivial: statements such as `Libya's Moammar Gadhafi killed', `Brexit was postponed (again)`, or
+`House prices skyrocketing' can be positive or negative (or even neutral), depending on your perspective and definition of sentiment. 
+Subjective language is also typically more ambiguous and more creative than factual statements,
+and even trained expert coders can have serious difficulty agreeing on the sentiment of statements. 
+
+This paper investigated the relatively straightforward (but substantively important) case of differentiating good from bad economic news headlines. %about the economy.
+We compared a large number of different methods for measuring this sentiment: 
+trained student coders; crowd coding; classical machine learning and deep learning; and a large variety of dictionaries. 
+For the latter, we used both original (generic) Dutch dictionaries and generic and domain-specific English dictionaries applied to automatic translation of the text.
+The results of all these methods were compared to a gold standard created by coding every unit multiple times and 
+resolving any disagreements. 
+
+The main finding is that human coding still carries the day for sentiment coding, 
+with only trained students and crowd coding achieving levels of agreement with the gold standard that would generally be accepted as valid measurements. 
+Of these, student coding is clearly still better than crowd coding at replicating the gold standard coding,
+achieving a Krippendorff's alpha of over 0.9 when using three coders per text.
+Crowd coding, however, also has relatively good accuracy, achieving an alpha of over 0.8 when each text is coded multiple times,
+equal to the performance of single student coding.
+With this performance, crowd coding has a number of substantial advantages over regular student coding. 
+First, crowd coding will often be significantly cheaper than student coding. 
+For our experiments, we paid coders \$0.02 per sentence. Including test questions, total costs were less than \$50 for 1500 annotations.
+This makes it affordable to code all units multiple times, a practice often considered too expensive for manual coding, 
+which not only improves the overall point estimate of sentiment, but also gives a measure of spread \citep[cf.][]{benoit16,lind2017content}.
+A second advantage is that after setting up the job, almost no researcher effort is required,
+as the system takes care of recruiting, testing, and monitoring the coders. 
+
+Please note that this does not mean we endorse the economics or business models of current crowd coding providers. 
+In our view, the main benefit of crowd coding is that the process is inherently transparent. 
+Since coders are interchangeable and all training and selection happens within the system, 
+we can be sure of the exact training and material that the coders received.
+With expert (or student) coding, the presumed standard practice is to have training events where groups of coders are instructed
+in the codebook and the coding routines. 
+Although ideally the training procedure would be published together with the codebook,
+it is difficult to avoid coders talking with each other and with the instructors, meaning that it is possible that a shared
+understanding can arise that is not captured in the codebook.
+This potentially makes it hard to create truly replicable coding and implies that the published intercoder agreement can be overly optimistic. 
+For crowd coding, in contrast, there is no reason to assume why the outcome will be structurally different if another researcher launches the same job, guaranteeing replicability and validity of the reliability measure. 
+This is in line with the findings and recommendations of \citet{weber18}, who advocate crowd coding after having difficulty replicating their own previous codings of moral claims.
+
+Dictionary coding is probably the most used automatic sentiment analysis method in the social sciences due to its transparency and simplicity.
+Unfortunately, but not surprisingly given previous results \citep{boukes2019,soroka15,gonzalez15}, performance of dictionaries was not satisfactory. 
+Agreement was generally close to chance agreement, and correlations between dictionaries were also low.
+Error analysis showed that this was mostly due to the missing context of words.
+This holds for both Dutch dictionaries and for English dictionaries applied to the automatically translated texts.
+
+In line with findings from the computational linguistics community, machine learning significantly outperformed dictionary coding,
+with a ``deep learning'' convolutional neural network 
+scoring around 20 percentage points higher on both agreement and intercoder reliability measures \citep{rudkowsky2018more,semeval,liu12}. 
+This performance is notwithstanding the fact that a relatively low amount of training material was available, 
+implying that better results might still be achievable with more training data.
+It is also possible that the machine learning models had particular difficulties with the low number of words in each headline,
+which could have exacerbated this data scarcity problem. 
+This could also explain the higher performance of the CNN model. 
+Because this model used word embeddings vectors rather than the word counts (as in the NB and SVM models),
+the model could utilize the words in the gold standard headlines even if these words did not occur in the training data.
+The disadvantage of machine learning methods are, however, their relative lack of transparency and the need for coded training data.
+The fact that a model is based on specific training data also means that a different task or domain requires new training data,
+so for smaller tasks it might be better to just use manual coding on a sufficiently large sample. 
+
+\subsection*{Recommendations for Text Classification}
+\noindent There are many different techniques for sentiment analysis and classifications of texts more generally. 
+Unfortunately, the results of this article show that automatic techniques do not always perform sufficiently.
+This even holds for dictionaries that have been developed and validated independently: 
+Since tasks and domains are almost never interchangeable in social science, 
+validated performance on the task a tool was developed for does not guarantee sufficient performance on a new task.
+
+On the basis of these findings, we recommend that text classification projects should follow the following steps to guarantee validity:
+
+\begin{APAenumerate}
+\item Formalize the conceptualization and operationalization for manual annotation of the quantity of interest. 
+  This step is extremely important and often requires pilot coding of material and discussion between researchers.
+\item Annotate a sufficiently large gold standard for validation. 
+  This needs to be coded by at least two annotators to calculate inter-coder reliability (or three in the case of disagreements). The size of the sample depends on the number and distribution of categories, but a good indication is Table 11.2 in \citet[p.240]{krippendorff12} which shows that often between 100 and 300 units are required. If insufficient reliability is achieved, go back to step one and repeat; otherwise, finish the validation set by discussing and resolving all disagreements. 
+\item Apply any applicable off-the-shelf dictionaries. 
+  If any of these is sufficiently valid as determined by comparison with the gold standard, we recommend using this for the text analysis as dictionaries give very good transparency and replicability for a low cost.
+\item If no sufficiently valid off-the-shelf dictionaries exist, consider customizing a dictionary or creating one. 
+  In this case, it is paramount that the gold standard is not referenced when creating a dictionary as that would bias the validity estimate: 
+  Any person involved in annotating the gold standard cannot contribute to creating the dictionary.
+  It can be very beneficial to use corpus statistics of the texts under study, for example by listing the most frequent or surprising words in the corpus or by listing words that are similar to words in an existing dictionary \citep{amsler20}. 
+  For example, similar to the results of the error analysis presented above this would have shown that a word like \trans{beurs}{stock exchange} is relatively frequent in this corpus and occurs in the NRC sentiment dictionary, but in the corpus of this study has no clear positive or negative valence and should probably be dropped from the dictionary.
+  As always, make sure the corpus analysis excludes any documents in the gold standard to avoid biasing the performance estimate.
+  As above, test the validity of the created dictionary against the gold standard, and use it if it is sufficiently valid.
+  If many variations need to be tested or threshold scores need to be determined, a second set of documents should be annotated for this. Only the final dictionary should be tested against the validation set to ensure an unbiased estimate of validity. 
+\item If off-the-shelf or custom dictionaries do not achieve sufficient validity, the remaining options are human coding or machine learning. 
+ For this, code a relatively large set of articles (a thousand or more) using crowd coding or expert coding. 
+ We would recommend to use the validation set created in step 2 to continually test the validity of the manual coding by including a small percentage of validation sentences in the jobs. 
+\item Train a machine learning model using the coded documents. 
+  Use \emph{cross-validation} to perform a first validation and/or test multiple models and select (hyper)parameters as needed. 
+  If the model is sufficiently valid, train again using the whole coded data set and validate against the gold standard. 
+\item If needed, repeat from step 5 until the model is sufficiently valid or enough units have been coded to perform the substantive analysis. 
+\end{APAenumerate}
+
+\vspace{1em}
+
+\noindent Following these guidelines ensures that the results are valid and replicable with the minimum amount of manual coding needed,
+which can range from only coding the gold standard to having to do a fully manual analysis. 
+
+We would like to close with a final recommendation for the field. 
+In our view, the biggest problem facing the analysis of sentiment or tone in communication science is the lack of a shared conceptualization.
+`Sentiment' can mean many things in different theoretical contexts, as is clear from the fact that, for instance, a hotel review, a political policy preference,
+and a statement about the economy can all be seen as expressions of sentiment. 
+To remedy this situation, we should categorize the different theoretical claims related to tone or sentiment,
+and formalize a set of definitions that can be used to create gold standards for each type of sentiment measure.
+Specifically, attention should be paid to the unit of measurement and to disentangle the value of the sentiment from its source (who is expressing the sentiment) and target (who or what is being evaluated). 
+As a field, we could then collaborate on creating training material and building, comparing, and improving shared tools for one or more 
+concrete sentiment analysis tasks as defined in the first step.
+This approach of creating \emph{shared tasks} has yielded very good results in computational linguistics and related fields
+and have the potential to dramatically increase the quality, comparability, and transparency of automatic sentiment analysis in the social sciences. 
+
+%Voeg toe: i miss one recommendation: Have at least two (or three in the case of disagreements) code a single piece of text to assure the reliability of individual coding decisions.

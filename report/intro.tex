@@ -1,0 +1,68 @@
+\noindent \emph{Sentiment} (or tone) of communication is a central topic for scholars of communication \citep{lengauer2012negativity}. 
+Sentiment has been studied in news coverage of politicians  \citep{hopmann2011incumbency,dunaway2015objectivity,vargo2014network}, news coverage of political elections \citep{kleinnijenhuis2019combined,kleinnijenhuis2007test,mccombes2000setting},
+political campaigns \citep{cho2013campaign,shah2007campaign,haselmayer2019negative,Nai2019,Ridout2011}, political referendums \citep{elenbaas2008effects}, political debates \citep{nagel2012there,connaughton2004invitations,hopmann2011incumbency}, and to analyze the rhetoric of political elites in parliament and manifesto's \citep{Rhodes2019,Rheault2016,Kosmidis2018} -- to name a few topics in the last two decades. 
+Beyond the domain of politics, a wide variety of communication scholars used sentiment to study objects, such as the quality of mediated inter-group contact \citep{wojcieszak2016saw}, the hostile media effect \citep{shin2017partisan}, news coverage of wars \citep{aday2010chasing}, news coverage of Asia in Asian and Western TV stations \citep{natarajan2003asian}, coverage about companies \citep{jonkman2020buffering}, media violence and aggression \citep{martins2013content}, health news coverage \citep{kim2015attracting}, the content of news websites \citep{valenzuela2017behavioral} and the user-comments under their articles \citep{muddiman2017news}, gender differences in news reporting  \citep{rodgers2003socialization}, news frames on biotechnology \citep{matthes2008content}, or criticisms of news media \citep{domke1999politics}.
+
+While omnipresent as a concept, measuring sentiment -- or any of the often co-occurring concepts, such as emotionality, negativity, polarity, subjectivity, tone, or valence -- is not straightforward. 
+Sentiment is generally expressed with ambiguous and creative language \citep{pang08,wiebe04,liu12}.
+In addition, sentiment analysis in the social sciences suffers from a lack of agreed-upon conceptualization and operationalization \citep{lengauer2012negativity,kleinnijenhuis2008negativity}. 
+
+Computational approaches to sentiment analysis have the potential to remedy the problems of scalability and replicability inherent in manual coding 
+\citep[For overviews, see for example][]{vanatteveldt2019studying, welbers17, boumans16}.
+%To remedy the costs and logistic difficulties involved with human annotation, scholars have increasingly relied upon automated forms of text analysis 
+% The ``text-as-data revolution'' \citep{grimmer13} has blessed us with many easy available new data sources to test old and new research questions.
+% The fast-growing computational text community has made it possible to use these newly available data sets -- a prime example hereof is the R-package \emph{Quanteda} \citep{quanteda}. 
+While these methods can be very cost-efficient, their application is not without pitfalls \citep{grimmer13,wilkerson2017large,margolin2019computational,hilbert2019computational,atteveldt2018cmm}.
+Off-the-shelf dictionaries are developed for, and typically validated on, a specific task and domain, and often do not perform well on other tasks. 
+For example, \citet{young12} found that different dictionaries for measuring sentiment ``show stunningly little overlap'' (p.211)
+and do not correlate well with each other or with expert annotations. 
+Similarly, machine learning models that are optimized for a certain task (such as distinguishing positive film reviews from negative ones) can give misleading results for social science research by identifying spurious patterns in the data that was used to train these algorithms \citep{thelwall2012sentiment}.
+Nevertheless, the current proliferation of available dictionaries and other off-the-shelf tools tends to overshadow the low measurement validity \citep{gonzalez15, soroka15},
+and in many cases these tools are not validated before being used on new tasks. 
+On top of these challenges, (semi-)automated tools for non-English languages are rare, hampering comparative research of communication \citep{haselmayer2017sentiment}. 
+
+This paper's contribution lies in demonstrating which, if any, of the sentiment analysis methods actually work well for determining the tone of media coverage.
+We use a triple-coded gold standard validation set to compare different manual and automatic approaches to sentiment analysis of Dutch economic news headlines.
+Using a Dutch-language case study gives an impression of the state of the art in non-English language tools 
+as well as allowing us to test the efficacy of machine translation for comparative research.
+Moreover, we presume that journalistic descriptions of whether the economy is doing well or not are relatively factual and unambiguous. 
+Therefore, the economy seems to be an `easy' test for automated methods compared to many aspects of political news,
+where opinions and sentiment are often expressed in more nuanced or creative ways. 
+
+%Using only the headlines of text also simplifies the problem since 
+Headlines are often relatively simple and explicit compared to the more nuanced arguments made in the article body. 
+%Moreover, it 
+Thereby, focusing only on headlines avoids the issue of articles citing multiple sources that can each express a different sentiment, which makes it difficult to judge the `overall' sentiment of an article.
+%On the other hand, 
+Nevertheless, the limited amount of words in a headline could put automatic methods at a disadvantage since it is less likely that any given dictionary or machine learning model will contain a matching word.
+The sentiment of headlines, however, is interesting in its own right as the headline is the first (and sometimes the only) part of an article that people read, and headlines shape the context in which people read the article. 
+In social science research, headlines are seen as an important framing device \citep[e.g.][]{tankard01,liu19}, 
+a signal of news values \citep[e.g.][]{ng20} and as an important predictor of effects on polarization, political attitudes, and consumer confidence \citep[e.g.][]{munger20,narayan17,blood95}.
+Moreover, many other forms of communication that are studied in our field (and with automated content analysis), such as tweets, chat messages, and online comments, are also relatively short.
+Thus, evaluating methods that determine sentiment of headlines is a relevant task for communication science.
+In addition, it is a suitable case for sentiment analysis in general,
+even though results might differ for other forms of communication such as full articles.
+
+
+%We fully agree that headlines are not the same thing as the full article, and it’s fully possible that a headline has a strong sentiment while the article itself is more nuanced and balanced. The sentiment of headlines, however, is interesting in its own right as the headline is the first (and sometimes the only) part of an article that people read and is an important context in which they read it. In communication research, headlines are seen as an important framing device (e.g. Tankard 2001, De Vreese 2005, Liu et al 2019) a predictor of whether people are likely to read the full article (e.g. Lagerwerf 2020, Ng & Zao 2019) and as predictor of media effects on polarization (e.g. Munger et al., 2020), market prices (e.g. Narayan & Narayan 2019), and political attitudes (e.g. Blood & Philips, 1995). Moreover, besides headlines other short texts such as tweets, chat messages, and online comments are also relatively short but important forms of communication that are often studied in our field. 
+
+
+For this study, we used the existing manual annotations presented in \citet{boukes2019}.
+Besides comparing the gold standard to these manual codings and to crowd coding data that were collected specifically for this article, 
+we used the manual codings as training data for classical and `deep learning' machine learning models.
+%In this paper, we evaluate many different approaches to measure sentiment in text with methods that go beyond off-the-shelf Dutch dictionary tools. 
+Finally, we apply many of the different dictionaries that have recently become available,
+including English-language dictionaries using machine translation of the headlines \citep[e.g. as suggested by][]{devries2018} and a dictionary specifically customized to the domain of interest \citep[suggested by][]{muddiman2019}. 
+Thereby, our paper presents a comprehensive review of existing methods to measure sentiment.
+We apply an open science, open materials approach. 
+All our analytical code, data, and results are published in the online compendium for this paper.%
+%\footnote{For review, an anonymous version of this compendium is available here: \url{https://anonymous.4open.science/r/475de8a9-6796-4538-95bc-94182a2e5557/}}
+\footnote{\url{https://github.com/vanatteveldt/ecosent}}
+
+Generally, results from this case study do not warrant optimism regarding the possibilities of automatic sentiment analysis, especially dictionary based analyses. 
+In line with e.g. \citet{soroka15} and \citet{boukes2019}, we find that off-the-shelf dictionaries perform poorly on this task.
+Machine learning approaches, especially deep learning, performs considerably better than the off-the-shelf sentiment analysis tools, 
+but still do not reach the level of validity generally required for text analysis methods. 
+On a more positive note, the results of crowd coding can compete with the quality delivered by trained coders, providing a cheaper and especially more transparent and replicable alternative to expensive student coders. 
+The main take-home message is, however, that a human eye is still required to guarantee the validity of measuring sentiment in content analysis.
+As detailed in the step-by-step process given at the end of this article, we strongly recommend that every automatic text analysis project should start with coding a validation set. 

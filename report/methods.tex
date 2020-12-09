@@ -1,0 +1,129 @@
+\section{Data and Methods}
+
+\noindent By comparing various methods of sentiment analysis, 
+this paper aims to help researchers choose the best method for approaching a sentiment analysis project.
+The starting point of this analysis are the data reported in \cite{boukes2019}.
+%To compare the various methods of sentiment analysis with the aim of giving researchers a recommendation how to approach the measurement of sentiment analysis, .
+These authors collected news from a total of ten newspapers and five websites using an extensive search string that covers a wide variety of economic and financial issues published between February 1 and July 7, 2015. It included three quality newspapers (\textit{NRC Handelsblad, Trouw, de Volkskrant}), a financial newspaper (\textit{Financieel Dagblad}), three popular newspapers (\textit{Algemeen Dagblad, Metro, De Telegraaf}) and three regional outlets (\textit{Dagblad van het Noorden, de Gelderlander, Noordhollands Dagblad}). 
+For the automated text analyses, all headlines were preprocessed by lemmatizing them using the Dutch lemmatizer Frog \citep{frog}.
+In short, lemmatizing means that we reduce a verb like ``dacht'' (thought) to its lemma ``denken'' (think). 
+%Newspapers items were retrieved via LexisNexis and stored in the Amsterdam Content Analysis Toolkit (AMCAT) \citep{vanatteveldt2014}. The items of the news websites were retrieved from the Infrastructure for Content Analysis-tool (INCA) \citep{trilling2018}. 
+
+\paragraph{Gold Standard}
+To guarantee the quality of our comparisons, we have created a gold standard against which we evaluate the existing methods by manually annotating a selection of the headlines from the manually annotated data of \cite{boukes2019}.
+We randomly selected headlines that were annotated multiple times and that were annotated as being about the economy. 
+\citet[p.240]{krippendorff12} recommends at least 143 documents for determining intercoder reliability for this case ($P_c =.33;\alpha\geq.8;sig.\leq.005$), but to be conservative we decided to use 300 headlines.
+%This choice allowed us to focus on comparing sentiment analysis methods instead of comparing topic and sentiment jointly.
+These headlines were annotated by the three authors using the instructions from the original article.
+The initial inter-coder agreement of this coding was Krippendorff's $\alpha=0.75$,
+with agreement between coder pairs ranging from 0.75 to 0.82, which reflects the subjectivity of the task at hand. 
+All disagreements were then discussed between the authors and resolved where possible.
+In most cases, these disagreements were caused by simple clerical errors or by a misinterpretation of the sentence or coding rules. 
+Eleven headlines were removed after discussion as they were deemed to be inherently ambiguous (i.e., not ideal for a gold standard),
+If anything, removing the hardest headlines should make the task slightly easier for the different forms of automatic sentiment analysis. 
+
+\paragraph{Manual Coding}
+As reported in \citet{boukes2019}, the sentiment of newspaper and website headlines was manually annotated by a team of 22 student coders. 
+The coders were trained by means of two training sessions of three hours, and three homework assignments. 
+In addition, they could send their questions or doubts by e-mail and receive almost immediate feedback. 
+
+To verify whether articles really dealt with economic news, the first question in the code-book was whether the headline or first paragraph of the item referred to the economy, economic developments or an economic topic (e.g., inflation, unemployment, interest rates, or the housing market). 
+Subsequently, coders were asked to evaluate the sentiment of a headline with regards to the economy on a three point-scale: (-1) negative; (0) neutral, ambiguous, or mixed; and (+1) positive. 
+Coders were explicitly instructed to only evaluate the headline and to not consider any information that they already had seen from the full text. 
+Inter-coder reliability was assessed on sample of 148 randomly selected news items that were analyzed by at least three of the coders; on average this were 5.63 coders. This sentiment measurement proved to have a satisfactory inter-coder reliability (Krippendorff's $\alpha$ = .80).
+
+\paragraph{Crowd Coding}
+The headlines from the gold standard were all coded by five crowd coders using the Figure~8 platform.\footnote{\url{http://figure-eight.com}, formerly CrowdFlower} 
+Coders received short instructions with a limited amount of examples (see online appendix for the task definition).
+Besides these 300 sentences, 70 (relatively straightforward) test sentences were included for which we provided the correct answer.
+These were used first in an initial quiz to ensure coders understood the instructions, and after that one test question was included in every page of five target sentences to ensure that coders remained concentrated during the task. Coders that missed test questions were informed of this, and coders missing more than 70\% of test questions were excluded. 
+
+
+\paragraph{Sentiment Dictionaries} 
+In this paper, we partly replicate the dictionaries used in \cite{boukes2019} and add specific dictionaries for \textit{hope} and \textit{fear} in the economic context.
+Specifically, we applied the Dutch ANEW \citep{anew}, Pattern \citep{pattern} and Polyglot \citep{polyglot} dictionaries 
+using the Python code published with that paper. 
+In addition, we used the R package Quanteda \citep{quanteda} to add 
+(a) the dictionary developed by \cite{damstra2018} to measure the sentiment of economic news; 
+(b) the NRC Emotion Lexicon \citep{mohammad2013} for both measuring positive and negative words as well as trust and fear words; 
+and (c) a customized dictionary based on the approach suggested by \cite{muddiman2019}.
+%For the latter dictionary, we manually annotated the 300 most frequent words, yielding a dictionary consisting of 32 positive and 38 negative words.
+The upper-part of Table \ref{tab:info} displays the number of words per category in the Dutch dictionaries.
+For the dictionaries applied using Quanteda (D2, D3, and D4), 
+the table also lists the categories that were used for positive and negative words. 
+For these dictionaries, a headline was counted as positive if there were more positive than negative words, and similarly for negative.
+Headlines without any sentiment words or with equal positive and negative words were treated as neutral. 
+%\footnote{The positive category for DamstraBoukes is Hope, the negative one is Fear. For RID, the positive category is Positive Affect, the negative one is Anxiety. For NRC, we first added respectively the positive categories (Positive and Trust) and the negative categories (Negative and Fear), and subsequently used Equation \ref{eq:sentiment}.}}
+
+
+\paragraph{English Dictionaries using Machine Translation}
+The number of Dutch dictionaries available is rather limited. 
+There are many more dictionaries for sentiment analysis available in English, 
+including also domain-specific dictionaries for sentiment in finance.
+Following the suggestion by \cite{devries2018}, we used machine translation to translate the gold standard texts.
+For this, we used both Google Translate and DeepL to translate the gold standard texts.%
+\footnote{Accessed at \url{https://translate.google.com/} and \url{deepl.com}, respectively. Since DeepL provided slightly better performance, we only report these scores here, but see the online compendium for a full overview. }
+This allowed us to make use of the plenitude of English sentiment dictionaries available using the Quanteda R packages \citep{quanteda}:
+First, we used the Affective Norms for English Words (AFINN) \citep{afinn}, a publicly available list of English words rated for valence with values between -5 (negative) and +5 (positive). The version implemented in the Quanteda package uses a binary classification. % into 878 positive (valence > 0) and 1,599 negative (valence < 0) features. 
+Second, we used the Augmented General Inquirer\footnote{\url{http://www.wjh.harvard.edu/$\sim$inquirer/ homecat.htm}} \textit{Positiv} and \textit{Negativ} dictionary.
+Third, we used the dictionary %containing 2,006 positive and 4,783 negative words 
+from Hu and Liu \citep{hu2004,liu2005}.
+Fourth, we applied the 2014 version of the Loughran and McDonald Sentiment Word Lists \citep{loughran2011}. 
+%The categories we used are ``negative'' (2355 features) and ``positive'' (354).
+Fifth, we employed the Martindale's Regressive Imagery Dictionary (RID) \citep{martindale1975, martindale1992}.
+%The RID consists of about 3,150 words and roots assigned to 29 categories of primary process cognition, 7 categories of secondary process cognition, and 7 categories of emotions, designed by \cite{martindale1975, martindale1992} to measure primordial vs. conceptual thinking.
+Sixth, we used the Lexicoder Sentiment Dictionary (LSD) \citep{lexicoder,young12}.
+%The dictionary consists of 2,858 ``negative'' sentiment words and 1,709 ``positive'' sentiment words. 
+The seventh and eight dictionaries are the NRC Emotion Lexicon, but in English this time, and the translated \cite{damstra2018} dictionary similar to the one applied in Dutch.
+The lower-part of Table \ref{tab:info} displays the used categories and number of words per category in the English dictionaries.
+
+\begin{table*}[h!]
+  \caption{Information on Off-the-Shelf Dictionaries}\label{tab:info}
+\input{table_info_dictionaries}
+\end{table*}
+
+\paragraph{Machine Learning} \label{ML}
+This paper uses two types of machine learning: 
+`classical' machine learning with a Naive Bayes (NB) and Support Vector Machine (SVM) classifier, and `deep' learning using a Convolutional Neural Network (CNN).
+The setup and training procedure for both models are given below.
+For all models, we used 6,038 manually coded headlines from \citet{boukes2019} as training data. 
+The final models were validated against the 300 headlines gold standard.%
+\footnote{
+Since the models were trained on the headlines coded by the student coders as reported by \citet{boukes2019},
+it is possible that these models would perform better when validated against the student codings rather than against our gold standard data, 
+even though we used the same coding procedure. 
+To make sure the ML models were not disadvantaged, we also validated the models against the student codings of the gold standard data,
+which yielded almost identical results. See the online appendix for these outcomes. }
+
+For the NB and SVM model, we used \emph{scikit-learn} \citep{sklearn} to create a document-term matrix with normalized td-idf weights,
+and train and test the model. 
+To determine the hyperparameters for the SVM model (regularization parameter and kernel type and coefficient)
+we performed a grid search using 5-fold crossvalidation.\footnote{See the online appendix for the grid search procedure and results}
+The best performing model was then trained on all training data and tested on the validation set. 
+%The choice of machine learning algorithm is determined by the kind of model that fits the data.
+%This choice is comparable to choosing between different types of regression models.
+%\textbf{Note that SVM is one of many different types of machine learning algorithms, 
+%and there are no strong a priori  theoretical considerations for preferring SVM over e.g. Naive Bayes (NB)}. 
+%For that reason, we tested different models (and model settings) using cross-validation within the training data. 
+%The Support Vector Machine (SVM) algorithm turned out to give the best performance.
+
+
+%\subsection{Model II:  Convolutional Neural Network}
+For the deep learning model, we chose to use a Convolutional Neural Network (CNN), 
+which allows for local interactions between word meanings.
+That is, scores are computed for windows of adjacent words, so the model can treat word combinations differently from the underlying words. 
+Given the relatively small length of newspaper headlines, we decided not to use more complicated models (such as Long-Short Term Memory or LSTM models) that also allow non-local interactions \citep{goldberg17}.
+Specifically, we used \emph{keras} with \emph{tensorflow} back-end \citep{tensorflow} to train and test the CNN consisting of the following layers:
+\begin{APAenumerate}%[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+    \item An \emph{embeddings} layer using the Amsterdam Embeddings Model trained on Dutch news \citep{aem}. This layer looks up each word in the input and replaces it by its 320-dimensional embedding vector representing its position in a latent semantic space.
+    \item A \emph{convolution} layer that concatenates the embeddings for each 3-word window and transforms them into a lower-dimensional representation using a dense neural layer, effectively allowing for features to be created spanning at most 3 words.
+    \item A \emph{max-pooling} layer that maximizes the value for each feature for each document.
+    \item A regular \emph{dense network} that predicts the sentiment from the pooled input features. 
+\end{APAenumerate}
+
+The architecture above is a relatively standard architecture for document classification. 
+However, there are still many choices (hyperparameters) left, from the depth and size of the dense network to the learning rate and loss function. 
+Since again there are no strong theoretical grounds to determine these parameters, we conducted a grid search using cross-validation within the training to find the optimal parameter values similar to the procedure for SVM.\footnote{See the online appendix for the grid search procedure and results}
+These settings were then used to train a new model on all training data, which was validated on the gold standard data. 
+
+

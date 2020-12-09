@@ -1,0 +1,72 @@
+\section{Existing Methods of Sentiment Analysis}
+
+\noindent Traditionally, sentiment is measured using manual annotators and a codebook \citep[for examples, see][]{kleinnijenhuis2019combined,kleinnijenhuis2007test,meijer2006issue,cho2013campaign,shah2007campaign,aday2010chasing,elenbaas2008effects,natarajan2003asian,mccombes2000setting,martins2013content,nagel2012there,rodgers2003socialization,muddiman2017news,dunaway2015objectivity}. %or all of the intro citations?
+Manual coding is expensive, however, and even when using extensive training programs high levels of reliability are not always achieved \citep{weber18}.
+%This not only complicates measuring sentiment: Extensive training, in combination with uncertain data quality, makes measuring sentiment even more expensive.
+%To avoid the high costs of manual coding, scholars have turned to the `wisdom of the crowd’ and used crowd-coding as a compelling solution for the huge volumes of available texts 
+
+One possible solution is to use crowd coding platforms instead of traditional expert (or undergrad) coders \citep{benoit16,haselmayer2017sentiment,lind2017content}.
+Sentiment analysis, in particular, can be relatively easily reduced to simple questions suitable for crowd coding.
+In addition, the lower costs of crowd coding allow for each document to be coded by multiple coders.
+This not only increases reliability, but also gives an indication of the ambiguity of sentiment.
+Finally, the crowd only sees the material as presented in the crowd coding platform, which can be easily shared between researchers.
+This means that crowd coding is more transparent and replicable than traditional manual coding.
+
+Another option is to use automatic sentiment analysis methods: 
+Using a computer program to classify each document as being positive, neutral, or negative
+\citep[for overviews of these methods, see][]{grimmer13,wilkerson2017large,welbers17,vanatteveldt2019studying,boumans16,hopkins2010method, nunez2016automated}. 
+There are broadly two types of methods that can be used for this: dictionaries and supervised machine learning. 
+
+%As a solution, scholars turned to new common practice where computers `do the work' instead of costly human annotators. 
+%When using computers -- or better to say \emph{automated} or \emph{computational} methods -- for text analysis, scholars `ask the computer' for \emph{classification} 
+%That is, to organize texts into a set of categories. 
+%Sometimes researchers know the categories beforehand -- for instance, positive and negative utterances -- other times they do not. 
+%In the case of sentiment, or any of its synonyms, the categories are known. 
+%One is interested in the occurrence of positive utterances relative to the occurrence of negative ones for the object of study.
+
+One could (naively) think that measuring sentiment using a dictionary should be easy:
+Make a long list of positive and negative words and count how many words of each category occur.
+Indeed, in the last decade we have seen a proliferation of available \emph{off-the-shelf} dictionaries for sentiment analysis \citep{gonzalez15, soroka15}.
+Studies within computational linguistics, however, suggest that coming up with the right set of keywords might be less trivial than one initially thinks \citep[for an overview, see][]{pang08}. 
+Applying one or another dictionary to investigate a specific research question could lead to widely divergent conclusions \citep{boukes2019,young12,gonzalez15,soroka15}.
+
+In general, it turns out that the validity of sentiment analysis highly depends on the domain, genre and language to which it is applied \citep{gonzalez15,soroka15,pang08,thelwall2012sentiment}.
+Therefore, scholars have started to apply (supervised) machine learning methods to classify texts. % -- or video's and images.
+In contrast to the off-the-shelf dictionaries, machine learning can account for the peculiarities of the texts under study.
+In machine learning, rather than having the researcher specify this link explicitly using a dictionary,
+the computer uses manually coded \emph{training data} to learn the link between input features (e.g. words as independent variables) and the desired output label (e.g. sentiment as dependent variable).
+Technically, a machine learning algorithm is used to create a statistical model based on the training data which is then used to 
+predict the sentiment of unlabeled texts.
+%That is, a sentence like ``The econonomy has never been better'' has the label `positive', while a sentence like ``The economy took a big hit'' is labeled negative.
+Machine learning generally outperforms dictionary-based methods, and most state-of-the-art sentiment analysis systems developed in computational linguistics are now based on machine learning \citep{semeval}. 
+These models generally have a very high number of parameters to be estimated, for example a score for every unique word in the training data.
+Since this can easily lead to overfitting of the model, 
+its performance should always be judged on separate validation data (out of sample prediction).
+
+Initially, most machine learning applications used word frequencies -- also called `bag-of-words' -- as input features.
+This approach ignores all aspects of word order and grammar. 
+More recently, so-called `deep learning' models have been developed that use neural networks with many hidden layers to overcome this limitation \citep{goldberg17}. 
+This is generally used in combination with \emph{word embedding models} \citep{mikolov13distributed, rudkowsky2018more}. 
+These models used very large quantities of unlabeled texts (i.e. without manual codings) 
+to learn the overall meaning of a word.
+This reduces the number of distinct input features and allows words that were not present in the initial data to be captured in the model. 
+
+Each of the methods surveyed here has its own advantages and disadvantages.
+Although machine learning methods generally outperform dictionaries in state-of-the-art systems, 
+their performance strongly depends on the availability of sufficient training material.
+Dictionaries are more transparent and easier to apply.
+All automated methods, however, will decrease in performance when applied to a task or domain
+that is different from the one it was developed for. 
+This makes it difficult to estimate beforehand which method will be the most effective or what its performance will be.
+The difficulty of ex-ante estimation stresses the importance of validating each method for its specific task. 
+
+%This means the computer can also take word context or word combinations into account.
+
+%A variety of choices could be made when applying SML.
+%For examply which \emph{algorithm} should I apply? Or who is attaching the labels to texts that the computers in turn have to learn the patterns of?
+%To address the first question, very broadly speaking, one could distinguish \emph{classical} machine learning from \emph{deep learning}.
+%The first one is quite similar to training a regular statistical model, with the word counts as input variables and the sentiment (positive, neutral, negative) as a nominal outcome variable. 
+%Deep learning is a non-scientific term to refer to a class of models that have been developed relatively recently.
+%These models are called `deep' learning because they generally consist of a neural network with multiple `hidden' (latent) layers, that take individual words as input rather than aggregated word counts. 
+%To answer the second question, the `gold standard’ to compare the outcomes of the automated approaches against, is typically created by a manual content analysis, following established best practices for safeguarding reliability \citep{balke2014agents,krippendorff12,taboada11}. 
+%To avoid the high costs of manual coding, scholars have turned to the `wisdom of the crowd’ and used crowd-coding as a compelling solution for the huge volumes of available texts \citep{benoit16,haselmayer2017sentiment,lind2017content}.

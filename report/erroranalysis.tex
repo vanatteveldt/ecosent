@@ -1,0 +1,25 @@
+\newcommand{\fnerroranalysis}{\footnote{%
+See `error analysis' in the online appendix at \url{https://github.com/vanatteveldt/ecosent}%
+}}
+
+\newcommand{\trans}[2]{\emph{#1} (#2)}
+
+We conducted an error analysis to improve our understanding of the mistakes made by the various automatic methods.\fnerroranalysis{} 
+For the error analysis on the off-the-shelf dictionaries, we picked the NRC dictionary, 
+the best performing Dutch dictionary (by alpha) that also has an English translation. 
+Many of the mistakes made in the Dutch NRC dictionary are missed negations. 
+For example positively classifying the word \trans{groei}{growth} in sentences like \trans{afnemende groei hypotheken}{reduced growth in mortgages}  or \trans{matige groei}{tepid growth} or negatively classifying the word \emph{crisis} in \trans{Cyprus heft laatste restricties op na crisis}{Cyprus lifts last restrictions after the crisis}. 
+In addition, the error analysis revealed  clear mistakes, such as misclassifying the word \trans{beurs}{stock exchange} as positive. 
+
+The English NRC dictionary applied to headlines translated by deepl shows a similar pattern, with the words \emph{job} and \emph{savings} being misclassified as positive in sentences such as \emph{Best Buy deletes 1500 jobs} and \emph{300 million in savings gone in one day}. The same happened to negative words like \emph{crisis} and \emph{inflation}. 
+
+To better understand the role of translation, we then looked at the sentences that were correctly classified in Dutch but missed by the translated version. An inspection of these ($n=54$) sentences suggests that, although some are translated a bit clumsily, this does not seem to be the cause of the errors as the translation errors are more concerned with function words rather than the sentiment carrying words (for example, \emph{300 million in savings gone in one day} was actually translated as \emph{300 million in savings in one day away}). An interesting detail is that the word \emph{interest} caused most of the translated misclassifications as the English word \emph{interest} is ambiguous between the supposedly neutral meaning of interest rate and the positive concept of being interested or interesting, while the Dutch translation (rente) is not ambiguous. 
+
+For the error analysis of our machine learning approaches, we first look at Naive Bayes as that method has the most interpretable feature weights. Interestingly, the words \trans{faillissement}{bankruptcy} and \trans{werkloosheid}{unemployment} were positive features, presumably because these words are often negated in the training documents. Being based on word frequencies (bag of words), Naive Bayes also suffers from the same lack of context as the dictionaries, for example classifying the sentences \trans{minder woningen onder water}{fewer underwater mortgages} as negative based on negative values for both \emph{fewer} and \emph{underwater}, even though the result of the former is actually to negate the latter. 
+
+The convolutional neural network can take word context into account, but unfortunately the more complex parameters are not easy to inspect manually. When inspecting the misclassified sentences manually, however, it turns out to make some of the same mistakes as the other methods, for example classifying \emph{more bankruptcies} as positive. For many other sentences it is less clear why they are misclassified, although they do seem to have a large amount of rare or new words such as \trans{Werkgevers torpederen caos}{employers torpedo collective-bargaining-agreements}, \trans{dubbelfout bij crisistaks}{double-error with crisis-tax} and \trans{Grieken zijn weer platzak}{Greeks are stone-broke again}. 
+Then again, all these words were in the word embeddings and most had sensible synonyms, for example listing \trans{werkgeversheffing}{employer charge} and \trans{graaitax}{grabber tax} as synonyms for \emph{crisistaks}, although \emph{caos} was misclassified 
+(presumably due to the failed lemmatization to the singular form \emph{CAO}) and \trans{dubbelfout}{double error} was related mostly to tennis terms. 
+Still, since the close synonyms of these rare words are mostly rare words themselves, it is possible that even though the embeddings vectors does words not in the training data to be used for classification, if the words occur in too few contexts in the documents used for creating the embeddings they will still cause difficulties for the algorithm. 
+
+

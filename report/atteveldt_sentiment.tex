@@ -1,0 +1,62 @@
+\documentclass[jou,11pt]{apa6}
+\usepackage[utf8]{inputenc}
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage[english]{babel}
+\usepackage[natbibapa]{apacite}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{setspace}
+\PassOptionsToPackage{hyphens}{url}
+
+%\let\OldMaketitle\maketitle
+%\let\OldNewpage\newpage
+%\renewcommand\maketitle{%
+%   \renewcommand\newpage{\let\newpage\OldNewpage}% <----- Eliminate the effect of first \newpage
+%   \OldMaketitle%
+%}
+\renewcommand{\doiprefix}{}
+\newcommand{\doi}[1]{https://doi.org/#1}
+
+
+%http://www.chikrii.com/products/tex2word/
+\title{The Validity of Sentiment Analysis:\par Comparing Manual Annotation, Crowd-Coding, Dictionary Approaches, and Machine Learning Algorithms}
+\shorttitle{The Validity of Sentiment Analysis}
+
+\twoauthors{Wouter van Atteveldt, Mariken A.C.G. van der Velden}{Mark Boukes}
+\twoaffiliations{Communication Science, Vrije Universiteit Amsterdam}{Amsterdam School of Communication Research}
+
+\abstract{\input{abstract}}
+\keywords{Sentiment Analysis, Manual Annotation, Automated Approaches, Measurement Validity, Evaluation}
+
+\authornote{Accepted for publication in Computational Methods and Measures, details will follow}
+
+\begin{document}
+
+% APA6 seems to want indented paragraphs, but for some reasons the apa6 class does not?
+%\setlength{\parindent}{4em}
+ 
+\maketitle
+
+% JoC wants level-2 headings since they see the title as the level-1 heading.
+% Add an empty section here so we can use subsections in the rest. 
+% Comment out for jou mode, add for man mode
+%\section{}
+
+\input{intro}
+
+\input{existing_methods_sentiment}
+
+\input{methods}
+
+\input{results}
+
+\input{discussion}
+
+\newpage
+\bibliographystyle{apacite}
+{\footnotesize\bibliography{bibliography}}
+
+
+\end{document}
