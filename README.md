@@ -1,6 +1,10 @@
 # Economic Sentiment
 Data &amp; Analysis compendium for the Economic Sentiment analysis paper.
 
+# Article
+
+View the [preprint of the article here](report/atteveldt_sentiment.pdf).
+
 # Code
 
 The main analysis code is located in the [src/data-processing](src/data-processing). 
