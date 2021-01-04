@@ -54,6 +54,13 @@ cat("# Table 2: Overall Performance of the Tested Sentiment Analysis Approaches\
 cat(table2, file=fn, sep="\n", append=T)
 ```
 
+Make CSV file for publisher
+
+```{r}
+fn = here("report/figures/table_performance.csv")
+write_csv(perf, file=fn)
+```
+
 Make the latex table for the manuscript.
 I'm using jinja2 template [table.tex.j2](table.tex.j2) which is called with a json string containing the data.
 
@@ -88,6 +95,7 @@ cors = cor(wide_scores %>% select(-id), use = "pairwise") %>% as_tibble(rownames
 cors_dict = purrr::map(variables, function(x1) purrr::map(variables, function(x2) cors$value[cors$method==x1 & cors$method2 == x2]))
 ```
 
+
 Create latex table with j2 template
 
 ```{r}
@@ -95,6 +103,18 @@ used_names = names %>% filter(variable %in% cors$method)
 used_sections = sections[sections %in% used_names$section]
 varnames = purrr::map(used_sections, ~filter(names, section == .))
 render_j2("src/analysis/table_corr.tex.j2", "report/figures/table_corr.tex", data=list(data=cors_dict, names=varnames))
+```
+
+Create CSV file for publisher
+
+```{r}
+names = used_names %>% mutate(label=str_c(abbreviation, ": ", name)) %>% select(variable, abbreviation, label)
+cors %>% 
+  left_join(names %>% select(method=variable, label)) %>%
+  left_join(names %>% select(method2=variable, m2=abbreviation)) %>% 
+  ungroup() %>% select(label, m2, value) %>%
+  filter(m2 == "G" | str_sub(label, end=2) > m2, label != "G: Gold") %>% pivot_wider(names_from=m2) %>% arrange(label) %>% select(label, G, order(colnames(.))) %>% 
+  write_csv(here("report/figures/table_corr.csv"), na = "")
 ```
 
 ## Correlation between uncertainty and accuracy 
