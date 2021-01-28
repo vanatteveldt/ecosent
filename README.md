@@ -3,7 +3,7 @@ Data &amp; Analysis compendium for the Economic Sentiment analysis paper.
 
 # Article
 
-View the [preprint of the article here](report/atteveldt_sentiment.pdf).
+View the [article](https://www.tandfonline.com/doi/pdf/10.1080/19312458.2020.1869198?needAccess=true) (open access).
 
 # Code
 
