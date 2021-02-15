@@ -37,7 +37,8 @@ Een kop is negatief als er bijvoorbeeld staat dat het slecht gaat met de economi
 Als een kop alleen maar feiten noemt zonder daar een oordeel bij te geven is het artikel neutraal. Bijvoorbeeld als de werkloosheid 7% is, maar als er niet staat of dat veel of weinig is. 
 
 Bijvoorbeeld:
-*Werkloosheid is 7%*
+
+*Werkloosheid is 7%* <br/>
 deze kop is neutraal, er wordt alleen een feit genoemd
 
 *Werkloosheid is toegenomen tot 7%*
