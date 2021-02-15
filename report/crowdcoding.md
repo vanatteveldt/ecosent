@@ -31,22 +31,19 @@ Informal translation: "Below there is a headline or title of a newspaper or onli
 
 Below is the text that was used to instruct the coders: 
 
-<div style="border:2px solid black">
-Deze **taak** gaat over de toon van krantenkoppen of titels van online nieuwsitems over economisch nieuws. Van elke kop willen we weten of de kop negatief of positief is. Een kop is alleen negatief of positief als er een duidelijk en expliciet oordeel wordt gegeven over economische ontwikkelingen. Je mag ook aangeven dat een kop neutraal is. 
+Deze taak gaat over de toon van krantenkoppen of titels van online nieuwsitems over economisch nieuws. Van elke kop willen we weten of de kop negatief of positief is. Een kop is alleen negatief of positief als er een duidelijk en expliciet oordeel wordt gegeven over economische ontwikkelingen. Je mag ook aangeven dat een kop neutraal is. 
 Een kop is positief als bijvoorbeeld gesteld wordt dat de economie groeit, of het consumentenvertrouwen stijgt, er meer banen komen, of als een bedrijf groeit, winst maakt, of de productie uitbreidt. 
 Een kop is negatief als er bijvoorbeeld staat dat het slecht gaat met de economie, de werkloosheid toeneemt, de huizenverkoop afneemt, of een bedrijf failliet gaat om mensen ontslaat. 
 Als een kop alleen maar feiten noemt zonder daar een oordeel bij te geven is het artikel neutraal. Bijvoorbeeld als de werkloosheid 7% is, maar als er niet staat of dat veel of weinig is. 
-Bijvoorbeeld:
-Werkloosheid is 7%
-deze kop is neutraal, er wordt alleen een feit genoemd
-</div>
 
-```
-Werkloosheid is toegenomen tot 7%
+Bijvoorbeeld:
+*Werkloosheid is 7%*
+deze kop is neutraal, er wordt alleen een feit genoemd
+
+*Werkloosheid is toegenomen tot 7%*
 deze kop is negatief: de werkloosheid is afgenomen
 
-
-Werkloosheid is lager dan gevreesd 
+*Werkloosheid is lager dan gevreesd *
 deze kop is positief: de werkloosheid is laag
  
 Als een artikel gemengd is of als het onduidelijk is of het positief of negatief is dan wordt het als neutraal gecodeerd:
@@ -54,34 +51,38 @@ Economie groeit maar salarissen stagneren
 deze kop is neutraal, want er staat zowel een negatief (salaris stagneert) als positief (economie groeit) oordeel. 
  
 Als het niet duidelijk is of de kop over de economie gaat, maar wel duidelijk is dat het positief of negatief is, codeer de kop dan als positief of negatief. Bijvoorbeeld:
-Bar en boos
+
+*Bar en boos*
 Deze kop is negatief. We weten niet zeker of het over de economie gaat, maar het is zeker negatief.
  
 Soms zijn er koppen waarin er iets positiefs of negatiefs wordt gezegd over een specifiek persoon zonder dat het iets zegt over de economie. Deze codeer je als neutraal. Als een kop echter zegt dat het goed (of slecht) gaat met een bedrijf dan codeer je het als positief (of juist negatief). Als bedrijven winst maken gaat het immers meestal goed met de economie. 
-Janssen verkozen tot ondernemer van het jaar
+
+*Janssen verkozen tot ondernemer van het jaar*
 Deze kop is neutraal: ook in slechte jaren is er een ondernemer van het jaar. Dit zegt dus niets over of het slecht of goed gaat.
 
 
-Pietersen nieuwe topman KPN 
+*Pietersen nieuwe topman KPN*
 Deze kop is ook neutraal: het is goed nieuws voor Pietersen, maar of het goed voor de economie is weten we niet. Ook in slechte tijden kan een bedrijf een nieuwe topman krijgen
 
 
-Winst Google met 9% gegroeid
+*Winst Google met 9% gegroeid*
 Deze kop is positief: het gaat goed met Google, en dus (vermoedelijk) met de economie.
 
 
-KPN neemt Telfort over
+*KPN neemt Telfort over*
 Deze kop is neutraal. Misschien is dit goed voor KPN en Telfort, maar misschien ook niet.
 
 
 Het gaat in deze taak om het oordeel van de schrijver over de economie, en niet om wat jij persoonlijk vindt van de economie. 
-BTW wordt verhoogd naar 9%
+
+*BTW wordt verhoogd naar 9%*
 Deze kop is neutraal.  In de kop staat niet of dit  goed of slecht is voor de economie. Misschien is het vervelend als de BTW omhoog gaat, maar misschien is het juist een goede maatregel.
 
 
-Economie krimpt door BTW verhoging 
+*Economie krimpt door BTW verhoging *
 Dit is wel negatief:  hier wordt duidelijk gesteld dat de economie zal krimpen door de verhoging. 
-```
+
+## Translated Instructions
 
 For convenience, below is the **unchecked** deepl.com translation of the instructions:
 
