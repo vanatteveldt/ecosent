@@ -31,8 +31,9 @@ See the files in [src/data-processing](src/data-processing) for details on how t
 
 * [Performance, learning curve, correlations](src/analysis/performance.md)
 
-# Supplementary Results
+# Online Appendix / Supplementary Results
 
+* [Crowd coding instructions](report/crowdcoding.md)
 * [Confusion Matrices of all methods](src/analysis/confusion_matrix.md)
 * [Grid Search for CNN](src/analysis/cnn_gridsearch.md) (code: [30_cnn_gridsearch.py](src/data-processing/30_cnn_gridsearch.py)
 * [Grid Search for SVM](src/analysis/svm_gridsearch.md) (code: [19_svm_gridsearch.py](src/data-processing/19_svm_gridsearch.py)
