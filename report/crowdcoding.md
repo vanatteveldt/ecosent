@@ -31,7 +31,7 @@ Informal translation: "Below there is a headline or title of a newspaper or onli
 
 Below is the text that was used to instruct the coders: 
 
-<div border="2px solid black">
+<div style="border:2px solid black">
 Deze **taak** gaat over de toon van krantenkoppen of titels van online nieuwsitems over economisch nieuws. Van elke kop willen we weten of de kop negatief of positief is. Een kop is alleen negatief of positief als er een duidelijk en expliciet oordeel wordt gegeven over economische ontwikkelingen. Je mag ook aangeven dat een kop neutraal is. 
 Een kop is positief als bijvoorbeeld gesteld wordt dat de economie groeit, of het consumentenvertrouwen stijgt, er meer banen komen, of als een bedrijf groeit, winst maakt, of de productie uitbreidt. 
 Een kop is negatief als er bijvoorbeeld staat dat het slecht gaat met de economie, de werkloosheid toeneemt, de huizenverkoop afneemt, of een bedrijf failliet gaat om mensen ontslaat. 
