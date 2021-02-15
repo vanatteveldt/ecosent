@@ -31,16 +31,17 @@ Informal translation: "Below there is a headline or title of a newspaper or onli
 
 Below is the text that was used to instruct the coders: 
 
-```
-Deze taak gaat over de toon van krantenkoppen of titels van online nieuwsitems over economisch nieuws. Van elke kop willen we weten of de kop negatief of positief is. Een kop is alleen negatief of positief als er een duidelijk en expliciet oordeel wordt gegeven over economische ontwikkelingen. Je mag ook aangeven dat een kop neutraal is. 
+<div border="2px solid black">
+Deze **taak** gaat over de toon van krantenkoppen of titels van online nieuwsitems over economisch nieuws. Van elke kop willen we weten of de kop negatief of positief is. Een kop is alleen negatief of positief als er een duidelijk en expliciet oordeel wordt gegeven over economische ontwikkelingen. Je mag ook aangeven dat een kop neutraal is. 
 Een kop is positief als bijvoorbeeld gesteld wordt dat de economie groeit, of het consumentenvertrouwen stijgt, er meer banen komen, of als een bedrijf groeit, winst maakt, of de productie uitbreidt. 
 Een kop is negatief als er bijvoorbeeld staat dat het slecht gaat met de economie, de werkloosheid toeneemt, de huizenverkoop afneemt, of een bedrijf failliet gaat om mensen ontslaat. 
 Als een kop alleen maar feiten noemt zonder daar een oordeel bij te geven is het artikel neutraal. Bijvoorbeeld als de werkloosheid 7% is, maar als er niet staat of dat veel of weinig is. 
 Bijvoorbeeld:
 Werkloosheid is 7%
 deze kop is neutraal, er wordt alleen een feit genoemd
+</div>
 
-
+```
 Werkloosheid is toegenomen tot 7%
 deze kop is negatief: de werkloosheid is afgenomen
 
